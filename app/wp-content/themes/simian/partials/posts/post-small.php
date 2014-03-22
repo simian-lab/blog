@@ -1,6 +1,6 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class( 'post-'.$wp_query->current_post + 1 ); ?>>
 	<header class="post-header">
-		<h1 class="post-title truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+		<h2 class="post-title truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 	</header>
 	<section class="post-content">
 		<?php the_post_thumbnail( 'small-thumbnail' ); ?>
