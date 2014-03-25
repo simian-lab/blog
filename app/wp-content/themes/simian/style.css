@@ -825,13 +825,8 @@ a:hover {
 /* Titles */
 .title, h1, h2, h3, h4, h5, h6, .widget-title {
   font: 400 17px/1.3 'Roboto Condensed', sans-serif;
-  text-transform: uppercase
-}
-.title a, h1 a, h1, h2 a, h3 a, h4 a, h5 a, h6 a, .widget-title a {
+  text-transform: uppercase;
   color: #239392;
-}
-h2{
-  color: #96d60b;
 }
 .title a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .widget-title a:hover {
   text-shadow: 0 0 1px #1E807F;
