@@ -1147,7 +1147,7 @@ pre {
 }
 /*Metadata content*/
 .metadata {
-  font: 11px 'Roboto Condensed', sans-serif;
+  font: 14px 'Roboto Condensed', sans-serif;
 }
 .metadata a {
   color: #5d504f;
@@ -1252,15 +1252,15 @@ pre {
 }
 
 .widget {
-  font-size: 11px;
+  font-size: 13px;
   margin-bottom: 15px;
 }
 .widget p {
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .widget-title {
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .widget.six.columns, .widget.three.columns, .widget.four.columns {
