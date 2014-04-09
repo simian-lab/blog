@@ -1,8 +1,8 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" class="post">
 	<header class="post-header">
-		<h1 class="post-title">
+		<h2 class="post-title">
 			<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-		</h1>
+		</h2>
 	</header>
 	<div class='row'>
 		<section class='post-content'>

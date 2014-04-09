@@ -14,7 +14,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 	<title>
 		<?php
 		wp_title( '&mdash;', true, 'right' );
@@ -26,6 +26,7 @@
 
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
+	<meta name="google-site-verification" content="0CB9xNrPBj6tzzd6f0qbUyRLbuDgQDqMO0gM91rDYrk" />
 </head>
 <body id="page" <?php body_class(); ?>>
 	<!--[if lt IE 9]>

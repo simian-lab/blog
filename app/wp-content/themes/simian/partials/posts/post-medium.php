@@ -1,6 +1,6 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class( 'post-'.$wp_query->current_post + 1 ); ?>>
 	<header>
-		<h1 class="truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+		<h2 class="truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 	</header>
 	<section>
 		<?php the_post_thumbnail( 'medium-thumbnail' ); ?>
