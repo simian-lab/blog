@@ -41,9 +41,9 @@ if ( ! function_exists( 'frank_get_option' ) ) {
 if ( ! isset( $content_width ) ) $content_width = 980;
 
 define( 'HEADER_TEXTCOLOR', '3D302F' );
-define( 'HEADER_IMAGE', '%s/images/logo.jpg' );
-define( 'HEADER_IMAGE_WIDTH', 215 );
-define( 'HEADER_IMAGE_HEIGHT', 120 );
+define( 'HEADER_IMAGE', '%s/images/default_header.jpg' );
+define( 'HEADER_IMAGE_WIDTH', 980 );
+define( 'HEADER_IMAGE_HEIGHT', 225 );
 
 add_filter( 'wp_list_categories', 'frank_remove_category_list_rel' );
 add_filter( 'the_category', 'frank_remove_category_list_rel' );
