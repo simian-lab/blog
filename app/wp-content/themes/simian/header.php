@@ -18,7 +18,6 @@
 	<title>
 		<?php
 		wp_title( '&mdash;', true, 'right' );
-		bloginfo( 'name' );
 		?>
 	</title>
 

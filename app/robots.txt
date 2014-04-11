@@ -1,4 +1,4 @@
-Sitemap: blog.simian/sitemap_index.xml
+Sitemap: http://blog.simian.co/sitemap_index.xml
 
 User-agent: *
 Disallow: /cgi-bin/ 
