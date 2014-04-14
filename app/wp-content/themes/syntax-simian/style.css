@@ -1,0 +1,67 @@
+/*
+Theme Name: Syntax-Simian
+Description: Syntax child theme
+Author: Pablo Garcia
+Template: syntax-wpcom
+*/
+@import url("../syntax-wpcom/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+html,body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+p {
+	font-family: Georgia, serif;
+}
+a {
+  color: #239392;
+  text-decoration: none;
+}
+a:hover {
+  text-shadow: 0 0 1px #1E807F;
+  color: #1E807F;
+}
+a:visited {
+  color: #4f4138;
+}
+/* Titles */
+.title, h1, h2, h3, h4, h5, h6, .widget-title, .site-title {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  color: #239392;
+}
+.title a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .widget-title a:hover {
+  text-shadow: 0 0 1px #1E807F;
+  color: #1E807F;
+}
+.title.small, h1.small, h2.small, h3.small, h4.small, h5.small, h6.small {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.site-header{
+	background: white;
+}
+.site-description {
+  color: #239392;
+}
+.site-title a {
+	color: #239392;
+}
+#toggle-nav:before{
+	background: #96d60b;
+}
+.navigation-main, .navigation-main a{
+	background: #4f4138;
+	color: white;
+}
+.navigation-main li.current_page_item > a, .navigation-main li.current-menu-item > a {
+  background-color: #4f4138;
+  color: white;
+ }
+ .navigation-main a:hover {
+  background-color: #4f4138;
+}
+button, input[type="submit"]{
+  background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(150, 214, 11)), to(rgb(133, 190, 8)));
+}
