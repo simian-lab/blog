@@ -44,13 +44,17 @@ a:visited {
   border-bottom: 4px solid #4f4138;
 }
 .site-header img{
-  margin-left: 139px;
+  display: inline;
 }
 .site-description {
   color: #239392;
 }
+.site-title{
+  display: inline;
+}
 .site-title a {
 	color: #239392;
+  display: inline;
 }
 #toggle-nav:before{
 	background: #96d60b;
