@@ -31,16 +31,15 @@ $path     = get_theme_mod( 'jetpack-path' );
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<?php if ( get_header_image() ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img class="site-header-image" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-		</a>
-		<?php endif; // End header image check. ?>
 		<div class="site-header-wrapper clear">
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</div>
+				<?php if ( get_header_image() ) : ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="site-header-image" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+					</a>
+				<?php endif; // End header image check. ?>
+			    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>				
+		    </div>
 			<?php if ( $facebook || $twitter || $tumblr || $linkedin || $google || $path ) : ?>
 				<div class="social-links">
 				<?php if ( $facebook ) : ?>
