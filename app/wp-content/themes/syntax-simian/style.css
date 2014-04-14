@@ -43,6 +43,9 @@ a:visited {
 	background: white;
   border-bottom: 4px solid #4f4138;
 }
+.site-header img{
+  margin-left: 139px;
+}
 .site-description {
   color: #239392;
 }
