@@ -50,7 +50,7 @@ $path     = get_theme_mod( 'jetpack-path' );
 		<div class="site-header-wrapper clear">
 			<div class="site-branding">
 				<?php if ( get_header_image() ) : ?>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<a href="http://simian.co/" rel="Simian Website">
 						<img class="site-header-image" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 					</a>
 				<?php endif; // End header image check. ?>
