@@ -55,6 +55,7 @@ a:visited {
   color: #239392;
 }
 .social-links {
+  display: inline;
   float: none;
 }
 .site-title{
