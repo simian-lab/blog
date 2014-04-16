@@ -42,6 +42,10 @@ a:visited {
 .site-header{
 	background: white;
   border-bottom: 4px solid #4f4138;
+  margin: 0px;
+}
+.site-branding{
+  margin: 0px;
 }
 .site-header img{
   display: inline;
@@ -78,5 +82,6 @@ button, input[type="submit"]{
 @media only screen and (max-width: 767px){
   .site-title{
     display: block;
-  }
+    margin-top: 0px;
+  }  
 }

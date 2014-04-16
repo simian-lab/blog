@@ -54,42 +54,44 @@ $path     = get_theme_mod( 'jetpack-path' );
 						<img class="site-header-image" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 					</a>
 				<?php endif; // End header image check. ?>
-			    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>				
-		    </div>
-			<?php if ( $facebook || $twitter || $tumblr || $linkedin || $google || $path ) : ?>
-				<div class="social-links">
-				<?php if ( $facebook ) : ?>
-					<a href="<?php echo esc_url( $facebook ); ?>" class="facebook-link">
-						<span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'syntax' ); ?></span>
-					</a>
+			    <h1 class="site-title">
+			    	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+					<?php if ( $facebook || $twitter || $tumblr || $linkedin || $google || $path ) : ?>
+					<div class="social-links">
+					<?php if ( $facebook ) : ?>
+						<a href="<?php echo esc_url( $facebook ); ?>" class="facebook-link">
+							<span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'syntax' ); ?></span>
+						</a>
+					<?php endif; ?>
+					<?php if ( $google ) : ?>
+						<a href="<?php echo esc_url( $google ); ?>" class="google-link">
+							<span class="screen-reader-text"><?php esc_html_e( 'Google+', 'syntax' ); ?></span>
+						</a>
+					<?php endif; ?>
+					<?php if ( $linkedin ) : ?>
+						<a href="<?php echo esc_url( $linkedin ); ?>" class="linkedin-link">
+							<span class="screen-reader-text"><?php esc_html_e( 'LinkedIn', 'syntax' ); ?></span>
+						</a>
+					<?php endif; ?>
+					<?php if ( $path ) : ?>
+						<a href="<?php echo esc_url( $path ); ?>" class="path-link">
+							<span class="screen-reader-text"><?php esc_html_e( 'Path', 'syntax' ); ?></span>
+						</a>
+					<?php endif; ?>
+					<?php if ( $twitter ) : ?>
+						<a href="<?php echo esc_url( $twitter ); ?>" class="twitter-link">
+							<span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'syntax' ); ?></span>
+						</a>
+					<?php endif; ?>
+					<?php if ( $tumblr ) : ?>
+						<a href="<?php echo esc_url( $tumblr ); ?>" class="tumblr-link">
+							<span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'syntax' ); ?></span>
+						</a>
+					<?php endif; ?>
+					</div>
 				<?php endif; ?>
-				<?php if ( $google ) : ?>
-					<a href="<?php echo esc_url( $google ); ?>" class="google-link">
-						<span class="screen-reader-text"><?php esc_html_e( 'Google+', 'syntax' ); ?></span>
-					</a>
-				<?php endif; ?>
-				<?php if ( $linkedin ) : ?>
-					<a href="<?php echo esc_url( $linkedin ); ?>" class="linkedin-link">
-						<span class="screen-reader-text"><?php esc_html_e( 'LinkedIn', 'syntax' ); ?></span>
-					</a>
-				<?php endif; ?>
-				<?php if ( $path ) : ?>
-					<a href="<?php echo esc_url( $path ); ?>" class="path-link">
-						<span class="screen-reader-text"><?php esc_html_e( 'Path', 'syntax' ); ?></span>
-					</a>
-				<?php endif; ?>
-				<?php if ( $twitter ) : ?>
-					<a href="<?php echo esc_url( $twitter ); ?>" class="twitter-link">
-						<span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'syntax' ); ?></span>
-					</a>
-				<?php endif; ?>
-				<?php if ( $tumblr ) : ?>
-					<a href="<?php echo esc_url( $tumblr ); ?>" class="tumblr-link">
-						<span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'syntax' ); ?></span>
-					</a>
-				<?php endif; ?>
-				</div>
-			<?php endif; ?>
+			    </h1>				
+		    </div>			
 		</div>
 	</header><!-- #masthead -->
 	<div id="main" class="site-main">
