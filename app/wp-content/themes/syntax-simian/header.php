@@ -39,7 +39,13 @@ $path     = get_theme_mod( 'jetpack-path' );
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <meta name="msapplication-TileColor" content="#00aba9">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-
+<?php if ( is_front_page() || is_home() ): ?>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@simianlab">
+<meta name="twitter:title" content="Simian – Web and mobile design & development studio">
+<meta name="twitter:description" content="Need help with an app or website? Wether you have a big project or a simple idea, Simian can help!">
+<meta name="twitter:image:src" content="http://simian.co/images/monkeyface.png">
+<?php endif; ?>
 <?php wp_head(); ?>
 </head>
 
