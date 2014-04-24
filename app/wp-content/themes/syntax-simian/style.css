@@ -86,5 +86,8 @@ button, input[type="submit"]{
 @media only screen and (max-width: 767px){
   .site-title{
     margin: 0 auto 0px;
+  }
+  .site-title a{
+    display: block;
   }  
 }
