@@ -61,8 +61,9 @@ $path     = get_theme_mod( 'jetpack-path' );
 					</a>
 				<?php endif; // End header image check. ?>
 			    <h1 class="site-title">
-			    	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					<?php if ( $facebook || $twitter || $tumblr || $linkedin || $google || $path ) : ?>
+			    	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>					
+			    </h1>
+			    <?php if ( $facebook || $twitter || $tumblr || $linkedin || $google || $path ) : ?>
 					<div class="social-links">
 					<?php if ( $facebook ) : ?>
 						<a href="<?php echo esc_url( $facebook ); ?>" class="facebook-link">
@@ -96,7 +97,6 @@ $path     = get_theme_mod( 'jetpack-path' );
 					<?php endif; ?>
 					</div>
 				<?php endif; ?>
-			    </h1>				
 		    </div>			
 		</div>
 	</header><!-- #masthead -->
