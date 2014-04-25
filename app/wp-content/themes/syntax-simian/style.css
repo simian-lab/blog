@@ -84,10 +84,14 @@ button, input[type="submit"]{
 }
 /*MOBILE*/
 @media only screen and (max-width: 767px){
+  .site-branding{
+    padding: 0px;
+  }
   .site-title{
     margin: 0 auto 0px;
   }
-  .site-title a{
+  .social-links{
     display: block;
+    margin: 0px 0px;
   }  
 }
