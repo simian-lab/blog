@@ -42,8 +42,8 @@ $path     = get_theme_mod( 'jetpack-path' );
 <?php if ( is_front_page() || is_home() ): ?>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@simianlab">
-<meta name="twitter:title" content="Simian – Web and mobile design & development studio">
-<meta name="twitter:description" content="Need help with an app or website? Wether you have a big project or a simple idea, Simian can help!">
+<meta name="twitter:title" content="Simian – <?php _e('Web and mobile design & development studio', 'syntax' ); ?> ">
+<meta name="twitter:description" content="<?php _e('Need help with an app or website? Wether you have a big project or a simple idea, Simian can help!','sintax'); ?>">
 <meta name="twitter:image:src" content="http://simian.co/images/monkeyface.png">
 <?php endif; ?>
 <?php wp_head(); ?>
