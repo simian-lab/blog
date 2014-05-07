@@ -106,9 +106,20 @@ button, input[type="submit"]{
     margin: 0px 0px;
   }  
 }
-@media only screen and (max-width: 472px){
-  .social-links{
+@media only screen and (max-width: 561px){
+   #flags_language_selector{
     display: block;
     margin: 0px 0px;
-  }  
+  } 
+}
+
+@media only screen and (max-width: 472px){
+  .social-links{
+    display: inline-block;
+    margin: 0px 0px;
+  }
+  #flags_language_selector{
+    display: inline;
+    margin: 0px 0px;
+  }   
 }
