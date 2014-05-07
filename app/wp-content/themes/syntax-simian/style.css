@@ -89,6 +89,9 @@ a:visited {
   float: none;
   vertical-align: super;
 }
+#flags_language_selector, .site-title, .social-links{
+  vertical-align: -webkit-baseline-middle;
+}
 button, input[type="submit"]{
   background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(150, 214, 11)), to(rgb(133, 190, 8)));
 }
