@@ -79,6 +79,15 @@ a:visited {
  .navigation-main a:hover {
   background-color: #4f4138;
 }
+#flags_language_selector img{
+  margin: 0.2em;
+  height: 2.15em;
+  width: 2.15em;
+}
+#flags_language_selector {
+  display: inline;
+  float: none;
+}
 button, input[type="submit"]{
   background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(150, 214, 11)), to(rgb(133, 190, 8)));
 }
@@ -90,8 +99,10 @@ button, input[type="submit"]{
   .site-title{
     margin: 0 auto 0px;
   }
-  .social-links{
-    display: inline;
+  .social-links{;
+    margin: 0px 0px;
+  }
+  #flags_language_selector{
     margin: 0px 0px;
   }  
 }
