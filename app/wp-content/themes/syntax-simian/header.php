@@ -96,11 +96,11 @@ $path     = get_theme_mod( 'jetpack-path' );
 						</a>
 					<?php endif; ?>
 					</div>
-				<?php endif; ?>
-				<div id="flags_language_selector">
+				<?php endif; ?>				
+		    </div>
+		    <div id="flags_language_selector">
 					<?php language_selector_flags(); ?>
-				</div>
-		    </div>			
+			</div>			
 		</div>
 	</header><!-- #masthead -->
 	<div id="main" class="site-main">

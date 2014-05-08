@@ -86,7 +86,7 @@ a:visited {
 }
 #flags_language_selector {
   display: inline;
-  float: none;
+  float: right;
   vertical-align: super;
 }
 #flags_language_selector, .site-title, .social-links{
@@ -106,24 +106,16 @@ button, input[type="submit"]{
   .social-links{;
     margin: 0px 0px;
   }
-  #flags_language_selector{
-    margin: 0px 0px;
-  }  
 }
-@media only screen and (max-width: 561px){
-   #flags_language_selector{
-    display: block;
-    margin: 0px 0px;
-  } 
+@media only screen and (max-width: 800px){
+  .site-branding{
+    float: left;
+    width: 72%;
+  }
 }
-
 @media only screen and (max-width: 472px){
   .social-links{
     display: inline-block;
     margin: 0px 0px;
   }
-  #flags_language_selector{
-    display: inline;
-    margin: 0px 0px;
-  }   
 }
