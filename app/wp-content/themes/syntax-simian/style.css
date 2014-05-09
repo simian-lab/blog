@@ -85,9 +85,10 @@ a:visited {
   border:1px solid #333;
 }
 #flags_language_selector {
-  display: inline;
-  float: right;
-  vertical-align: super;
+  display: inline;  
+  position: absolute;
+  right: 0px;
+  top: 33px;
 }
 #flags_language_selector, .site-title, .social-links{
   vertical-align: -webkit-baseline-middle;
@@ -105,12 +106,6 @@ button, input[type="submit"]{
   }
   .social-links{;
     margin: 0px 0px;
-  }
-}
-@media only screen and (max-width: 800px){
-  .site-branding{
-    float: left;
-    width: 72%;
   }
 }
 @media only screen and (max-width: 640px){
