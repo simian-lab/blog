@@ -46,6 +46,7 @@ a:visited {
 }
 .site-branding{
   margin: 0px;
+  max-width: 100%;
 }
 .site-header img{
   display: inline;
@@ -79,6 +80,19 @@ a:visited {
  .navigation-main a:hover {
   background-color: #4f4138;
 }
+#flags_language_selector img{
+  margin: 0.2em;
+  border:1px solid #333;
+}
+#flags_language_selector {
+  display: inline;  
+  position: absolute;
+  right: 6.250em;
+  top: 1.250em;
+}
+#flags_language_selector, .site-title, .social-links{
+  vertical-align: -webkit-baseline-middle;
+}
 button, input[type="submit"]{
   background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(150, 214, 11)), to(rgb(133, 190, 8)));
 }
@@ -90,14 +104,24 @@ button, input[type="submit"]{
   .site-title{
     margin: 0 auto 0px;
   }
-  .social-links{
-    display: inline;
+  .social-links{;
     margin: 0px 0px;
-  }  
+  }
 }
-@media only screen and (max-width: 472px){
+@media only screen and (max-width: 800px){
+  #flags_language_selector{
+    position: initial;
+  }
+}
+@media only screen and (max-width: 640px){
   .social-links{
-    display: block;
+    display: inline-block;
     margin: 0px 0px;
-  }  
+  }
+  .site-title{
+    float: left;
+  }
+  #flags_language_selector{
+    display: block;
+  }
 }
