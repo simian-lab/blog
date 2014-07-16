@@ -249,7 +249,8 @@ if( ! class_exists( 'Yoast_License_Manager', false ) ) {
 			$api_params = array(
 				'edd_action' => $action . '_license',
 				'license'    => $this->get_license_key(),
-				'item_name'  => urlencode( trim( $this->product->get_item_name() ) )
+				'item_name'  => urlencode( trim( $this->product->get_item_name() ) ),
+				'url' => home_url()
 			);
 
 			// create api request url
@@ -259,7 +260,7 @@ if( ! class_exists( 'Yoast_License_Manager', false ) ) {
 			$request = new Yoast_API_Request( $url );
 	
 			if( $request->is_valid() !== true ) {
-				$this->set_notice( sprintf( __( "Request error: \"%s\" (%scommon license notices%s)", $this->product->get_text_domain() ), $request->get_error_message(), '<a href="https://yoast.com/support/licenses/#license-activation-notices">', '</a>' ), false );
+				$this->set_notice( sprintf( __( "Request error: \"%s\" (%scommon license notices%s)", $this->product->get_text_domain() ), $request->get_error_message(), '<a href="http://kb.yoast.com/article/13-license-activation-notices">', '</a>' ), false );
 			}
 
 			// get response
