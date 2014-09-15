@@ -1,0 +1,15 @@
+language: php
+php:
+ - 5.4
+
+script: phpunit UnitTest
+
+env:
+  global:
+    - OPENSHIFT_REPO=ssh://541669a7e0b8cd47d50001a2@blog-simian.rhcloud.com/~/git/blog.git/
+
+before_install:
+  - git remote -v | grep ^openshift || git remote add openshift $OPENSHIFT_REPO
+
+after_success:
+  - git push -f openshift $BRANCH:master
