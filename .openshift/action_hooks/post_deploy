@@ -1,2 +1,3 @@
 echo Copying openshift-config file to $OPENSHIFT_REPO_DIR/wp-config.php
+ln -s app php
 cp $OPENSHIFT_REPO_DIR/app/stack/openshift-config.php $OPENSHIFT_REPO_DIR/app/wp-config.php
