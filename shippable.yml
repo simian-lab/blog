@@ -13,3 +13,8 @@ before_install:
 
 after_success:
   - git push -f openshift $BRANCH:master
+
+# include
+branches:
+  only:
+    - master
