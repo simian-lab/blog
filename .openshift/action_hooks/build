@@ -1,7 +1,7 @@
-cd $app_dir
-cat >> .openshift/action_hooks/build
-if [ ! -d $OPENSHIFT_DATA_DIR/uploads ]; then
-    mkdir $OPENSHIFT_DATA_DIR/uploads
-fi
-
-ln -sf $OPENSHIFT_DATA_DIR/uploads $OPENSHIFT_REPO_DIR/app/wp-content/
+#cd $app_dir
+#cat >> .openshift/action_hooks/build
+#if [ ! -d $OPENSHIFT_DATA_DIR/uploads ]; then
+#    mkdir $OPENSHIFT_DATA_DIR/uploads
+#fi
+#
+#ln -sf $OPENSHIFT_DATA_DIR/uploads $OPENSHIFT_REPO_DIR/app/wp-content/
