@@ -55,20 +55,31 @@ class IclCommentsTranslation{
         if(isset($_POST['action']) && $_POST['action']=='editedcomment'){
             add_action('transition_comment_status', array($this, 'transition_comment_status_actions'), 1, 3);
         }
-                     
-                
-        if('comment.php' == $pagenow){
-            $row  = $wpdb->get_row("
+
+	    if ( 'comment.php' == $pagenow ) {
+
+		    $c = false;
+
+		    if ( isset( $_GET[ 'c' ] ) ) {
+			    $c = intval( $_GET[ 'c' ] );
+		    } elseif ( isset( $_POST[ 'c' ] ) ) {
+			    $c = intval( $_POST[ 'c' ] );
+		    }
+
+		    if ( $c !== false ) {
+			    $row = $wpdb->get_row( "
                 SELECT c.user_id, t.language_code 
                 FROM {$wpdb->comments} c JOIN {$wpdb->prefix}icl_translations t ON c.comment_ID = t.element_id AND element_type='comment'
-                WHERE c.comment_ID=".intval($_GET['c'])
-            );
-            $comment_author = $row->user_id;
-            $comment_lang   = $row->language_code;
-            if($current_user->data->ID == $comment_author && $comment_lang == $this->user_language){
-                add_action('admin_head', array($this, 'admin_head_actions'));
-            }            
-        }        
+                WHERE c.comment_ID=" . $c );
+		    }
+		    if ( $row && isset( $row->user_id ) && isset( $row->language_code ) ) {
+			    $comment_author = $row->user_id;
+			    $comment_lang   = $row->language_code;
+			    if ( $current_user->data->ID == $comment_author && $comment_lang == $this->user_language ) {
+				    add_action( 'admin_head', array( $this, 'admin_head_actions' ) );
+			    }
+		    }
+	    }
         add_action('edit_comment', array($this, 'edit_comment_actions'));
         
         add_action('comment_form', array($this, 'comment_form_options'));        
@@ -98,8 +109,12 @@ class IclCommentsTranslation{
             global $wpdb;
             $nonce = wp_create_nonce('machine-translation-failed'.$_GET['retry_mtr']);
             if($_GET['nonce']==$nonce){
-                $wpdb->query("DELETE FROM {$wpdb->comments} WHERE comment_ID=" . intval($_GET['retry_mtr']));
-                $wpdb->query("DELETE FROM {$wpdb->prefix}icl_translations WHERE element_type='comment' AND element_id=" . intval($_GET['retry_mtr']));
+								$delete_query = "DELETE FROM {$wpdb->comments} WHERE comment_ID=%d";
+								$delete_query_prepared = $wpdb->prepare($delete_query, $_GET['retry_mtr']);
+                $wpdb->query($delete_query_prepared);
+								$delete_query = "DELETE FROM {$wpdb->prefix}icl_translations WHERE element_type='comment' AND element_id=%d";
+								$delete_query_prepared = $wpdb->prepare($delete_query, $_GET['retry_mtr']);
+                $wpdb->query($delete_query_prepared);
                 if(defined('WP_ADMIN')){
                     wp_redirect(rtrim(preg_replace('@retry_mtr=([0-9]+)&nonce=([0-9a-z]+)@','',$_SERVER['REQUEST_URI']),'?'));            
                 }else{
@@ -299,23 +314,29 @@ class IclCommentsTranslation{
         
         return $translation;
         */
-    } 
-    
-    
-    function delete_comment_actions($comment_id){
-        global $sitepress;
-        $trid = $sitepress->get_element_trid($comment_id, 'comment');
-        if($trid){
-            $translations = $sitepress->get_element_translations($trid, 'comment');
-            $sitepress->delete_element_translation($trid, 'comment');
-            foreach($translations as $t){
-                if(isset($t->element_id) && $t->element_id != $comment_id){
-                    wp_delete_comment($t->element_id);
-                }
-            }            
-        }
-    }    
-    
+    }
+
+	function delete_comment_actions( $comment_id ) {
+		global $sitepress;
+		$lang_details = $sitepress->get_element_language_details( $comment_id, 'comment' );
+		if ( $lang_details && isset( $lang_details->trid ) && isset( $lang_details->source_language_code ) ) {
+			$trid = $lang_details->trid;
+			if ( $lang_details->source_language_code ) {
+				$sitepress->delete_element_translation( $trid, 'comment', $lang_details->language_code );
+			} else {
+				$translations = $sitepress->get_element_translations( $lang_details->trid, 'comment' );
+				$sitepress->delete_element_translation( $trid, 'comment' );
+				foreach ( $translations as $t ) {
+					if ( isset( $t->element_id ) && $t->element_id != $comment_id ) {
+						remove_action( 'delete_comment', array( $this, 'delete_comment_actions' ) );
+						wp_delete_comment( $t->element_id );
+						add_action( 'delete_comment', array( $this, 'delete_comment_actions' ) );
+					}
+				}
+			}
+		}
+	}
+
     function wp_set_comment_status_actions($comment_id, $status){
         global $sitepress;        
         static $ids_processed = array(); // using this for avoiding the infinite loop
@@ -333,7 +354,7 @@ class IclCommentsTranslation{
     
     function edit_comment_actions($comment_id){
         // we'll use this hook ONLY for updating comments - not for new comments
-        if($_POST['icl_translate_reply']){
+        if(isset($_POST['icl_translate_reply'])){
             global $wpdb;
             $res = $wpdb->get_row("
                 SELECT MD5(c.comment_content)<> ms.md5 AND ms.md5 IS NOT NULL AS updated, ms.to_language
@@ -504,11 +525,11 @@ class IclCommentsTranslation{
 			$comments_in_the_users_language = array();
             $translated_comments_trids = array();
             if(!empty($trids)){
-                $res = $wpdb->get_results("
+                $res = $wpdb->get_results( $wpdb->prepare("
                     SELECT element_id, trid 
                     FROM {$wpdb->prefix}icl_translations
-                    WHERE element_type='comment' AND trid IN (".join(',',$trids).") AND language_code = '{$this->user_language}'
-                ");   
+                    WHERE element_type='comment' AND trid IN (".join(',',$trids).") AND language_code = %s
+                ", $this->user_language));   
                 foreach($res as $row){
                     $comments_in_the_users_language[] = $row->element_id;
                     $translated_comments_trids[] = $row->trid;
@@ -630,23 +651,31 @@ class IclCommentsTranslation{
         }elseif( isset($_POST['action']) && $_POST['action']=='get-comments' && isset($_POST['mode']) && $_POST['mode']=='single'){
             global $sitepress;
             if(preg_match('#SELECT \* FROM (.+)comments USE INDEX \(comment_date_gmt\) WHERE \( comment_approved = \'0\' OR comment_approved = \'1\' \)  AND comment_post_ID = \'([0-9]+)\'  ORDER BY comment_date_gmt ASC LIMIT ([0-9]+), ([0-9]+)#i',$sql,$matches)){
-                $post_type = $wpdb->get_var("SELECT post_type FROM {$wpdb->posts} WHERE ID='{$_POST['post_ID']}'");
-								$row = $wpdb->get_row("SELECT language_code FROM {$wpdb->prefix}icl_translations WHERE element_id={$_POST['post_ID']} AND element_type='post_{$post_type}'", ARRAY_N);
+                $post_id = (int) $_POST['post_ID'];
+                $post_type = get_post_type($post_id);
+                $post_type_prefixed = "post_" . $post_type;
+                $q = "SELECT language_code FROM {$wpdb->prefix}icl_translations WHERE element_id=%s AND element_type=%s";
+                $q_prepared = $wpdb->prepare($q, $post_id, $post_type_prefixed);
+								$row = $wpdb->get_row($q_prepared, ARRAY_N);
                 $c_language = $row[0];
                 
                 if($this->enable_comments_translation){
 					$tr_ids_orig = array();
-					$res = $wpdb->get_results("
-                        SELECT element_id, trid FROM {$wpdb->prefix}icl_translations t
-                        JOIN {$wpdb->comments} c ON t.element_id = c.comment_ID AND comment_POST_ID = {$_POST['post_ID']}
-                        WHERE t.element_type='comment' AND language_code='{$c_language}'");
+					$post_id = (int) $_POST['post_ID'];
+					$q = "SELECT element_id, trid FROM {$wpdb->prefix}icl_translations t
+                        JOIN {$wpdb->comments} c ON t.element_id = c.comment_ID AND comment_POST_ID = %d
+                        WHERE t.element_type=%s AND language_code=%s";
+					$q_prepared = $wpdb->prepare($q, $post_id, 'comment', $c_language);
+					$res = $wpdb->get_results($q_prepared);
                     foreach($res as $r){
                         $tr_ids_orig[$r->trid] = $r->element_id;
                     }
-                    $res = $wpdb->get_results("
-                        SELECT element_id, trid FROM {$wpdb->prefix}icl_translations t
-                        JOIN {$wpdb->comments} c ON t.element_id = c.comment_ID AND comment_POST_ID = {$_POST['post_ID']}
-                        WHERE t.element_type='comment' AND language_code='{$this->user_language}'");                    
+										$post_id = (int) $_POST['post_ID'];
+										$q = "SELECT element_id, trid FROM {$wpdb->prefix}icl_translations t
+                        JOIN {$wpdb->comments} c ON t.element_id = c.comment_ID AND comment_POST_ID = %d
+                        WHERE t.element_type=%s AND language_code=%s";
+										$q_prepared = $wpdb->prepare($q, $post_id, 'comment', $this->user_language);
+                    $res = $wpdb->get_results($q_prepared);                    
                     foreach($res as $r){
                         $tr_ids_tr[$r->trid] = $r->element_id;
                     }   
@@ -861,11 +890,13 @@ class IclCommentsTranslation{
                 foreach($wp_query->comments as $c){
                     $comment_ids[] = (int)$c->comment_ID;
                 }                
-                $res = $wpdb->get_results("
+                $res_query = "
                     SELECT t.element_id, t.trid, ms.status 
                     FROM {$wpdb->prefix}icl_translations t 
                     LEFT JOIN {$wpdb->prefix}icl_message_status ms ON t.element_id=ms.object_id 
-                    WHERE t.element_id IN(".join(',',$comment_ids).") AND t.element_type='comment' AND t.language_code <> '". $current_language ."' AND (ms.object_type='comment' OR ms.object_type IS NULL)");
+                    WHERE t.element_id IN(".join(',',$comment_ids).") AND t.element_type='comment' AND t.language_code <> %s AND (ms.object_type='comment' OR ms.object_type IS NULL)";
+								$res_query_prepared = $wpdb->prepare($res_query, $current_language);
+								$res = $wpdb->get_results($res_query_prepared);
                 foreach($res as $row){
                     $tridsmap[$row->trid] = $row->element_id;
                     if($row->status){
@@ -873,12 +904,13 @@ class IclCommentsTranslation{
                     }
                     
                 }
-                if(!empty($tridsmap)){            
-                    $res = $wpdb->get_results("
-                        SELECT t.trid, c.comment_content
+                if(!empty($tridsmap)){   
+										$res_query = "SELECT t.trid, c.comment_content
                         FROM {$wpdb->prefix}icl_translations t 
                             JOIN  {$wpdb->comments} c ON t.element_id = c.comment_ID
-                        WHERE t.trid IN(".join(',',array_keys($tridsmap)).") AND t.element_type='comment' AND t.language_code='". $current_language ."'");
+                        WHERE t.trid IN(".join(',',array_keys($tridsmap)).") AND t.element_type='comment' AND t.language_code=%s";
+										$res_query_prepared = $wpdb->prepare($res_query, $current_language);
+                    $res = $wpdb->get_results($res_query_prepared);
                     foreach($res as $row){
                         $comment_originals[$tridsmap[$row->trid]] = $row->comment_content;
                     }

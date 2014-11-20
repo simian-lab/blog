@@ -64,14 +64,19 @@ function icl_plugin_upgrade(){
         }
         foreach($post_types as $type=>$ids){
             if(!empty($ids)){
-                $wpdb->query("UPDATE {$wpdb->prefix}icl_translations SET element_type='post_{$type}' WHERE element_type='post' AND element_id IN(".join(',',$ids).")");    // @since 3.1.5 - mysql_* function deprecated in php 5.5+
+								$q = "UPDATE {$wpdb->prefix}icl_translations SET element_type=%s WHERE element_type='post' AND element_id IN(".join(',',$ids).")";
+								$q_prepared = $wpdb->prepare($q, 'post_'.$type);
+                $wpdb->query($q_prepared);    // @since 3.1.5 - mysql_* function deprecated in php 5.5+
             }
         }
         
         // fix categories & tags in icl_translations
         $res = $wpdb->get_results("SELECT term_taxonomy_id, taxonomy FROM {$wpdb->term_taxonomy}"); 
         foreach($res as $row) { 
-            $icltr = $wpdb->get_row("SELECT translation_id, element_type FROM {$wpdb->prefix}icl_translations WHERE element_id='{$row->term_taxonomy_id}' AND element_type LIKE 'tax\\_%'");
+            $icltr = $wpdb->get_row(
+										$wpdb->prepare("SELECT translation_id, element_type FROM {$wpdb->prefix}icl_translations WHERE element_id=%d AND element_type LIKE %s", 
+										array( $row->term_taxonomy_id, wpml_like_escape('tax_') . '%' ))
+														);
             if('tax_' . $row->taxonomy != $icltr->element_type){
                 $wpdb->update($wpdb->prefix . 'icl_translations', array('element_type'=>'tax_'.$row->taxonomy), array('translation_id'=>$icltr->translation_id));
             }
@@ -119,6 +124,8 @@ function icl_plugin_upgrade(){
 	icl_upgrade_version('3.1');
 
 	icl_upgrade_version('3.1.5');
+
+    icl_upgrade_version('3.1.8');
 
 	//Forcing upgrade logic when ICL_SITEPRESS_DEV_VERSION is defined
 	//This allow to run the logic between different alpha/beta/RC versions

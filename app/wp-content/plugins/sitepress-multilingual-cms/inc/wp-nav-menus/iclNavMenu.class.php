@@ -35,8 +35,11 @@ class iclNavMenu{
                 
         add_filter('theme_mod_nav_menu_locations', array($this, 'theme_mod_nav_menu_locations'));
         $theme_slug = get_option( 'stylesheet' );        
-        add_filter('pre_update_option_theme_mods_' . $theme_slug, array($this, 'pre_update_theme_mods_theme'));        
-        
+        add_filter('pre_update_option_theme_mods_' . $theme_slug, array($this, 'pre_update_theme_mods_theme'));
+
+        // add_filter('wp_page_menu_args', array($this, 'wp_nav_menu_args_filter'));
+        // add_filter('wp_page_menu', array($this, 'wp_nav_menu_items_filter'));
+
         add_filter('wp_nav_menu_args', array($this, 'wp_nav_menu_args_filter'));
         add_filter('wp_nav_menu_items', array($this, 'wp_nav_menu_items_filter'));
         
@@ -283,7 +286,9 @@ class iclNavMenu{
     function wp_delete_nav_menu($id){
         global $wpdb;
         $menu_id_tt = $wpdb->get_var($wpdb->prepare("SELECT term_taxonomy_id FROM {$wpdb->term_taxonomy} WHERE term_id=%d AND taxonomy='nav_menu'",$id));
-        $wpdb->query("DELETE FROM {$wpdb->prefix}icl_translations WHERE element_id='{$menu_id_tt}' AND element_type='tax_nav_menu' LIMIT 1");
+        $q = "DELETE FROM {$wpdb->prefix}icl_translations WHERE element_id=%d AND element_type='tax_nav_menu' LIMIT 1";
+				$q_prepared = $wpdb->prepare($q, $menu_id_tt);
+				$wpdb->query($q_prepared);
     }
     
     function wp_update_nav_menu_item($menu_id, $menu_item_db_id, $args){
@@ -310,7 +315,9 @@ class iclNavMenu{
         global $wpdb;
         $post = get_post($menu_item_id);
         if(!empty($post->post_type) && $post->post_type == 'nav_menu_item'){
-            $wpdb->query("DELETE FROM {$wpdb->prefix}icl_translations WHERE element_id='{$menu_item_id}' AND element_type='post_nav_menu_item' LIMIT 1");
+						$q = "DELETE FROM {$wpdb->prefix}icl_translations WHERE element_id=%d AND element_type='post_nav_menu_item' LIMIT 1";
+						$q_prepared = $wpdb->prepare($q, $menu_item_id);
+            $wpdb->query($q_prepared);
         }        
     }
     
@@ -351,7 +358,10 @@ class iclNavMenu{
                 }
                 $trs[] = $tr_link ;
             }
-            $langsel .= '&nbsp;' . join (', ', $trs);
+            $langsel .= '&nbsp;';
+						if (isset($trs)) {
+							$langsel .= join (', ', $trs);
+						}
             $langsel .= '</div><br />';    
             $langsel .= '<div class="howto icl_nav_menu_text" style="float:right;">';    
             $langsel .= '<div><a href="'.admin_url('admin.php?page=' . ICL_PLUGIN_FOLDER . '/menu/menus-sync.php').'">' . __('Synchronize menus between languages.', 'sitepress') . '</a></div>';    
@@ -424,15 +434,18 @@ class iclNavMenu{
     
     function get_menus_without_translation($lang){
         global $sitepress, $wpdb;
-        $res = $wpdb->get_results("
+				$res_query = "
             SELECT ts.element_id, ts.trid, t.name 
             FROM {$wpdb->prefix}icl_translations ts
             JOIN {$wpdb->term_taxonomy} tx ON ts.element_id = tx.term_taxonomy_id
             JOIN {$wpdb->terms} t ON tx.term_id = t.term_id
             WHERE ts.element_type='tax_nav_menu' 
-                AND ts.language_code='{$sitepress->get_default_language()}'
+                AND ts.language_code=%s
                 AND tx.taxonomy = 'nav_menu'
-        ");
+        ";
+				$default_language = $sitepress->get_default_language();
+				$res_query_prepared = $wpdb->prepare($res_query, $default_language);
+        $res = $wpdb->get_results($res_query_prepared);
         $menus = array();
         foreach($res as $row){            
             if(!$wpdb->get_var("SELECT translation_id FROM {$wpdb->prefix}icl_translations WHERE trid='{$row->trid}' AND language_code='{$lang}'")){
@@ -469,17 +482,20 @@ class iclNavMenu{
     function get_menus_by_language(){
         global $wpdb, $sitepress;
         $langs = array();
-        $res = $wpdb->get_results("
+				$res_query = "
             SELECT lt.name AS language_name, l.code AS lang, COUNT(ts.translation_id) AS c
             FROM {$wpdb->prefix}icl_languages l
                 JOIN {$wpdb->prefix}icl_languages_translations lt ON lt.language_code = l.code
                 JOIN {$wpdb->prefix}icl_translations ts ON l.code = ts.language_code            
-            WHERE lt.display_language_code='".$sitepress->get_admin_language()."'
+            WHERE lt.display_language_code=%s
                 AND l.active = 1
                 AND ts.element_type = 'tax_nav_menu'
             GROUP BY ts.language_code
             ORDER BY major DESC, english_name ASC
-        ");
+        ";
+				$admin_language = $sitepress->get_admin_language();
+				$res_query_prepared = $wpdb->prepare($res_query, $admin_language);
+        $res = $wpdb->get_results($res_query_prepared);
         foreach($res as $row){
             $langs[$row->lang] = $row;
         }        
@@ -627,39 +643,56 @@ class iclNavMenu{
 
         return $val;
     }
-    
-    function wp_nav_menu_args_filter($args){
-        global $sitepress;
-        
-        if ( ! $args['menu'] ){                   
-            $locations = get_nav_menu_locations();
-            if(isset( $args['theme_location'] ) && isset($locations[$args['theme_location']])){
-                $args['menu'] = icl_object_id($locations[$args['theme_location']], 'nav_menu');    
-            }
-        }; 
-        
-        if ( ! $args['menu'] ){            
-            remove_filter('theme_mod_nav_menu_locations', array($this, 'theme_mod_nav_menu_locations'));
-            $locations = get_nav_menu_locations();
-            if(isset( $args['theme_location'] ) && isset($locations[$args['theme_location']])){
-                $args['menu'] = icl_object_id($locations[$args['theme_location']], 'nav_menu');    
-            }            
-            add_filter('theme_mod_nav_menu_locations', array($this, 'theme_mod_nav_menu_locations'));    
-        }
 
-        if ( $args['menu'] ){            
-			$debug_backtrace = $sitepress->get_backtrace( 5 ); //Ignore objects and limit to first 5 stack frames, since 4 is the highest index we use
-            if($debug_backtrace[4]['function']=='widget'){
-                if(is_integer($args['menu'])){
-                    $args['menu'] = wp_get_nav_menu_object( icl_object_id($args['menu'], 'nav_menu') );    
-                }elseif(!empty($args['menu']->term_id)){
-                    $args['menu'] = wp_get_nav_menu_object( icl_object_id($args['menu']->term_id, 'nav_menu') );
-                }
+	function wp_nav_menu_args_filter( $args ) {
+
+		if ( ! $args[ 'menu' ] ) {
+			$locations = get_nav_menu_locations();
+			if ( isset( $args[ 'theme_location' ] ) && isset( $locations[ $args[ 'theme_location' ] ] ) ) {
+				$args[ 'menu' ] = icl_object_id( $locations[ $args[ 'theme_location' ] ], 'nav_menu' );
+			}
+		};
+
+		if ( ! $args[ 'menu' ] ) {
+			remove_filter( 'theme_mod_nav_menu_locations', array( $this, 'theme_mod_nav_menu_locations' ) );
+			$locations = get_nav_menu_locations();
+			if ( isset( $args[ 'theme_location' ] ) && isset( $locations[ $args[ 'theme_location' ] ] ) ) {
+				$args[ 'menu' ] = icl_object_id( $locations[ $args[ 'theme_location' ] ], 'nav_menu' );
+			}
+			add_filter( 'theme_mod_nav_menu_locations', array( $this, 'theme_mod_nav_menu_locations' ) );
+		}
+
+		// $args[ "menu" ] can be an object consequently to widget's call
+		if ( is_object($args[ 'menu' ]) && ( ! empty( $args[ 'menu' ]->term_id )) ) {
+				$args['menu'] = wp_get_nav_menu_object(icl_object_id($args['menu']->term_id, 'nav_menu'));
+		}
+
+		if ( ( ! is_object ( $args['menu'] )) && is_numeric ( $args['menu'] ) ) {
+				$args[ 'menu' ] = wp_get_nav_menu_object( icl_object_id( $args[ 'menu' ], 'nav_menu' ) );
+		}
+
+		if ( ( ! is_object ( $args['menu'] )) && is_string ( $args["menu"] ) ) {
+            $term = get_term_by( 'slug', $args[ 'menu' ], 'nav_menu' );
+            if ( false === $term) {
+                    $term = get_term_by( 'name', $args[ 'menu' ], 'nav_menu' );
             }
-        }
-        
-        return $args;
-    }
+
+            if ( false !== $term ) {
+                    $args['menu'] = wp_get_nav_menu_object(icl_object_id($term->term_id, 'nav_menu'));
+            }
+		}
+
+		if ( ! is_object ( $args['menu'] ) ) {
+				$args['menu'] = false;
+		}
+
+        /*
+		if (is_object($args['menu']) && $args['fallback_cb']) {
+			$args['fallback_cb'] = false;
+		}*/
+
+		return $args;
+	}
     
     function wp_nav_menu_items_filter($items){
         $items = preg_replace(
@@ -688,10 +721,12 @@ class iclNavMenu{
             <script type="text/javascript">
             addLoadEvent(function(){
                 <?php foreach($menus_not_translated as $menu_id): ?>
-                if(jQuery('#locations-<?php echo $menu_id?>').length > 0){
-                    jQuery('#locations-<?php echo $menu_id?> option').first().html('<?php esc_js(_e('not translated in current language','sitepress')) ?>');
-                    jQuery('#locations-<?php echo $menu_id?>').css('font-style','italic');
-                    jQuery('#locations-<?php echo $menu_id?>').change(function(){if(jQuery(this).val()!=0) jQuery(this).css('font-style','normal');else jQuery(this).css('font-style','italic')});
+	            var menu_id = '<?php echo $menu_id?>';
+	            var location_menu_id = jQuery('#locations-' + menu_id);
+	            if(location_menu_id.length > 0){
+                    location_menu_id.find('option').first().html('<?php echo esc_js(__('not translated in current language','sitepress')) ?>');
+                    location_menu_id.css('font-style','italic');
+                    location_menu_id.change(function(){if(jQuery(this).val()!=0) jQuery(this).css('font-style','normal');else jQuery(this).css('font-style','italic')});
                 }
                 <?php endforeach; ?>
             });            

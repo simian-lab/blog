@@ -218,7 +218,7 @@ function icl_object_id($element_id, $element_type='post', $return_original_if_mi
         $element_type = $_dtype;
     }
     //
-
+    
 	$cache_key_args = array_filter( array( $element_id, $element_type, $return_original_if_missing, $ulanguage_code ) );
 	$cache_key      = md5( json_encode( $cache_key_args ) );
 	$cache_group    = 'icl_object_id';
@@ -241,10 +241,7 @@ function icl_object_id($element_id, $element_type='post', $return_original_if_mi
     $element_types = array_merge($post_types, $taxonomies);
     $element_types[] = 'comment';
 
-    if (!in_array($element_type, $element_types)) {
-        trigger_error(sprintf(__('Invalid object kind: %s', 'sitepress'), $element_type), E_USER_NOTICE);
-        return null;
-    } elseif (!$element_id) {
+    if (!$element_id) {
         trigger_error(__('Invalid object id', 'sitepress'), E_USER_NOTICE);
         return null;
     }
@@ -265,10 +262,26 @@ function icl_object_id($element_id, $element_type='post', $return_original_if_mi
     }
 
     $trid = $sitepress->get_element_trid($icl_element_id, $icl_element_type);
-    $translations = $sitepress->get_element_translations($trid, $icl_element_type, false, false, true);
-
+		if (!$trid) {
+			$trid = $sitepress->get_element_trid($icl_element_id, 'tax_'.$icl_element_type);
+			if ($trid) {
+				$icl_element_type = 'tax_'.$icl_element_type;
+			} else {
+				$trid = $sitepress->get_element_trid($icl_element_id, 'post_'.$icl_element_type);
+				if ($trid) {
+					$icl_element_type = 'post_'.$icl_element_type;
+				}
+			}
+		}
+		
+		if ($trid) {
+			$translations = $sitepress->get_element_translations($trid, $icl_element_type, false, true, true);
+		}
+    
+    
     if (isset($translations[$ulanguage_code]->element_id)) {
         $ret_element_id = $translations[$ulanguage_code]->element_id;
+        
         if (in_array($element_type, $taxonomies)) {
 			$ret_element_id_prepared = $wpdb->prepare( "SELECT t.term_id FROM {$wpdb->term_taxonomy} tx JOIN {$wpdb->terms} t ON t.term_id = tx.term_id WHERE tx.term_taxonomy_id = %d AND tx.taxonomy=%s", array($ret_element_id, $element_type) );
 			$ret_element_id = $wpdb->get_var( $ret_element_id_prepared );
@@ -280,8 +293,12 @@ function icl_object_id($element_id, $element_type='post', $return_original_if_mi
     $fcache[$fcache_key] = $ret_element_id;
 
 	wp_cache_set($cache_key, $ret_element_id, $cache_group);
+    
     return $ret_element_id;
 }
+
+add_filter('translate_object_id', 'icl_object_id', 10, 4);    
+
 
 function icl_get_current_language() {
     global $sitepress;
@@ -299,7 +316,7 @@ function icl_tf_determine_mo_folder($folder, $rec = 0) {
     $dh = @opendir($folder);
     $lfn = $sitepress->get_locale_file_names();
 
-    while ($file = readdir($dh)) {
+    while ( $dh && $file = readdir( $dh ) ) {
         if (0 === strpos($file, '.'))
             continue;
         if (is_file($folder . '/' . $file) && preg_match('#\.mo$#i', $file) && in_array(preg_replace('#\.mo$#i',
@@ -628,6 +645,9 @@ function icl_template_paged($template) {
    // get template slug for custom page chosen as front page
    $template_slug = get_page_template_slug( get_option('page_on_front') );
    
+   // "The function get_page_template_slug() returns an empty string when the value of '_wp_page_template' is either empty or 'default'."
+   if ( !$template_slug ) return $template;
+   
    $templates = array();
    
    $templates[] = $template_slug;
@@ -639,3 +659,44 @@ function icl_template_paged($template) {
 
 // apply this filter only on non default language
 add_filter('template_include', 'icl_template_paged');
+
+function icl_language_selector() {
+	global $sitepress;
+	return $sitepress->get_language_selector();
+}
+
+function icl_language_selector_footer() {
+	return SitePressLanguageSwitcher::get_language_selector_footer();
+}
+
+/**
+ * Returns an HTML hidden input field with name="lang" and value of current language
+ * This is for theme authors, to make their themes compatible with WPML when using the search form.
+ * In order to make the search form work properly, they should use standard WordPress template tag get_search_form()
+ * In this case WPML will handle the the rest.
+ * If for some reasons the template function can't be used and form is created differently,
+ * authors must the following code between inside the form
+ * <?php
+ * if (function_exists('wpml_the_language_input_field')) {
+ *	wpml_the_language_input_field();
+ * }
+ *
+ * @global SitePress $sitepress
+ * @return string|null HTML input field or null
+ */
+function wpml_get_language_input_field() {
+	global $sitepress;
+	if (isset($sitepress)) {
+		return "<input type='hidden' name='lang' value='" . $sitepress->get_current_language() . "' />";
+	}
+	return null;
+}
+
+/**
+ * Echoes the value returned by \wpml_the_language_input_field
+ *
+ * @since 3.1.7.3
+ */
+function wpml_the_language_input_field() {
+	echo wpml_get_language_input_field(); 
+}

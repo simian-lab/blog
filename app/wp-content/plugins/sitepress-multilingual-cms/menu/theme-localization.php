@@ -1,4 +1,6 @@
 <?php
+global $WPML_ST_MO_Downloader;
+
 if((!isset($sitepress_settings['existing_content_language_verified']) || !$sitepress_settings['existing_content_language_verified']) || 2 > count($sitepress->get_active_languages())){
     return;
 }
@@ -74,12 +76,12 @@ $locales = $sitepress->get_locale_file_names();
     <?php if($sitepress_settings['theme_localization_type']==2):?>
     <th scope="col"><?php printf(__('MO file in %s', 'sitepress'), '/wp-content/themes/' . get_option('template')) ?></th>        
     <?php endif; ?>
-    <?php if(class_exists('$WPML_ST_MO_Downloader') && !empty($sitepress_settings['st']['auto_download_mo'])):?>
-    <?php 
-        $wptranslations = $WPML_ST_MO_Downloader->get_option('translations');
-    ?>
-    <th scope="col" align="right"><?php echo __('WP Translation', 'sitepress') ?></th>
-    <th scope="col">&nbsp;</th>
+    <?php if ( isset( $WPML_ST_MO_Downloader ) && ! empty( $sitepress_settings[ 'st' ][ 'auto_download_mo' ] ) ): ?>
+	    <?php
+	    $wptranslations = $WPML_ST_MO_Downloader->get_option( 'translations' );
+	    ?>
+	    <th scope="col" align="right"><?php echo __( 'WP Translation', 'sitepress' ) ?></th>
+	    <th scope="col">&nbsp;</th>
     <?php endif; ?>
     </tr>        
     </thead>        
@@ -112,7 +114,7 @@ $locales = $sitepress->get_locale_file_names();
         <?php endif; ?>        
     </td>              
     <?php endif; ?> 
-    <?php if(class_exists('$WPML_ST_MO_Downloader') && !empty($sitepress_settings['st']['auto_download_mo'])):?>
+    <?php if(isset($WPML_ST_MO_Downloader) && !empty($sitepress_settings['st']['auto_download_mo'])):?>
     <td scope="col"><?php 
             
         $wpl_disabled = true;
@@ -168,20 +170,21 @@ $locales = $sitepress->get_locale_file_names();
         <span class="icl_ajx_response" id="icl_ajx_response_fn"></span>
     </p>
     </form>
-        
-    <?php if(!empty($sitepress_settings['st']['auto_download_mo'])):?>            
-        <?php if(class_exists('$WPML_ST_MO_Downloader') && !is_null($WPML_ST_MO_Downloader->get_option('last_time_xml_check'))): ?>
-            <?php if($WPML_ST_MO_Downloader->get_option('last_time_xml_check_trigger') == 'wp-update'): ?>
-                <?php printf(__('WPML last checked for WordPress translations %s when WordPress version updated. <a%s>Check now.</a>', 'sitepress'), 
-                    date("F j, Y @H:i", $WPML_ST_MO_Downloader->get_option('last_time_xml_check')), ' id="icl_adm_update_check" href="#"'); ?>
-            <?php else: ?>
-                <?php printf(__('WPML last checked for WordPress translations %s (manual). <a%s>Check now.</a>', 'sitepress'), 
-                    date("F j, Y @H:i", $WPML_ST_MO_Downloader->get_option('last_time_xml_check')), ' id="icl_adm_update_check" href="#"'); ?>
-            <?php endif;?>
-        <?php else: ?>
-            <?php printf(__('WPML has never checked for WordPress translations. <a%s>Check now.</a>', 'sitepress'), ' id="icl_adm_update_check" href="#"'); ?>
-        <?php endif; ?>
-    <?php endif; ?>
+	    <?php
+	    if ( ! empty( $sitepress_settings[ 'st' ][ 'auto_download_mo' ] ) ) {
+		    if ( isset( $WPML_ST_MO_Downloader ) ) {
+			    if ( ! is_null( $WPML_ST_MO_Downloader->get_option( 'last_time_xml_check' ) ) ) {
+				    if ( $WPML_ST_MO_Downloader->get_option( 'last_time_xml_check_trigger' ) == 'wp-update' ) {
+					    printf( __( 'WPML last checked for WordPress translations %s when WordPress version updated. <a%s>Check now.</a>', 'sitepress' ), date( "F j, Y @H:i", $WPML_ST_MO_Downloader->get_option( 'last_time_xml_check' ) ), ' id="icl_adm_update_check" href="#"' );
+				    } else {
+					    printf( __( 'WPML last checked for WordPress translations %s (manual). <a%s>Check now.</a>', 'sitepress' ), date( "F j, Y @H:i", $WPML_ST_MO_Downloader->get_option( 'last_time_xml_check' ) ), ' id="icl_adm_update_check" href="#"' );
+				    }
+			    } else {
+				    printf( __( 'WPML has never checked for WordPress translations. <a%s>Check now.</a>', 'sitepress' ), ' id="icl_adm_update_check" href="#"' );
+			    }
+		    }
+	    }
+	    ?>
     
     <br />    
     <div id="icl_adm_updates" class="icl_cyan_box" style="display:none"></div>    

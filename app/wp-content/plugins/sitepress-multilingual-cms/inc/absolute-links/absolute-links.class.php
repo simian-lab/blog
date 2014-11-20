@@ -16,7 +16,7 @@ class AbsoluteLinks{
 
 		//custom posts query vars
 		foreach ( $wp_post_types as $k => $v ) {
-			if ( in_array( $k, array( 'post', 'page' ) ) ) {
+			if ( $k === 'post' || $k === 'page' ) {
 				continue;
 			}
 			if ( $v->query_var ) {
@@ -25,7 +25,7 @@ class AbsoluteLinks{
 		}
 		//taxonomies query vars
 		foreach ( $wp_taxonomies as $k => $v ) {
-			if ( in_array( $k, array( 'category' ) ) ) {
+			if ( $k === 'category' ) {
 				continue;
 			}
 			if ( $k == 'post_tag' && !$v->query_var ) {
@@ -280,7 +280,7 @@ class AbsoluteLinks{
 						$def_url[ $regk ] = $regv;
 					} else {
 						$alp_broken_links[ $alp_matches[ 2 ][ $k ] ] = array();
-						$name                                        = esc_sql( $post_name );
+						$name                                        = wpml_like_escape( $post_name );
 						$p                                           = $wpdb->get_results( "SELECT ID, post_type FROM {$wpdb->posts} WHERE post_name LIKE '{$name}%' AND post_type IN('post','page')" );
 						if ( $p ) {
 							foreach ( $p as $post_suggestion ) {
@@ -447,14 +447,21 @@ class AbsoluteLinks{
 	}
 
 	function process_post( $post_id ) {
-		global $wpdb;
+		global $wpdb, $sitepress;
 
 		delete_post_meta( $post_id, '_alp_broken_links' );
 
 		$post             = $wpdb->get_row( "SELECT * FROM {$wpdb->posts} WHERE ID={$post_id}" );
 		$alp_broken_links = array();
 
+		$this_post_language = $sitepress->get_language_for_element($post_id, 'post_' . $post->post_type);
+		$current_language = $sitepress->get_current_language();
+		
+		$sitepress->switch_lang($this_post_language);
+		
 		$post_content = $this->_process_generic_text( $post->post_content, $alp_broken_links );
+		
+		$sitepress->switch_lang($current_language);
 
 		if ( $post_content != $post->post_content ) {
 			$wpdb->update( $wpdb->posts, array( 'post_content' => $post_content ), array( 'ID' => $post_id ) );

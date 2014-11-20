@@ -1,3 +1,148 @@
+**3.1.8.3**
+
+* **Fixes**
+	* Replaced flag for Traditional Chinese with the correct one
+	* Fixed an issue with using paginated front pages.
+	* Fixed an issue with using a root page while using static front pages.
+	* Fixed an issue with additional slashes in urls
+	* Fixed an issue with same terms names in more than one language
+	* Fixed support for post slug translation
+	* Fixed an issue with term_ids being filtered despite the feature having been disabled.
+	* Fixed issues with duplicate terms and erroneous language assignments to terms, resulting from setting a taxonomy from untranslated to translated.
+
+**3.1.8.2**
+
+* **Fixes**
+	* Fixed compatibility issue of json_encode() function with PHP < 5.3.0 not accepting the options argument
+	* Fixed an issue with some terms not being properly displayed on the Taxonomy Translations Screen.
+	
+**3.1.8.1**
+
+* **Fixes**
+	* Fixed a compatibility issue with WooCommerce, showing up when upgrading to 3.1.8
+
+**3.1.8**
+
+* **Improvements**
+	* Added template tag to display HTML input with current language wpml_the_language_input_field()
+	* Added support for translation of string packages
+	* Minor speed improvements related to operations on arrays
+	* Minor speed improvements related to string caching
+	* Minor speed and compatibility improvement: JS files are now called from footer.
+	* Installer: Added pagination for site keys list of Account -> My Sites
+	* Installer: Allow registering new sites by clicking a link in the WordPress admin instead of copying and pasting the site url in the Account -> My Sites section
+	* Installer: Display more detailed debug information related to connectivity issues with the WPML repository
+	* Button "Post type assignments" added to Troubleshooting page allowing to synchronise post types and languages in translation table
+	* Added functionality to allow the same term name across multiple languages without the use of @lang suffixes.
+	* Added functionality to remove existing language suffixes to the troubleshooting menu.
+
+* **Compatibility**
+	* Fixed category setting for Woocommerce products
+
+* **Fixes**
+	* Fixed some PHP notices and warnings
+	* Fixed search form on secondary language
+	* Fixed issue with caching on page set as front page
+	* Fixed: Taxonomy terms are not showing on the WPML->Taxonomy Translation page 
+	* icl_object_id function now works well also with unregistered custom post types
+	* Minor issues with language switcher on mobile devices
+	* Fixed problem with language switcher options during installation
+	* Textarea for additional CSS for language switcher was too wide, now it fits into screen. 
+	* Fixed influence of admin language on settings for language switcher in menu
+	* wp_nav_menu now always displays language switcher when configured
+	* Fixed custom queries while using a root page
+	* Fixed DB error when fetching completed translations from ICanLocalize
+	* Installer: Fixed problem with WPML registration information (site key) not being saved when the option_value field in the wp_options table used a different charset than the default WordPress charset defined in wp-config.php
+	* Installer: Reversed the order in which the site keys are displayed.
+	* Fixed pagination on root page
+	* Fixed root page permalink on post edit screen
+	* Fixed root page preview
+	* Fixed minor issues in wp-admin with RTL languages 
+	* Fix for conflicting values of context when registering strings for translation
+	* Fixed: Archive of untranslated custom post type should not display 'rel="alternate" hreflang="" href=""' in header
+	* Fixed language filters for get_terms() function
+	* Fixed problem with taxonomy (e.g. category) parents synchronization
+	* Fixed problem with editing post slug
+	* Removed unnecessary taxonomy selector from Taxonomy translation page
+	* Fixed some PHP notices on WPML Languages page with "All Languages" selected on language switcher
+	* Fixed problem with adding categories by simply pressing "Enter" key (post edit screen).
+	* Removed option to delete default category translations
+	* Fixed missing terms filtering by current language in admin panel
+	* Fixed problem with comments quick edit
+
+**3.1.7.2**
+
+* **Improvements**
+	* Installer support for WordPress Multisite
+* **Fixes**
+	* Fixed: Caching issue when duplicating posts
+
+**3.1.7.1**
+
+* **Fixes**
+	* Fixed: Cannot send documents to translation
+	* Fixed: WordPress database error: Duplicate entry during post delete
+	* Fixed: Preview page does not work on Root page
+	* Fixed: Fatal error: Call to a member function get_setting() on a non-object
+
+**3.1.7**
+
+* **Improvements**
+	* Added template functions for reading/saving WPML settings, for future use
+	* When wp-admin language is switched to non default and user will update any plugin or theme configuration, this value will be recognized as translation and updated correctly
+	* Added "Remote WPML config files" functionality
+	* New version of installer
+	* Added various descriptions of WPML settings, displayed on configuration screens
+	* Added shortcodes for language switchers
+* **Compatibility** 
+	* WP SEO plugin compatibility enhancements
+	* Compatibility with WP 4.0: Removed like_escape() calls
+* **Fixes**
+	* get_custom_post_type_archive_link() now always returns correct link
+	* Fixed url filters for different languages in different domains configured
+	* In icl_object_id we were checking if post type is registered: WordPress doesn't require this, so we removed this to be compatible with filters from other plugins
+	* Fixed hreflang atribute for tag/category archive pages
+	* Fixed permissions checking for document translators
+	* Fixed: media tags added to default language instead of translation
+	* Fixed broken relationship consistency when translating posts 
+	* Replaced strtolower() function calls with mb_strtolower() and gained better compatibility with non-ASCII languages
+
+**3.1.6**
+
+* **Improvements**
+	* Languages can have now apostrophes in their names
+	* Time of first activation of WPML plugin reduced to about 5% of previous results
+	* Administrator can add user role to display hidden languages
+	* New way to define WPML_TM_URL is now tolerant for different server settings
+	* Added debug information box to WPML > Support page
+* **Compatibility** 
+	* WP SEO plugin compatibility enhancements
+	* Added filters to be applied when custom fields are duplicated. 
+	* Added filtering stylesheet URI back
+	* Fixed compatibility with new version of NextGen Gallery plugin
+* **Fixes**
+	* Fixed possible SQL injections
+	* Function 'get_post_type_archive_link' was not working with WPML, it is fixed now 
+	* WPML is no longer removing backshlashes from post content, when post it duplicated
+	* Enhanced filtering of home_url() function
+	* Translated drafts are saved now with correct language information
+	* Improved translation of hierarchical taxonomies
+	* wp_query can have now more than one slug passed to category_name
+	* Support for translate_object_id filter - this can be used in themes instead of the icl_object_id function
+	* get_term_adjust_id cache fixed to work also if term is in multiple taxonomies
+	* Fixed wrong post count for Language Links
+	* Fixed widget previews
+	* Fixed warning in sitepress::get_inactive_content()
+	* Fixed string translation for multilevel arrays where content was indexed by numbers, it was not possible to translate elements on position zero. 
+	* Function url_to_postid() is now filtered by WPML plugin to return correct post ID. 
+	* WordPress Multisite: when you switch between blogs, $sitepress->get_default_language() returned sometimes wrong language. It is fixed.
+	* Broken language switcher in custom post type archive pages was fixed. 
+	* Removed references to global $wp_query in query filtering functions
+	* icl_object_id works now for private posts
+	* constants ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS + ICL_DONT_LOAD_LANGUAGES_JS are respected now when JS and CSS files are loaded
+	* Fixed broken wp_query when qurying not translatable Custom Post Type by its name: WPML was removing this name, which resulted with wrong list of posts
+	* When was set root page, secondary loops displayed wrong results
+
 **3.1.5**
 
 * **Improvements**
@@ -110,6 +255,7 @@
 	* Fixed a potential issue when element source language is set to an empty string rather than null: when reading element translations, either NULL or '' will be handled as NULL.
 
 **3.1.1**
+
 * **Fixes** 
 	* Fixed an issue that occurs with some configurations, when reading WPML settings
 

@@ -42,7 +42,7 @@ if ( isset( $_GET[ 'debug_action' ] ) && $_GET[ 'nonce' ] == wp_create_nonce( $_
 			update_option( 'icl_sitepress_settings', $sitepress_settings );
 
 			global $wpdb;
-			$wpdb->query( "TRUNCATE TABLE {$wpdb->prefix}icl_core_status" ); 
+			$wpdb->query( "TRUNCATE TABLE {$wpdb->prefix}icl_core_status" );
 			$wpdb->query( "TRUNCATE TABLE {$wpdb->prefix}icl_content_status" );
 			$wpdb->query( "TRUNCATE TABLE {$wpdb->prefix}icl_string_status" );
 			$wpdb->query( "TRUNCATE TABLE {$wpdb->prefix}icl_node" );
@@ -161,7 +161,7 @@ if ( isset( $_GET[ 'debug_action' ] ) && $_GET[ 'nonce' ] == wp_create_nonce( $_
                                 AND element_type LIKE 'post\\_%'
                             ", ARRAY_N );
 							if ( $trid ) {
-								$wpdb->query( "DELETE FROM {$wpdb->prefix}icl_translations WHERE trid={$trid} AND language_code='{$target_language}'" );
+								$wpdb->query( $wpdb->prepare("DELETE FROM {$wpdb->prefix}icl_translations WHERE trid=%d AND language_code=%s", array($trid, $target_language) ) );
 								$recover = array(
 									'translation_id'       => $request[ 'cms_id' ],
 									'element_type'         => $element_type,
@@ -206,8 +206,11 @@ if ( isset( $_GET[ 'debug_action' ] ) && $_GET[ 'nonce' ] == wp_create_nonce( $_
 		case 'icl_cms_id_fix':
 			$iclq = new ICanLocalizeQuery( $sitepress_settings[ 'site_id' ], $sitepress_settings[ 'access_key' ] );
 
-			$p = $wpdb->get_row( "SELECT t.* FROM {$wpdb->prefix}icl_translations t JOIN {$wpdb->prefix}icl_translation_status s ON t.translation_id=s.translation_id
-                WHERE t.element_type LIKE 'post\\_%' AND t.source_language_code IS NOT NULL AND s.translation_service='icanlocalize' LIMIT {$_REQUEST['offset']}, 1" );
+			$q = "SELECT t.* FROM {$wpdb->prefix}icl_translations t JOIN {$wpdb->prefix}icl_translation_status s ON t.translation_id=s.translation_id
+                WHERE t.element_type LIKE 'post\\_%' AND t.source_language_code IS NOT NULL AND s.translation_service='icanlocalize' LIMIT %d, 1";
+			$offset = (int) $_REQUEST['offset'];
+			$q_prepared = $wpdb->prepare($q, $offset);
+			$p = $wpdb->get_row( $q_prepared );
 			if ( !empty( $p ) ) {
 
 				$original_id = $wpdb->get_var( $wpdb->prepare( "SELECT element_id FROM {$wpdb->prefix}icl_translations WHERE trid=%d AND source_language_code IS NULL", $p->trid ) );
@@ -334,15 +337,17 @@ if ( isset( $_GET[ 'debug_action' ] ) && $_GET[ 'nonce' ] == wp_create_nonce( $_
 				}
 
 			// get jobs that are in progress
-			$translations = $wpdb->get_results( "
+			$translations_query = "
                 SELECT t.element_id, t.element_type, t.language_code, t.source_language_code, t.trid, 
                     s.rid, s._prevstate, s.translation_id 
                 FROM {$wpdb->prefix}icl_translation_status s 
                 JOIN {$wpdb->prefix}icl_translations t
                     ON t.translation_id = s.translation_id    
                 WHERE s.translation_service='icanlocalize'
-                AND s.status = " . ICL_TM_IN_PROGRESS . "
-            " );
+                AND s.status = %d
+            ";
+			$translations_query_prepared = $wpdb->prepare($translations_query, ICL_TM_IN_PROGRESS);
+			$translations = $wpdb->get_results( $translations_query_prepared );
 
 			$job2delete = $rids2cancel = array();
 			foreach ( $translations as $t ) {
@@ -831,7 +836,7 @@ echo '</textarea>';
             <label><input type="checkbox" onchange="if(jQuery(this).prop('checked')){jQuery('#icl_fix_languages').prop('disabled', false);}else{jQuery('#icl_fix_languages').prop('disabled', true);}">
                 &nbsp;<?php _e("This operation will reset WPML's language tables and reinstall it. Any custom languages that you added will be removed.", 'sitepress') ?></label><br /><br />
 			<input disabled="disabled" id="icl_fix_languages" type="button" class="button-secondary" value="<?php _e( 'Clear language information and repopulate languages', 'sitepress' ) ?>"/><br/><br />
-			<small style="margin-left:10px;"><?php _e( "This operation will remove WPML's language table and recreate it. You should use it if you just installed WPML and you're not seeing a complete list of avaialble languages.", 'sitepress' ) ?></small>
+			<small style="margin-left:10px;"><?php _e( "This operation will remove WPML's language table and recreate it. You should use it if you just installed WPML and you're not seeing a complete list of available languages.", 'sitepress' ) ?></small>
             <br /><br />
 		</p>
 	<?php } ?>
@@ -850,7 +855,9 @@ echo '</textarea>';
 		<p>
 			<input id="icl_cms_id_fix" type="button" class="button-secondary" value="<?php _e( 'CMS ID fix', 'sitepress' ) ?>"/>
 			<span id="icl_cms_id_fix_prgs"
-				  style="display: none;"><?php printf( __( 'fixing %s/%d', 'sitepress' ), '<span id="icl_cms_id_fix_prgs_cnt">0</span>', $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}icl_translations t JOIN {$wpdb->prefix}icl_translation_status s ON t.translation_id=s.translation_id WHERE t.element_type LIKE 'post\\_%' AND t.source_language_code IS NOT NULL AND s.translation_service='icanlocalize'" ) ) ?></span><br/>
+				  style="display: none;"><?php printf( __( 'fixing %s/%d', 'sitepress' ), '<span id="icl_cms_id_fix_prgs_cnt">0</span>', $wpdb->get_var( 
+									$wpdb->prepare("SELECT COUNT(*) FROM {$wpdb->prefix}icl_translations t JOIN {$wpdb->prefix}icl_translation_status s ON t.translation_id=s.translation_id WHERE t.element_type LIKE %s AND t.source_language_code IS NOT NULL AND s.translation_service=%s",
+													array( wpml_like_escape('post_') . '%', 'icanlocalize' ) ) ) ) ?></span><br/>
 			<small
 				style="margin-left:10px;"><?php _e( "Updates translation in progress with new style identifiers for documents. The new identifiers depend on the document being translated and the languages so it's not possible to get out of sync when translations are being deleted locally.", 'sitepress' ) ?></small>
 		</p>
@@ -883,7 +890,10 @@ echo '</textarea>';
 		<input id="icl_fix_terms_count" type="button" class="button-secondary" value="<?php _e( 'Fix terms count', 'sitepress' ) ?>"/><br/>
 		<small style="margin-left:10px;"><?php _e( 'Correct terms count in case something went wrong with translated contents.', 'sitepress' ) ?></small>
 	</p>
-
+	<p>
+		<input id="icl_fix_post_types" type="button" class="button-secondary" value="<?php _e( 'Fix post type assignment for translations', 'sitepress' ) ?>"/><br/>
+		<small style="margin-left:10px;"><?php _e( 'Correct post type assignment for translations of custom post types in case something went wrong.', 'sitepress' ) ?></small>
+	</p>
 	<p>
 		<br/>
 		<?php _e( 'Translatable custom posts linking', 'sitepress' ); ?><br/>
@@ -891,7 +901,9 @@ echo '</textarea>';
 
 		<?php
 		$translatable_posts = $sitepress->get_translatable_documents();
-		$res = $wpdb->get_col( "SELECT DISTINCT element_type FROM {$wpdb->prefix}icl_translations WHERE element_type LIKE 'post\\_%'" );
+		$res = $wpdb->get_col( 
+						$wpdb->prepare("SELECT DISTINCT element_type FROM {$wpdb->prefix}icl_translations WHERE element_type LIKE %s",
+										array( wpml_like_escape('post_') . '%' ) ) );
 		echo '<table class="widefat" style="width:300px;">';
 
 		foreach ( $res as $row ) {
@@ -939,7 +951,9 @@ echo '</textarea>';
 		}
 		$translatable_taxs = array_unique( $translatable_taxs );
 
-		$res = $wpdb->get_col( "SELECT DISTINCT element_type FROM {$wpdb->prefix}icl_translations WHERE element_type LIKE 'tax\\_%'" );
+		$res = $wpdb->get_col( 
+						$wpdb->prepare("SELECT DISTINCT element_type FROM {$wpdb->prefix}icl_translations WHERE element_type LIKE %s",
+										array( wpml_like_escape('tax_') . '%' ) ) );
 		echo '<table class="widefat" style="width:300px;">';
 
 		foreach ( $res as $row ) {
@@ -1066,8 +1080,13 @@ echo '</textarea>';
 	<br clear="all"/>
 <?php } ?>
 
+<br clear="all"/>
+<?php
+//Todo: in WPML 3.2 we should use the new hooks to add elements to the troubleshooting page
+echo WPML_Troubleshooting_Terms_Menu::display_terms_with_suffix();
+?>
 
-<br/>
+<br clear="all"/>
 
 <div class="icl_cyan_box">
 
