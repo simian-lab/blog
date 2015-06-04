@@ -1,6 +1,5 @@
 .DS_Store
 *~
 node_modules
-wp-config.php
 app/robots.txt
 app/wp-content/uploads/
