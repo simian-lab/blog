@@ -4,3 +4,5 @@ node_modules
 wp-config.php
 app/robots.txt
 app/wp-content/uploads/
+app/wp-content/themes/simian-remake/node_modules
+app/.vagrant

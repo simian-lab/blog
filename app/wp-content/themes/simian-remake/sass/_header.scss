@@ -1,0 +1,32 @@
+.header{
+	position: relative;
+	height: 440px;
+	.top-header{
+		.logo{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.menu{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%); 
+		}
+		.tools{
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+	.monkey{
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		.site-title, .talking-money{
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}

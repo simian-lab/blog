@@ -1,0 +1,14 @@
+// Fonts
+$font-title:          'Open Sans', sans-serif;
+$font-text:           'Open Sans', sans-serif;
+
+// Neat variables
+$max-width:           68rem !global;
+$default-feature:     max-width;
+
+// Media queries
+$mobile:              em(580);
+$tablet:              em(960);
+$ipad-portrait:       em(768);
+$ipad-landscape:      em(1024);
+$small-desktop:       em(1100);
