@@ -43,3 +43,57 @@ a {
     .header .monkey .site-title, .header .monkey .talking-money {
       display: inline-block;
       vertical-align: middle; }
+
+.footer .content {
+  max-width: 68rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .footer .content::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .footer .content .block {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+    margin-left: 8.5298%; }
+    .footer .content .block:last-child {
+      margin-right: 0; }
+    .footer .content .block:first-child {
+      margin-left: 17.05961%; }
+  .footer .content .copyright {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%;
+    text-align: center; }
+    .footer .content .copyright:last-child {
+      margin-right: 0; }
+
+.home .main .content {
+  max-width: 68rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .home .main .content::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .home .main .content .posts-list {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%; }
+    .home .main .content .posts-list:last-child {
+      margin-right: 0; }
+    .home .main .content .posts-list .post-container .wp-post-image {
+      float: left; }
+    .home .main .content .posts-list .post-container .post-foot div {
+      display: block;
+      width: 33%;
+      float: left; }
+    .home .main .content .posts-list .post-container .post-foot .date .month {
+      text-transform: capitalize;
+      display: inline; }

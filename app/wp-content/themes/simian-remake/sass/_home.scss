@@ -1,0 +1,29 @@
+.home{
+	.main{
+		.content{
+			@include outer-container;
+			.posts-list{
+				@include span-columns(8);
+				@include shift(2);
+				.post-container{
+					.wp-post-image{
+						float: left;
+					}
+					.post-foot{
+						div{
+							display: block;
+							width: 33%;
+							float: left;
+						}
+						.date{
+							.month{
+								text-transform: capitalize;
+								display: inline;
+							}
+						}						
+					}
+				}
+			}
+		}
+	}
+}

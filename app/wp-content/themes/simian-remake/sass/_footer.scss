@@ -1,0 +1,18 @@
+.footer{
+	.content{
+		@include outer-container;
+		.block{
+			@include span-columns(2);
+			@include shift(1);
+			&:first-child{
+				@include shift(2);
+			}
+		}
+		.copyright{
+			@include span-columns(8);
+			@include shift(2);
+			text-align: center;
+		}
+	}
+	
+}
