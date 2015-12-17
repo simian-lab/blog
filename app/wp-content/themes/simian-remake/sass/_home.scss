@@ -6,9 +6,11 @@
 				@include span-columns(8);
 				@include shift(2);
 				.post-container{
-					.wp-post-image{
-						float: left;
-					}
+					.post-thumbnail{
+						.wp-post-image{
+							float: left;
+						}
+					}					
 					.post-foot{
 						div{
 							display: block;

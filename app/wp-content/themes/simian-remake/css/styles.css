@@ -88,7 +88,7 @@ a {
     margin-left: 17.05961%; }
     .home .main .content .posts-list:last-child {
       margin-right: 0; }
-    .home .main .content .posts-list .post-container .wp-post-image {
+    .home .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
       float: left; }
     .home .main .content .posts-list .post-container .post-foot div {
       display: block;

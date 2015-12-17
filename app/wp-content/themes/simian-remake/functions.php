@@ -36,3 +36,12 @@ if ( ! function_exists( 'simian_theme_enqueue_scripts' ) ) :
   }
 endif;
 add_action( 'wp_enqueue_scripts','simian_theme_enqueue_scripts', 100 );
+
+if ( ! function_exists( 'simian_nav_menus' ) ) :
+  function simian_nav_menus() {
+    register_nav_menu('header', 'Menú de Header');
+    register_nav_menu('footer_1', 'Menú de Footer Primera Columna');
+    register_nav_menu('footer_2', 'Menú de Footer Segunda Columna');
+  }
+endif;
+add_action( 'init', 'simian_nav_menus' );

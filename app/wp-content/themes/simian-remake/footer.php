@@ -2,9 +2,29 @@
   	<div class="content">
   		<div class="links block">
   			<h2 class="title"><?php _e('Contenido', 'simian_theme'); ?></h2>
+  			<?php
+        $args = array(
+          'theme_location' => 'footer_1',
+          'container' => false,
+          'menu_class' => '',
+          'echo' => true,
+          'fallback_cb' => 'wp_page_menu',
+          );
+
+          wp_nav_menu( $args ); ?>
   		</div>
   		<div class="info block">
   			<h2 class="title"><?php _e('Información', 'simian_theme'); ?></h2>
+			  <?php
+        $args = array(
+          'theme_location' => 'footer_2',
+          'container' => false,
+          'menu_class' => '',
+          'echo' => true,
+          'fallback_cb' => 'wp_page_menu',
+          );
+
+          wp_nav_menu( $args ); ?>
   		</div>
   		<div class="social block">
   			<h2 class="title"><?php _e('Síguenos', 'simian_theme'); ?></h2>

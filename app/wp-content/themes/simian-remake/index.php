@@ -35,7 +35,9 @@ $the_query = new WP_Query( $args );
 				$the_query->the_post(); ?>
 				<div class="post-container">
 					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail('large'); ?>
+						<div class="post-thumbnail">
+							<?php the_post_thumbnail('large'); ?>
+						</div>						
 						<h2 class="post-title">
 							<?php the_title(); ?>
 						</h2>

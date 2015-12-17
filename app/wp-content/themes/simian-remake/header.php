@@ -19,10 +19,19 @@
 		<div class="top-header">
 			<img class="logo" src="" alt="Simian Logo">
 			<nav class="menu">
-				
+				<?php
+        $args = array(
+          'theme_location' => 'header',
+          'container' => false,
+          'menu_class' => '',
+          'echo' => true,
+          'fallback_cb' => 'wp_page_menu',
+          );
+
+          wp_nav_menu( $args ); ?>
 			</nav>
 			<div class="tools">
-				
+				<?php get_search_form(); ?>
 			</div>
 		</div>
 		<div class="monkey">
