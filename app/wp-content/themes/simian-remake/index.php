@@ -41,9 +41,9 @@ $the_query = new WP_Query( $args );
 						<h2 class="post-title">
 							<?php the_title(); ?>
 						</h2>
-						<p class="post-excerpt">
+						<div class="post-excerpt">
 							<?php the_excerpt(); ?>
-						</p>
+						</div>
 					</a>
 					<div class="post-foot">
 						<div class="date">
@@ -62,6 +62,13 @@ $the_query = new WP_Query( $args );
 					</div>					
 				</div>
 				<?php endwhile; ?>
+				<div class="pagination">
+					<?php 
+					$args = array(
+						'show_all'           => True,
+					);
+					echo paginate_links($args); ?>
+				</div>				
 			</div>
 		<?php endif; ?>
 	</div>

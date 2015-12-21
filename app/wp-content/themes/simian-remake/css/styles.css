@@ -20,7 +20,9 @@ a {
 .header {
   position: relative;
   height: 440px;
-  background: url("../images/background-header.svg"); }
+  background: url("../images/background-header.svg");
+  background-repeat: no-repeat;
+  background-size: cover; }
   .header .top-header .logo {
     position: absolute;
     top: 0;
@@ -31,7 +33,16 @@ a {
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
+    .header .top-header .menu .menu-item {
+      font-family: "Quicksand", sans-serif;
+      color: #DED96B;
+      font-size: 20px;
+      display: inline-block;
+      padding: 0 3rem; }
   .header .top-header .tools {
+    background: url("../images/background-tools.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
     right: 0; }
@@ -44,13 +55,23 @@ a {
     .header .monkey .site-title, .header .monkey .talking-money {
       display: inline-block;
       vertical-align: middle; }
+    .header .monkey .site-title {
+      font-family: "Amatic SC", cursive;
+      color: #DED96B;
+      font-size: 100px; }
+    .header .monkey .talking-monkey {
+      width: 420px;
+      float: right; }
 
 .footer {
-  background: url("../images/background-footer.svg"); }
+  background: url("../images/background-footer.svg");
+  background-repeat: no-repeat;
+  background-size: cover; }
   .footer .content {
     max-width: 68rem;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    padding-top: 127px; }
     .footer .content::after {
       clear: both;
       content: "";
@@ -60,18 +81,34 @@ a {
       display: block;
       margin-right: 2.35765%;
       width: 14.70196%;
-      margin-left: 8.5298%; }
+      margin-left: 17.05961%;
+      text-align: center; }
       .footer .content .block:last-child {
         margin-right: 0; }
       .footer .content .block:first-child {
-        margin-left: 17.05961%; }
+        margin-left: 8.5298%; }
+        .footer .content .block:first-child .menu-item {
+          font-family: "Quicksand", sans-serif;
+          text-transform: uppercase;
+          color: white;
+          font-weight: bold; }
+      .footer .content .block .title {
+        font-family: "Amatic SC", cursive;
+        color: #DED96B;
+        font-size: 50px; }
+      .footer .content .block .menu-item {
+        font-family: "Quicksand", sans-serif;
+        text-transform: uppercase;
+        color: white; }
     .footer .content .copyright {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 65.88078%;
       margin-left: 17.05961%;
-      text-align: center; }
+      text-align: center;
+      font-family: "Quicksand", sans-serif;
+      color: #B3B0AE; }
       .footer .content .copyright:last-child {
         margin-right: 0; }
 
@@ -91,12 +128,36 @@ a {
     margin-left: 17.05961%; }
     .home .main .content .posts-list:last-child {
       margin-right: 0; }
-    .home .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
-      float: left; }
-    .home .main .content .posts-list .post-container .post-foot div {
-      display: block;
-      width: 33%;
-      float: left; }
-    .home .main .content .posts-list .post-container .post-foot .date .month {
-      text-transform: capitalize;
-      display: inline; }
+    .home .main .content .posts-list .post-container {
+      margin: 25% 0; }
+      .home .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
+        float: left;
+        margin-right: 50px; }
+      .home .main .content .posts-list .post-container .post-title {
+        color: #4FA2C0;
+        font-family: "Amatic SC", cursive;
+        font-size: 60px; }
+      .home .main .content .posts-list .post-container .post-excerpt {
+        color: #B3B0AE;
+        font-family: "Quicksand", sans-serif;
+        font-size: 20px; }
+      .home .main .content .posts-list .post-container .post-foot {
+        color: #B3B0AE;
+        font-family: "Quicksand", sans-serif;
+        font-size: 20px;
+        float: left;
+        width: 100%;
+        margin-top: 45px; }
+        .home .main .content .posts-list .post-container .post-foot div {
+          display: block;
+          width: 33%;
+          float: left; }
+        .home .main .content .posts-list .post-container .post-foot .date .month {
+          text-transform: capitalize;
+          display: inline; }
+    .home .main .content .posts-list .pagination {
+      float: right;
+      margin-top: 100px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #3F3832; }

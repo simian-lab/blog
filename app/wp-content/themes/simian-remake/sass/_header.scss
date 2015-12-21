@@ -2,6 +2,8 @@
 	position: relative;
 	height: 440px;
 	background: url('../images/background-header.svg');
+	background-repeat: no-repeat;
+  background-size: cover;
 	.top-header{
 		.logo{
 			position: absolute;
@@ -13,8 +15,18 @@
 			top: 0;
 			left: 50%;
 			transform: translateX(-50%); 
+			.menu-item{
+				font-family: $font-text;
+				color: $yellow;
+				font-size: 20px;
+				display: inline-block;
+    		padding: 0 3rem;
+			}
 		}
 		.tools{
+			background: url('../images/background-tools.svg');
+			background-repeat: no-repeat;
+  		background-size: cover;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -28,6 +40,15 @@
 		.site-title, .talking-money{
 			display: inline-block;
 			vertical-align: middle;
+		}
+		.site-title{
+			font-family: $font-title;
+			color: $yellow;
+			font-size: 100px;
+		}
+		.talking-monkey{
+			width: 420px;
+    	float: right;
 		}
 	}
 }
