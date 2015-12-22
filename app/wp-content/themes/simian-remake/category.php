@@ -1,12 +1,8 @@
 <?php
 /**
- * The main template file
  *
- * This is the most generic template file in a WordPress theme and one
- * of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query,
- * e.g., it puts together the home page when no home.php file exists.
- *
+ * The category Template file
+ * Template Name: category Template
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
@@ -15,19 +11,26 @@
  */
 
 get_header();
-//Main query 
+
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$category_id = get_query_var( 'cat' );
 $args = array(
   'order' => 'DESC',
   'orderby' => 'date',
   'post_status' => 'publish',
   'posts_per_page' => 4,
-  'paged' => $paged
+  'paged' => $paged,
+  'cat' => $category_id
 );
-$the_query = new WP_Query( $args );
-?>
+$the_query = new WP_Query( $args ); ?>
 <div class="main">
 	<div class="content">
+		<?php 
+		$cat_name = get_cat_name( $category_id ); ?>
+		<h2 class="category-head">
+			<span class="cat"><?php _e('Categoría> ','simian_theme'); ?></span>
+			<span class="category-title"><?php echo $cat_name; ?></span>
+		</h2>
 		<?php if ( $the_query->have_posts() ): ?>
 			<div class="posts-list">
 				<?php while ( $the_query->have_posts() ):
@@ -63,7 +66,7 @@ $the_query = new WP_Query( $args );
 							<p><?php the_tags(''); ?><p>
 						</div>
 						<?php endif; ?>
-					</div>					
+					</div>						
 				</div>
 				<?php endwhile; ?>
 				<div class="pagination">
@@ -72,7 +75,7 @@ $the_query = new WP_Query( $args );
 						'show_all'           => True,
 					);
 					echo paginate_links($args); ?>
-				</div>				
+				</div>
 			</div>
 		<?php endif; ?>
 	</div>

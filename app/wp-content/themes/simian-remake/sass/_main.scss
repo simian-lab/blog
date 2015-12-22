@@ -1,0 +1,63 @@
+.main{
+	.content{
+		@include outer-container;
+		.posts-list{
+			@include span-columns(10);
+			@include shift(1);
+			.post-container{
+				margin: 25% 0;
+				.post-thumbnail{
+					.wp-post-image{
+						float: left;
+						margin-right: 50px;
+					}
+				}
+				.post-title{
+					color: $light-blue;
+					font-family: $font-title;
+					font-size: 60px;
+				}	
+				.post-excerpt{
+					color: $grey;
+					font-family: $font-text;
+					font-size: 20px;
+				}				
+				.post-foot{
+					color: $grey;
+					font-family: $font-text;
+					font-size: 20px;
+					float: left;
+  				width: 100%;
+  				margin-top: 45px;
+					div{
+						display: block;
+						width: 33%;
+						float: left;
+					}
+					p{
+						display: inline;
+    				vertical-align: super;
+					}
+					.icon{
+						display: inline-block;
+    				width: 2rem;
+    				height: 2rem;
+					}
+					.date{
+						.month{
+							text-transform: capitalize;
+						}
+					}						
+				}
+			}
+			.pagination{
+				float: right;
+  			margin-top: 100px;
+  			font-size: 30px;
+  			font-weight: bold;
+  			color: $dark-brown;
+			}
+		}
+	}
+}
+

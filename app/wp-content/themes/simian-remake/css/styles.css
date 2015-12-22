@@ -46,6 +46,12 @@ a {
     position: absolute;
     top: 0;
     right: 0; }
+    .header .top-header .tools .icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem; }
+    .header .top-header .tools .social, .header .top-header .tools .search-tool, .header .top-header .tools .mail {
+      display: inline; }
   .header .monkey {
     position: absolute;
     bottom: 0;
@@ -100,6 +106,13 @@ a {
         font-family: "Quicksand", sans-serif;
         text-transform: uppercase;
         color: white; }
+    .footer .content .social .icon {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      background: white;
+      border-radius: 50%;
+      padding: 5px; }
     .footer .content .copyright {
       float: left;
       display: block;
@@ -112,52 +125,76 @@ a {
       .footer .content .copyright:last-child {
         margin-right: 0; }
 
-.home .main .content {
+.main .content {
   max-width: 68rem;
   margin-left: auto;
   margin-right: auto; }
-  .home .main .content::after {
+  .main .content::after {
     clear: both;
     content: "";
     display: table; }
-  .home .main .content .posts-list {
+  .main .content .posts-list {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 65.88078%;
-    margin-left: 17.05961%; }
-    .home .main .content .posts-list:last-child {
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    .main .content .posts-list:last-child {
       margin-right: 0; }
-    .home .main .content .posts-list .post-container {
+    .main .content .posts-list .post-container {
       margin: 25% 0; }
-      .home .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
+      .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
         float: left;
         margin-right: 50px; }
-      .home .main .content .posts-list .post-container .post-title {
+      .main .content .posts-list .post-container .post-title {
         color: #4FA2C0;
         font-family: "Amatic SC", cursive;
         font-size: 60px; }
-      .home .main .content .posts-list .post-container .post-excerpt {
+      .main .content .posts-list .post-container .post-excerpt {
         color: #B3B0AE;
         font-family: "Quicksand", sans-serif;
         font-size: 20px; }
-      .home .main .content .posts-list .post-container .post-foot {
+      .main .content .posts-list .post-container .post-foot {
         color: #B3B0AE;
         font-family: "Quicksand", sans-serif;
         font-size: 20px;
         float: left;
         width: 100%;
         margin-top: 45px; }
-        .home .main .content .posts-list .post-container .post-foot div {
+        .main .content .posts-list .post-container .post-foot div {
           display: block;
           width: 33%;
           float: left; }
-        .home .main .content .posts-list .post-container .post-foot .date .month {
-          text-transform: capitalize;
-          display: inline; }
-    .home .main .content .posts-list .pagination {
+        .main .content .posts-list .post-container .post-foot p {
+          display: inline;
+          vertical-align: super; }
+        .main .content .posts-list .post-container .post-foot .icon {
+          display: inline-block;
+          width: 2rem;
+          height: 2rem; }
+        .main .content .posts-list .post-container .post-foot .date .month {
+          text-transform: capitalize; }
+    .main .content .posts-list .pagination {
       float: right;
       margin-top: 100px;
       font-size: 30px;
       font-weight: bold;
       color: #3F3832; }
+
+.category .main .content .category-head {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%;
+  font-family: "Amatic SC", cursive;
+  font-size: 60px;
+  margin-bottom: 0;
+  margin-top: 60px;
+  text-transform: uppercase; }
+  .category .main .content .category-head:last-child {
+    margin-right: 0; }
+  .category .main .content .category-head .cat {
+    color: #4FA2C0; }
+  .category .main .content .category-head .category-title {
+    color: #3F3832; }
