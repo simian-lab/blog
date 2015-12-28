@@ -6,10 +6,12 @@ script: phpunit UnitTest
 
 env:
   global:
-    - OPENSHIFT_REPO=ssh://541669a7e0b8cd47d50001a2@blog-simian.rhcloud.com/~/git/blog.git/
+    - OPENSHIFT_PROD_REPO=ssh://541669a7e0b8cd47d50001a2@blog-simian.rhcloud.com/~/git/blog.git/
+    - OPENSHIFT_DEV_REPO=ssh://56731ad689f5cf716b000065@blogbeta-simian.rhcloud.com/~/git/blogbeta.git/
 
 before_install:
-  - git remote -v | grep ^openshift || git remote add openshift $OPENSHIFT_REPO
+  - if [ $BRANCH == "develop" ]; then git remote -v | grep ^openshift || git remote add openshift $OPENSHIFT_DEV_REPO; fi
+  - if [ $BRANCH == "master" ]; then git remote -v | grep ^openshift || git remote add openshift $OPENSHIFT_PROD_REPO; fi
 
 after_success:
   - git push -f openshift $BRANCH:master
@@ -18,3 +20,4 @@ after_success:
 branches:
   only:
     - develop
+    - master
