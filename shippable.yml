@@ -10,7 +10,7 @@ env:
     - OPENSHIFT_DEV_REPO=ssh://56731ad689f5cf716b000065@blogbeta-simian.rhcloud.com/~/git/blogbeta.git/
 
 before_install:
-  - if [ $BRANCH == "develop" ]; then git remote -v | grep ^openshift || git remote add openshift $OPENSHIFT_DEV_REPO; fi
+  - if [ $BRANCH == "feature/remake-theme" ]; then git remote -v | grep ^openshift || git remote add openshift $OPENSHIFT_DEV_REPO; fi
   - if [ $BRANCH == "master" ]; then git remote -v | grep ^openshift || git remote add openshift $OPENSHIFT_PROD_REPO; fi
 
 after_success:
@@ -19,5 +19,5 @@ after_success:
 #include
 branches:
   only:
-    - develop
+    - feature/remake-theme
     - master
