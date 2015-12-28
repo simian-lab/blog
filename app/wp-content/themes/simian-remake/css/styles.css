@@ -198,3 +198,38 @@ a {
     color: #4FA2C0; }
   .category .main .content .category-head .category-title {
     color: #3F3832; }
+
+.single-post .detail {
+  max-width: 68rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .single-post .detail::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .single-post .detail .hero {
+    font-family: "Quicksand", sans-serif;
+    color: #B3B0AE; }
+    .single-post .detail .hero .title {
+      font-family: "Amatic SC", cursive;
+      color: #DED96B;
+      font-size: 110px;
+      text-align: center; }
+    .single-post .detail .hero div {
+      display: block;
+      width: 50%;
+      float: left; }
+    .single-post .detail .hero p {
+      display: inline;
+      vertical-align: super; }
+    .single-post .detail .hero .icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem; }
+    .single-post .detail .hero .date .month {
+      text-transform: capitalize; }
+  .single-post .detail .content {
+    display: block;
+    color: #B3B0AE;
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px; }

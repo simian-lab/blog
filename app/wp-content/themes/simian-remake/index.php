@@ -47,11 +47,11 @@ $the_query = new WP_Query( $args );
 					<div class="post-foot">
 						<div class="date">
 							<svg class="icon icon-icon-calendar"><use xlink:href="#icon-icon-calendar"></use></svg><span class="mls"></span>
-							<p class="month"><?php the_date('j M'); ?></p>
+							<p class="month"><?php echo get_the_date('j M'); ?></p>
 							<p class="year"><?php echo __(' de ','simian_theme') . get_the_date('Y'); ?></p>
 						</div>
 						<div class="author">
-							<?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?>
+							<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
 						</div>
 						<div class="comments">
 							<svg class="icon icon-icon-balloon"><use xlink:href="#icon-icon-balloon"></use></svg><span class="mls"></span>

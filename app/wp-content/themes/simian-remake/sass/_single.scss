@@ -1,0 +1,40 @@
+.single-post{
+	.detail{
+		@include outer-container;
+		.hero{
+			font-family: $font-text;
+			color: $grey;
+			.title{
+				font-family: $font-title;
+				color: $yellow;
+				font-size: 110px;
+				text-align: center;
+			}		
+			div{
+				display: block;
+				width: 50%;
+				float: left;
+			}
+			p{
+				display: inline;
+				vertical-align: super;
+			}
+			.icon{
+				display: inline-block;
+				width: 2rem;
+				height: 2rem;
+			}
+			.date{
+				.month{
+					text-transform: capitalize;
+				}
+			}	
+		}
+		.content{
+			display: block;
+			color: $grey;
+			font-family: $font-text;
+			font-size: 20px;
+		}
+	}
+}
