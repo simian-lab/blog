@@ -20,7 +20,8 @@ $url = $thumb['0'];
 				<?php the_title();?>
 			</h1>
 			<div class="author">
-				<?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?>
+				<img class="icon" src="<?php echo get_template_directory_uri(); ?>/images/authors/<?php the_author_meta('nickname'); ?>.svg" alt="<?php the_author_meta('nickname'); ?>">							
+				<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
 			</div>
 			<div class="date">
 				<svg class="icon icon-icon-calendar"><use xlink:href="#icon-icon-calendar"></use></svg><span class="mls"></span>
@@ -41,7 +42,7 @@ $url = $thumb['0'];
 				
 			</div>
 			<div class="comments">
-				
+				<?php comments_template(); ?> 
 			</div>
 		</section>
 	</article>

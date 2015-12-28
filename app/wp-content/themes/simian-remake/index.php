@@ -51,6 +51,7 @@ $the_query = new WP_Query( $args );
 							<p class="year"><?php echo __(' de ','simian_theme') . get_the_date('Y'); ?></p>
 						</div>
 						<div class="author">
+							<img class="icon" src="<?php echo get_template_directory_uri(); ?>/images/authors/<?php the_author_meta('nickname'); ?>.svg" alt="<?php the_author_meta('nickname'); ?>">							
 							<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
 						</div>
 						<div class="comments">
