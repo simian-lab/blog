@@ -10,6 +10,9 @@
 					.wp-post-image{
 						float: left;
 						margin-right: 50px;
+						@include media($mobile){
+							width: 100%;
+						}
 					}
 				}
 				.post-title{
@@ -32,6 +35,10 @@
 					div{
 						display: block;
 						width: 33%;
+						@include media($mobile){
+							width: 100%;
+							float: none;
+						}
 						float: left;
 					}
 					p{

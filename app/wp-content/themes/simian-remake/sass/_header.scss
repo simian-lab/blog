@@ -4,7 +4,14 @@
 	background: url('../images/background-header.svg');
 	background-repeat: no-repeat;
   background-size: cover;
+  @include media($mobile){
+  	height: 100px;
+  }
 	.top-header{
+		//TODO: For now lets just hide it, implement mobile menu
+		@include media($mobile){
+  		display: none;
+  	}
 		.logo{
 			position: absolute;
 			top: 0;
@@ -45,6 +52,10 @@
 		bottom: 0;
 		left: 50%;
 		transform: translateX(-50%);
+		width: 750px;
+		@include media($mobile){
+			width: 63%;
+		}
 		.site-title, .talking-money{
 			display: inline-block;
 			vertical-align: middle;
@@ -52,11 +63,17 @@
 		.site-title{
 			font-family: $font-title;
 			color: $yellow;
-			font-size: 100px;
+			font-size: 90px;
+			width: 47%;
+			@include media($mobile){
+				font-size: 30px;
+			}
 		}
 		.talking-monkey{
-			width: 420px;
     	float: right;
+    	@include media($mobile){
+				width: 90px;
+			}
 		}
 	}
 }

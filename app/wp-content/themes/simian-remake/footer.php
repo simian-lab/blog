@@ -29,13 +29,13 @@
   		<div class="social block">
   			<h2 class="title"><?php _e('Síguenos', 'simian_theme'); ?></h2>
   			<div class="social-links">
-					<a href="" class="facebook">
+					<a href="https://www.facebook.com/simianlab" target="_blank" class="facebook">
 						<svg class="icon icon-icon-facebook"><use xlink:href="#icon-icon-facebook"></use></svg><span class="mls"></span>
 					</a>
-					<a href="" class="twitter">
+					<a href="https://twitter.com/simianlab" target="_blank"class="twitter">
 						<svg class="icon icon-icon-twitter"><use xlink:href="#icon-icon-twitter"></use></svg><span class="mls"></span>
 					</a>
-					<a href="" class="google-plus">
+					<a href="https://plus.google.com/+SimianCo" target="_blank" class="google-plus">
 						<svg class="icon icon-icon-google-plus"><use xlink:href="#icon-icon-google-plus"></use></svg><span class="mls"></span>
 					</a>
 				</div>

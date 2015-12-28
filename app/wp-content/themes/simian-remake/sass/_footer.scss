@@ -10,6 +10,9 @@
 			@include span-columns(2);
 			@include shift(2);
 			text-align: center;
+			@include media($mobile){
+				@include span-columns(8);
+			}
 			&:first-child{
 				@include shift(1);
 				.menu-item{
@@ -30,6 +33,11 @@
 				color: white;
 			}			
 		}
+		.links, .info{
+			@include media($mobile){
+				display: none;
+			}
+		}
 		.social{
 			.icon{
 				display: inline-block;
@@ -49,6 +57,10 @@
 		}
 		.simian-bottom{
 			@include span-columns(2);
+			@include media($mobile){
+				@include span-columns(4);
+				@include shift(4);
+			}
 			.icon{
 				width: 100%;
 			}
