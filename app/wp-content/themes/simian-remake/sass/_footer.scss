@@ -47,6 +47,12 @@
 			font-family: $font-text;
 			color: $grey;
 		}
+		.simian-bottom{
+			@include span-columns(2);
+			.icon{
+				width: 100%;
+			}
+		}
 	}
 	
 }

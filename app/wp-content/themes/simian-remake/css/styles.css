@@ -124,6 +124,15 @@ a {
       color: #B3B0AE; }
       .footer .content .copyright:last-child {
         margin-right: 0; }
+    .footer .content .simian-bottom {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 14.70196%; }
+      .footer .content .simian-bottom:last-child {
+        margin-right: 0; }
+      .footer .content .simian-bottom .icon {
+        width: 100%; }
 
 .main .content {
   max-width: 68rem;

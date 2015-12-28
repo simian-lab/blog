@@ -47,6 +47,9 @@
 	  			_e(', y los ejemplos de código están registrados bajo la licencia 2.0 de Apache.', 'simian_theme'); ?>
 	  		</p>
 	  	</div>
+      <div class="simian-bottom">
+        <svg class="icon icon-icon-simian"><use xlink:href="#icon-icon-simian"></use></svg><span class="mls"></span>
+      </div>
   	</div>
   </footer>
   <?php wp_footer(); ?>
