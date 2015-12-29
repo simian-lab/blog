@@ -46,7 +46,7 @@ $the_query = new WP_Query( $args );
 					</a>
 					<div class="post-foot">
 						<div class="date">
-							<svg class="icon icon-icon-calendar"><use xlink:href="#icon-icon-calendar"></use></svg><span class="mls"></span>
+							<svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg><span class="mls"></span>
 							<p class="month"><?php echo get_the_date('j M'); ?></p>
 							<p class="year"><?php echo __(' de ','simian_theme') . get_the_date('Y'); ?></p>
 						</div>
@@ -55,24 +55,30 @@ $the_query = new WP_Query( $args );
 							<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
 						</div>
 						<div class="comments">
-							<svg class="icon icon-icon-balloon"><use xlink:href="#icon-icon-balloon"></use></svg><span class="mls"></span>
+							<svg class="icon icon-balloon"><use xlink:href="#icon-balloon"></use></svg><span class="mls"></span>
 							<p><?php echo __('Comentarios', 'simian_theme') . '('.wp_count_comments()->total_comments . ')'; ?></p>
 						</div>
 						<?php if ( has_tag() ): ?>
 						<div class="tags">
-							<svg class="icon icon-icon-tag"><use xlink:href="#icon-icon-tag"></use></svg><span class="mls"></span>
+							<svg class="icon icon-tag"><use xlink:href="#icon-tag"></use></svg><span class="mls"></span>
 							<p><?php the_tags(''); ?><p>
 						</div>
 						<?php endif; ?>
 					</div>					
 				</div>
+
 				<?php endwhile; ?>
 				<div class="pagination">
-					<?php 
-					$args = array(
-						'show_all'           => True,
-					);
-					echo paginate_links($args); ?>
+					<?php
+					$pagination_args = array(
+						'show_all' => True,
+        		'mid_size' => 2,
+        		'next_text' => '<svg class="icon icon-right-arrow-circular"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>',
+        		'prev_text' => '<svg class="icon icon-left-arrow-circular"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>',
+        		'type' => 'plain'
+      		);
+      		$links = paginate_links( $pagination_args );
+					echo ($links); ?>
 				</div>				
 			</div>
 		<?php endif; ?>

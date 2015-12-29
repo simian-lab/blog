@@ -26,19 +26,53 @@ a {
   @media screen and (max-width: 36.25em) {
     .header {
       height: 100px; } }
+  .header .menu-toggle {
+    display: none; }
+    @media screen and (max-width: 36.25em) {
+      .header .menu-toggle {
+        display: block;
+        position: absolute; } }
+  @media screen and (max-width: 36.25em) {
+    .header .active-menu {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+      transition: -webkit-transform 600ms ease-in-out;
+      transition: transform 600ms ease-in-out; } }
   @media screen and (max-width: 36.25em) {
     .header .top-header {
-      display: none; } }
+      background: url("../images/background-header.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 440px;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      right: 100%;
+      transition: -webkit-transform 600ms ease-in-out;
+      transition: transform 600ms ease-in-out; } }
+  @media screen and (max-width: 36.25em) {
+    .header .top-header .menu-toggle {
+      position: relative; } }
   .header .top-header .logo {
     position: absolute;
     top: 0;
     left: 0; }
+    @media screen and (max-width: 36.25em) {
+      .header .top-header .logo {
+        position: relative; } }
   .header .top-header .menu {
     position: absolute;
     top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
+    @media screen and (max-width: 60em) {
+      .header .top-header .menu {
+        text-align: center; } }
+    @media screen and (max-width: 36.25em) {
+      .header .top-header .menu {
+        position: relative;
+        text-align: left; } }
     .header .top-header .menu .menu-item {
       font-family: "Quicksand", sans-serif;
       color: #DED96B;
@@ -52,6 +86,9 @@ a {
     position: absolute;
     top: 0;
     right: 0; }
+    @media screen and (max-width: 36.25em) {
+      .header .top-header .tools {
+        position: relative; } }
     .header .top-header .tools .icon {
       display: inline-block;
       width: 2rem;
@@ -168,7 +205,8 @@ a {
           .footer .content .simian-bottom:last-child {
             margin-right: 0; } }
       .footer .content .simian-bottom .icon {
-        width: 100%; }
+        width: 100%;
+        height: 100%; }
 
 .main .content {
   max-width: 68rem;
@@ -285,3 +323,64 @@ a {
     color: #B3B0AE;
     font-family: "Quicksand", sans-serif;
     font-size: 20px; }
+    .single-post .detail .content .comments {
+      overflow: hidden; }
+    .single-post .detail .content .social-share {
+      text-align: center; }
+      .single-post .detail .content .social-share .icon {
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem; }
+    .single-post .detail .content .related .related-header {
+      color: #3F3832; }
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  width: 2rem;
+  height: 2rem; }
+
+.border-color {
+  fill: #3F352E; }
+
+.fill-color {
+  fill: currentColor; }
+
+.icon-audio,
+.icon-calendar,
+.icon-close-circular,
+.icon-left-arrow-circular,
+.icon-right-arrow-circular,
+.icon-mail,
+.icon-search,
+.icon-share,
+.icon-pause {
+  color: #1EC1B3; }
+
+.icon-play-circular {
+  color: #00A2C2; }
+
+.icon-balloon,
+.icon-banana,
+.icon-left-arrow,
+.icon-right-arrow,
+.icon-map-marker,
+.icon-star {
+  color: #DED96B; }
+
+.icon-facebook {
+  color: #245A9D; }
+
+.icon-google-plus,
+.icon-youtube {
+  color: #E72B2C; }
+
+.icon-twitter {
+  color: #00A7E2; }
+
+.icon-heart,
+.icon-tag {
+  color: #FF5F5C; }
+
+.icon-simian {
+  color: #FFFFFF; }

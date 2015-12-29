@@ -30,13 +30,13 @@
   			<h2 class="title"><?php _e('Síguenos', 'simian_theme'); ?></h2>
   			<div class="social-links">
 					<a href="https://www.facebook.com/simianlab" target="_blank" class="facebook">
-						<svg class="icon icon-icon-facebook"><use xlink:href="#icon-icon-facebook"></use></svg><span class="mls"></span>
+						<svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg><span class="mls"></span>
 					</a>
 					<a href="https://twitter.com/simianlab" target="_blank"class="twitter">
-						<svg class="icon icon-icon-twitter"><use xlink:href="#icon-icon-twitter"></use></svg><span class="mls"></span>
+						<svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg><span class="mls"></span>
 					</a>
 					<a href="https://plus.google.com/+SimianCo" target="_blank" class="google-plus">
-						<svg class="icon icon-icon-google-plus"><use xlink:href="#icon-icon-google-plus"></use></svg><span class="mls"></span>
+						<svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
 					</a>
 				</div>
   		</div>
@@ -48,7 +48,7 @@
 	  		</p>
 	  	</div>
       <div class="simian-bottom">
-        <svg class="icon icon-icon-simian"><use xlink:href="#icon-icon-simian"></use></svg><span class="mls"></span>
+        <svg class="icon icon-simian"><use xlink:href="#icon-simian"></use></svg><span class="mls"></span>
       </div>
   	</div>
   </footer>

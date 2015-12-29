@@ -29,7 +29,9 @@ add_action( 'after_setup_theme', 'simian_theme_setup' );
 */
 if ( ! function_exists( 'simian_theme_enqueue_scripts' ) ) :
   function simian_theme_enqueue_scripts() {
-     //Javascripts 
+     //Javascripts
+    wp_register_script('simian-menu-toggle-js', get_stylesheet_directory_uri().'/js/menu-toggle.js', array('jquery'),'1.1', true);
+    wp_enqueue_script('simian-menu-toggle-js'); 
     //Styles :D
     wp_enqueue_style('simian-style', get_stylesheet_directory_uri() . '/css/styles.css', '', '1.0.1');
    

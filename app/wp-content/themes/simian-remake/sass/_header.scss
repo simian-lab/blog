@@ -7,21 +7,56 @@
   @include media($mobile){
   	height: 100px;
   }
+  .menu-toggle{
+  	display: none;
+  	@include media($mobile){
+  		display: block;
+  		position: absolute;
+  	}
+  }
+  .active-menu{
+  	@include media($mobile){
+  		transform: translateX(100%);
+  		transition: transform 600ms ease-in-out;
+  	}
+  }
 	.top-header{
-		//TODO: For now lets just hide it, implement mobile menu
 		@include media($mobile){
-  		display: none;
+  		background: url('../images/background-header.svg');
+			background-repeat: no-repeat;
+  		background-size: cover;
+  		height: 440px;
+    	position: absolute;
+    	z-index: 1;
+    	width: 100%;
+    	right: 100%;
+    	transition: transform 600ms ease-in-out;
+  	}
+  	.menu-toggle{
+  		@include media($mobile){
+  			position: relative;
+  		}
   	}
 		.logo{
 			position: absolute;
 			top: 0;
 			left: 0;
+			@include media($mobile){
+				position: relative;
+			}
 		}
 		.menu{
 			position: absolute;
 			top: 0;
 			left: 50%;
-			transform: translateX(-50%); 
+			transform: translateX(-50%);
+			@include media($tablet){
+				text-align: center;
+			}
+			@include media($mobile){
+				position: relative;
+				text-align: left;
+			}
 			.menu-item{
 				font-family: $font-text;
 				color: $yellow;
@@ -37,6 +72,9 @@
 			position: absolute;
 			top: 0;
 			right: 0;
+			@include media($mobile){
+				position: relative;
+			}
 			.icon{
 				display: inline-block;
     		width: 2rem;

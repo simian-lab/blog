@@ -35,6 +35,22 @@
 			color: $grey;
 			font-family: $font-text;
 			font-size: 20px;
-		}
+			.comments{
+				overflow: hidden;
+			}
+			.social-share{
+				text-align: center;
+				.icon{
+					display: inline-block;
+					width: 2.5rem;
+					height: 2.5rem;
+				}
+			}
+			.related{
+				.related-header{
+					color: $dark-brown;
+				}
+			}
+		}		
 	}
 }

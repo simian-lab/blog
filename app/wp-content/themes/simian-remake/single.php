@@ -24,7 +24,7 @@ $url = $thumb['0'];
 				<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
 			</div>
 			<div class="date">
-				<svg class="icon icon-icon-calendar"><use xlink:href="#icon-icon-calendar"></use></svg><span class="mls"></span>
+				<svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg><span class="mls"></span>
 				<p class="month"><?php echo get_the_date('j M'); ?></p>
 				<p class="year"><?php echo __(' de ','simian_theme') . get_the_date('Y'); ?></p>
 			</div>
@@ -35,11 +35,22 @@ $url = $thumb['0'];
 			</div>
 			<div class="post-footer">
 				<div class="social-share">
-					
+					<a href="https://www.facebook.com/simianlab" target="_blank" class="share">
+						<svg class="icon icon-icon-share"><use xlink:href="#icon-icon-share"></use></svg><span class="mls"></span>
+					</a>
+					<a href="https://www.facebook.com/simianlab" target="_blank" class="facebook">
+						<svg class="icon icon-icon-facebook"><use xlink:href="#icon-icon-facebook"></use></svg><span class="mls"></span>
+					</a>
+					<a href="https://twitter.com/simianlab" target="_blank" class="twitter">
+						<svg class="icon icon-icon-twitter"><use xlink:href="#icon-icon-twitter"></use></svg><span class="mls"></span>
+					</a>
+					<a href="https://plus.google.com/+SimianCo" target="_blank" class="google-plus">
+						<svg class="icon icon-icon-google-plus"><use xlink:href="#icon-icon-google-plus"></use></svg><span class="mls"></span>
+					</a>
 				</div>				
 			</div>
 			<div class="related">
-				
+				<h2 class="related-header"><?php _e('Artículos relacionados:', 'simian_theme'); ?></h2>
 			</div>
 			<div class="comments">
 				<?php comments_template(); ?> 
