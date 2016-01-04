@@ -78,6 +78,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
+			overflow: hidden;
 			@include media($mobile){
 				position: relative;
 				width: 380px;
@@ -89,6 +90,7 @@
 			}
 			.social, .search-tool, .mail, .languages, .search-bar{
 				display: inline;
+				transition: all 600ms ease-in-out;
 			}
 			.social, .search-tool, .mail{
 				vertical-align: super;
@@ -97,8 +99,6 @@
 				position: absolute;
     		right: -80%;
     		top: 0;
-    		transition: transform, display 600ms ease-in-out;
-    		display: none;
 				.search-form{
 					display: inline-block;
 					vertical-align: super;
@@ -106,15 +106,21 @@
 				.close .icon-close-circular{
 					vertical-align: bottom;
 				}
+				@include media($mobile){
+					right: -60%;
+				}
 			}
 			.active-search{
-				display: block;
   			transform: translateX(-120%);
-  			transition: transform, display 600ms ease-in-out;
+  			transition: transform 600ms ease-in-out;
+  			@include media($mobile){
+  				transform: translateX(-180%);
+  			}
 			}
 			.inactive{
 				opacity: 0;
 				pointer-events: none;
+				transition: all 600ms ease-in-out;
 			}
 			.languages{
 				.icon{
