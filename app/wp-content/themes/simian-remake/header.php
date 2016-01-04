@@ -275,10 +275,10 @@
 							$url_english = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 						}
 					}?>
-					<a href="<?php echo $url_spanish; ?>">
+					<a href="<?php echo 'http://'.$url_spanish; ?>">
 						<svg class="icon icon-es"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
 					</a>
-					<a href="<?php echo $url_english; ?>">
+					<a href="<?php echo 'http://'.$url_english; ?>">
 						<svg class="icon icon-en"><use xlink:href="#icon-en"></use></svg><span class="mls"></span>
 					</a>
 				</div>
