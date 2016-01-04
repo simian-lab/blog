@@ -10,6 +10,7 @@
 @import 'main';
 @import 'category';
 @import 'single';
+@import 'search';
 
 //General icons styles
 
@@ -39,7 +40,8 @@
 	color: $marine-blue;
 }
 
-.icon-play-circular {
+.icon-play-circular,
+.icon-en {
 	color: $play-blue;
 }
 
@@ -48,7 +50,9 @@
 .icon-left-arrow,
 .icon-right-arrow,
 .icon-map-marker,
-.icon-star {
+.icon-star,
+.icon-menu,
+.icon-es {
 	color: $yellow;
 }
 
