@@ -103,6 +103,9 @@
 					display: inline-block;
 					vertical-align: super;
 				}
+				.input{
+					font-family: $font-text;
+				}
 				.close .icon-close-circular{
 					vertical-align: bottom;
 				}
@@ -126,6 +129,9 @@
 				.icon{
 					width: 3rem;
 					height: 3rem;
+				}
+				#language{
+					display: inline-block;
 				}
 			}
 		}

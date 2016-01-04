@@ -258,19 +258,31 @@
 					</a>
 				</div>
 				<div class="languages">
-					<a href="">
-						<svg class="icon icon-es"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
-					</a>
-					<a href="">
-						<svg class="icon icon-en"><use xlink:href="#icon-en"></use></svg><span class="mls"></span>
-					</a>
+					<?php
+					//The idea is use the form to send us the desired language parameter here, the value is changed by js depending on the icon clicked
+					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; 
+					if (class_exists('SitePress')) {
+						global $sitepress;
+						if( $_REQUEST['language']){
+							$sitepress->switch_lang($_REQUEST['language'], true);
+						}						
+					}?>
+					<form id="language" method="GET" action="<?php echo $current_url; ?>">
+						<input type="hidden" id="lang-param" name="language" value="">
+						<a id="es-submit" href="">
+							<svg class="icon icon-es"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
+						</a>
+						<a id="en-submit" href="">
+							<svg class="icon icon-en"><use xlink:href="#icon-en"></use></svg><span class="mls"></span>
+						</a>
+					</form>
 				</div>
 				<div class="search-bar">
 					<a href="" class="search-submit" id="search-header">
 						<svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
 					</a>
 					<form class="search-form" id="form-header" action="<?php echo get_search_link(); ?>">
-						<input class="bar" name="s" type="text">
+						<input class="input" name="s" type="text">
 					</form>
 					<a href="" class="search-toggle" href="">
 						<svg class="icon icon-close-circular"><use xlink:href="#icon-close-circular"></use></svg><span class="mls"></span>

@@ -110,6 +110,8 @@ a {
       .header .top-header .tools .search-bar .search-form {
         display: inline-block;
         vertical-align: super; }
+      .header .top-header .tools .search-bar .input {
+        font-family: "Quicksand", sans-serif; }
       .header .top-header .tools .search-bar .close .icon-close-circular {
         vertical-align: bottom; }
       @media screen and (max-width: 36.25em) {
@@ -131,6 +133,8 @@ a {
     .header .top-header .tools .languages .icon {
       width: 3rem;
       height: 3rem; }
+    .header .top-header .tools .languages #language {
+      display: inline-block; }
   .header .monkey {
     position: absolute;
     bottom: 0;
