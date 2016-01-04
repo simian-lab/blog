@@ -260,14 +260,13 @@
 				<div class="languages">
 					<?php
 					//The idea is use the form to send us the desired language parameter here, the value is changed by js depending on the icon clicked
-					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; 
 					if (class_exists('SitePress')) {
 						global $sitepress;
 						if( $_REQUEST['language']){
 							$sitepress->switch_lang($_REQUEST['language'], true);
 						}						
 					}?>
-					<form id="language" method="GET" action="<?php echo $current_url; ?>">
+					<form id="language" method="GET">
 						<input type="hidden" id="lang-param" name="language" value="">
 						<a id="es-submit" href="">
 							<svg class="icon icon-es"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
@@ -281,7 +280,7 @@
 					<a href="" class="search-submit" id="search-header">
 						<svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
 					</a>
-					<form class="search-form" id="form-header" action="<?php echo get_search_link(); ?>">
+					<form class="search-form" id="form-header">
 						<input class="input" name="s" type="text">
 					</form>
 					<a href="" class="search-toggle" href="">
