@@ -210,6 +210,7 @@
   <?php wp_head(); ?>
 </head>
 <body id="page" <?php body_class(); ?>>
+	<?php if ( !is_404() ): ?>
 	<header class="header">
 		<div class="menu-toggle">
 			<a href="" class="mobile-menu">
@@ -302,3 +303,13 @@
 			<img class="talking-monkey" src="<?php echo get_template_directory_uri(); ?>/images/talking-monkey.svg" alt="Mono Aullador">
 		</div>
 	</header>
+	<?php else : ?>
+		<header class="header">
+			<div class="simian-home">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
+					<svg class="icon icon-simian"><use xlink:href="#icon-simian"></use></svg><span class="mls"></span>
+					<span class="home-label"><?php _e('Inicio', 'simian_theme'); ?></span>					
+				</a>        
+      </div>
+		</header>
+	<?php endif; ?>

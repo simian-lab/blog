@@ -442,6 +442,44 @@ a {
   font-family: "Quicksand", sans-serif;
   color: #3F3832; }
 
+.error404 {
+  background: #DED96B; }
+  .error404 .header {
+    background: transparent;
+    position: absolute;
+    margin: 40px; }
+    .error404 .header .simian-home .icon-simian {
+      width: 5rem;
+      height: 5rem;
+      color: #3F3832; }
+    .error404 .header .simian-home .home-label {
+      font-family: "Quicksand", sans-serif;
+      color: #3F3832;
+      font-size: 30px;
+      font-weight: bold;
+      position: relative;
+      left: -20px; }
+  .error404 .main-error {
+    font-family: "Amatic SC", cursive;
+    margin-top: 40px; }
+    .error404 .main-error .error-title {
+      color: #FF5F5C;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 65px;
+      margin: 0; }
+    .error404 .main-error .not-found {
+      color: #3F3832;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 130px;
+      margin: 0; }
+    .error404 .main-error .image404 {
+      width: 100%;
+      margin-bottom: -150px;
+      z-index: -1;
+      position: relative; }
+
 .icon {
   display: inline-block;
   fill: currentColor;

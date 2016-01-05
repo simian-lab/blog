@@ -1,0 +1,47 @@
+.error404{
+	background: $yellow;
+	.header{
+		background: transparent;
+		position: absolute;
+		margin: 40px;
+		.simian-home{
+			.icon-simian{
+				width: 5rem;
+    		height: 5rem;
+    		color: $dark-brown;
+			}
+			.home-label{
+				font-family: $font-text;
+				color: $dark-brown;
+				font-size: 30px;
+		    font-weight: bold;
+		    position: relative;
+		    left: -20px;
+			}
+		}
+	}
+	.main-error{
+		font-family: $font-title;
+		margin-top: 40px;
+		.error-title{
+			color: $light-red;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: 65px;
+			margin: 0;
+		}
+		.not-found{
+			color: $dark-brown;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: 130px;
+			margin: 0;
+		}
+		.image404{
+			width: 100%;
+    	margin-bottom: -150px;
+    	z-index: -1;
+    	position: relative;
+		}
+	}
+}
