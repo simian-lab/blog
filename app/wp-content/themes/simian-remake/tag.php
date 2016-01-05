@@ -1,8 +1,8 @@
 <?php
 /**
  *
- * The category Template file
- * Template Name: category Template
+ * The tag Template file
+ * Template Name: tag Template
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
@@ -13,23 +13,21 @@
 get_header();
 
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$category_id = get_query_var( 'cat' );
+$tag = get_query_var( 'tag' );
 $args = array(
   'order' => 'DESC',
   'orderby' => 'date',
   'post_status' => 'publish',
   'posts_per_page' => 4,
   'paged' => $paged,
-  'cat' => $category_id
+  'tag' => $tag
 );
 $the_query = new WP_Query( $args ); ?>
 <div class="main">
 	<div class="content">
-		<?php 
-		$cat_name = get_cat_name( $category_id ); ?>
 		<h2 class="category-head">
-			<span class="cat"><?php _e('Categoría> ','simian_theme'); ?></span>
-			<span class="category-title"><?php echo $cat_name; ?></span>
+			<span class="cat"><?php _e('Etiqueta> ','simian_theme'); ?></span>
+			<span class="category-title"><?php single_tag_title(); ?></span>
 		</h2>
 		<?php if ( $the_query->have_posts() ): ?>
 			<div class="posts-list">
@@ -72,7 +70,7 @@ $the_query = new WP_Query( $args ); ?>
 				<div class="pagination">
 					<?php 
 					$args = array(
-						'show_all'           => True,
+						'show_all' => True,
 					);
 					echo paginate_links($args); ?>
 				</div>
