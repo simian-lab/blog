@@ -329,50 +329,100 @@ a {
   .category .main .content .category-head .category-title {
     color: #3F3832; }
 
-.single-post .detail {
-  max-width: 68rem;
-  margin-left: auto;
-  margin-right: auto; }
-  .single-post .detail::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .single-post .detail .hero {
-    font-family: "Quicksand", sans-serif;
-    color: #B3B0AE; }
-    .single-post .detail .hero .title {
-      font-family: "Amatic SC", cursive;
-      color: #DED96B;
-      font-size: 110px;
-      text-align: center; }
-    .single-post .detail .hero div {
-      display: block;
-      width: 50%;
-      float: left; }
-    .single-post .detail .hero p {
+.single-post .detail .hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Quicksand", sans-serif;
+  color: #B3B0AE;
+  min-height: 80vh;
+  margin-top: -245px;
+  position: relative;
+  z-index: -1; }
+  .single-post .detail .hero .title {
+    font-family: "Amatic SC", cursive;
+    color: #DED96B;
+    font-size: 110px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    left: 50%; }
+  .single-post .detail .hero:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 166px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%); }
+
+.single-post .detail .content {
+  display: block;
+  color: #B3B0AE;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px; }
+  .single-post .detail .content .post-content {
+    max-width: 68rem;
+    margin-left: auto;
+    margin-right: auto; }
+    .single-post .detail .content .post-content::after {
+      clear: both;
+      content: "";
+      display: table; }
+  .single-post .detail .content .author, .single-post .detail .content .date {
+    display: block;
+    width: 50%;
+    float: left; }
+    .single-post .detail .content .author p, .single-post .detail .content .date p {
       display: inline;
       vertical-align: super; }
-    .single-post .detail .hero .icon {
+  .single-post .detail .content .icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem; }
+  .single-post .detail .content .date .month {
+    text-transform: capitalize; }
+  .single-post .detail .content .comments {
+    overflow: hidden; }
+  .single-post .detail .content .social-share {
+    text-align: center; }
+    .single-post .detail .content .social-share .icon {
       display: inline-block;
-      width: 2rem;
-      height: 2rem; }
-    .single-post .detail .hero .date .month {
-      text-transform: capitalize; }
-  .single-post .detail .content {
-    display: block;
-    color: #B3B0AE;
-    font-family: "Quicksand", sans-serif;
-    font-size: 20px; }
-    .single-post .detail .content .comments {
-      overflow: hidden; }
-    .single-post .detail .content .social-share {
-      text-align: center; }
-      .single-post .detail .content .social-share .icon {
-        display: inline-block;
-        width: 2.5rem;
-        height: 2.5rem; }
+      width: 2.5rem;
+      height: 2.5rem; }
+  .single-post .detail .content .related {
+    margin: 0 80px; }
     .single-post .detail .content .related .related-header {
       color: #3F3832; }
+    .single-post .detail .content .related .cycle-links {
+      margin: 0 220px; }
+      .single-post .detail .content .related .cycle-links .icon {
+        width: 4rem;
+        height: 4rem; }
+      .single-post .detail .content .related .cycle-links .label {
+        font-size: 38px;
+        font-family: "Quicksand", sans-serif;
+        color: #3F3832; }
+      .single-post .detail .content .related .cycle-links .left-link {
+        display: inline-block; }
+        .single-post .detail .content .related .cycle-links .left-link .label {
+          display: inline-block;
+          vertical-align: super; }
+      .single-post .detail .content .related .cycle-links .right-link {
+        display: inline-block;
+        float: right; }
+        .single-post .detail .content .related .cycle-links .right-link .label {
+          display: inline-block;
+          vertical-align: super; }
+    .single-post .detail .content .related .related-container .related-post {
+      width: 33%;
+      display: inline-block; }
+    .single-post .detail .content .related .related-container .title, .single-post .detail .content .related .related-container .post-thumbnail {
+      display: inline; }
+    .single-post .detail .content .related .related-container .title {
+      font-family: "Quicksand", sans-serif;
+      color: #3F3832;
+      font-size: 30px; }
 
 .search .main .content .search-head .results-span {
   font-family: "Amatic SC", cursive;
