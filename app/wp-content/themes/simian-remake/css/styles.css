@@ -405,6 +405,10 @@ a {
       .single-post .detail .content .related .cycle-links .icon {
         width: 4rem;
         height: 4rem; }
+        @media screen and (max-width: 60em) {
+          .single-post .detail .content .related .cycle-links .icon {
+            width: 2rem;
+            height: 2rem; } }
       .single-post .detail .content .related .cycle-links .label {
         font-size: 38px;
         font-family: "Quicksand", sans-serif;
@@ -414,15 +418,24 @@ a {
         .single-post .detail .content .related .cycle-links .left-link .label {
           display: inline-block;
           vertical-align: super; }
+          @media screen and (max-width: 60em) {
+            .single-post .detail .content .related .cycle-links .left-link .label {
+              font-size: 20px; } }
       .single-post .detail .content .related .cycle-links .right-link {
         display: inline-block;
         float: right; }
         .single-post .detail .content .related .cycle-links .right-link .label {
           display: inline-block;
           vertical-align: super; }
+          @media screen and (max-width: 60em) {
+            .single-post .detail .content .related .cycle-links .right-link .label {
+              font-size: 20px; } }
     .single-post .detail .content .related .related-container .related-post {
       width: 33%;
       display: inline-block; }
+      @media screen and (max-width: 60em) {
+        .single-post .detail .content .related .related-container .related-post {
+          width: 100%; } }
     .single-post .detail .content .related .related-container .title, .single-post .detail .content .related .related-container .post-thumbnail {
       display: inline; }
     .single-post .detail .content .related .related-container .title {

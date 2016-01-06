@@ -74,6 +74,10 @@
 					.icon{
 						width: 4rem;
     				height: 4rem;
+    				@include media($tablet){
+							width: 2rem;
+							height: 2rem;
+						}
 					}	
 					.label{
 						font-size: 38px;
@@ -85,6 +89,9 @@
 						.label{
 							display: inline-block;
 							vertical-align: super;
+							@include media($tablet){
+								font-size: 20px;
+							}
 						}
 					}
 					.right-link{
@@ -93,6 +100,9 @@
 						.label{
 							display: inline-block;
 							vertical-align: super;
+							@include media($tablet){
+								font-size: 20px;
+							}
 						}
 					}
 				}
@@ -100,6 +110,9 @@
 					.related-post{
 						width: 33%;
     				display: inline-block;
+    				@include media($tablet){
+    					width: 100%;
+    				}
 					}
 					.title, .post-thumbnail{
 						display: inline;
@@ -107,7 +120,7 @@
 					.title{
 						font-family: $font-text;
 						color: $dark-brown;
-						font-size: 30px;
+						font-size: 30px;						
 					}
 				}
 			}
