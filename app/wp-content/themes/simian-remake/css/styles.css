@@ -133,6 +133,8 @@ a {
     .header .top-header .tools .languages .icon {
       width: 3rem;
       height: 3rem; }
+    .header .top-header .tools .languages .white-icon {
+      color: white; }
     .header .top-header .tools .languages #language {
       display: inline-block; }
   .header .monkey {

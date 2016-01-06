@@ -260,7 +260,6 @@
 				</div>
 				<div class="languages">
 					<?php
-					//Depending 
 					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];					
 					if (class_exists('SitePress')) {
 						$match = preg_match('/^\/es\//', $_SERVER["REQUEST_URI"]);
@@ -276,11 +275,11 @@
 							$url_english = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 						}
 					}?>
-					<a href="<?php echo 'http://'.$url_spanish; ?>">
-						<svg class="icon icon-es"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
+					<a href="<?php echo 'http://'.$url_spanish; ?>">						
+							<svg class="icon icon-es<?php if( ICL_LANGUAGE_CODE == 'en'){ echo ' white-icon';} ?>"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
 					</a>
 					<a href="<?php echo 'http://'.$url_english; ?>">
-						<svg class="icon icon-en"><use xlink:href="#icon-en"></use></svg><span class="mls"></span>
+						<svg class="icon icon-en<?php if( ICL_LANGUAGE_CODE == 'es'){ echo ' white-icon';} ?>"><use xlink:href="#icon-en"></use></svg><span class="mls"></span>
 					</a>
 				</div>
 				<div class="search-bar">
