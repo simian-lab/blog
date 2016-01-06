@@ -24,9 +24,14 @@ $args = array(
 $the_query = new WP_Query( $args );
 ?>
 <div class="main">
-	<div class="content">
-	<div class="search-bar">
-		
+	<div class="content">	
+	<div class="search-bar">		
+		<form class="search-form" id="form-search" action="<?php echo get_search_link(); ?>">
+			<input class="input" name="s" type="text">
+		</form>
+		<a href="" class="search-submit" id="search-content">
+			<svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
+		</a>
 	</div>
 	<div class="search-head">
 		<span class="results-span"><?php _e('Resultados para la palabra > ','simian_theme'); ?></span>

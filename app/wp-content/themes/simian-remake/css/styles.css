@@ -426,6 +426,17 @@ a {
       color: #3F3832;
       font-size: 30px; }
 
+.search .main .content .search-bar .search-form {
+  display: inline-block;
+  vertical-align: top; }
+  .search .main .content .search-bar .search-form .input {
+    height: 35px;
+    width: 300px; }
+
+.search .main .content .search-bar .icon {
+  width: 3rem;
+  height: 3rem; }
+
 .search .main .content .search-head .results-span {
   font-family: "Amatic SC", cursive;
   color: #4FA2C0;
