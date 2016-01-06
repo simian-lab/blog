@@ -23,25 +23,25 @@ a {
   background: url("../images/background-header.svg");
   background-repeat: no-repeat;
   background-size: cover; }
-  @media screen and (max-width: 36.25em) {
+  @media screen and (max-width: 48em) {
     .header {
       height: 100px; } }
   .header .menu-toggle {
     display: none; }
-    @media screen and (max-width: 36.25em) {
+    @media screen and (max-width: 48em) {
       .header .menu-toggle {
         display: block;
         position: absolute; } }
     .header .menu-toggle .icon {
       width: 3rem;
       height: 3rem; }
-  @media screen and (max-width: 36.25em) {
+  @media screen and (max-width: 48em) {
     .header .active-menu {
       -webkit-transform: translateX(100%);
       transform: translateX(100%);
       transition: -webkit-transform 600ms ease-in-out;
       transition: transform 600ms ease-in-out; } }
-  @media screen and (max-width: 36.25em) {
+  @media screen and (max-width: 48em) {
     .header .top-header {
       background: url("../images/background-header.svg");
       background-repeat: no-repeat;
@@ -53,14 +53,14 @@ a {
       right: 100%;
       transition: -webkit-transform 600ms ease-in-out;
       transition: transform 600ms ease-in-out; } }
-  @media screen and (max-width: 36.25em) {
+  @media screen and (max-width: 48em) {
     .header .top-header .menu-toggle {
       position: relative; } }
   .header .top-header .logo {
     position: absolute;
     top: 0;
     left: 0; }
-    @media screen and (max-width: 36.25em) {
+    @media screen and (max-width: 48em) {
       .header .top-header .logo {
         position: relative; } }
   .header .top-header .menu {
@@ -72,16 +72,20 @@ a {
     @media screen and (max-width: 60em) {
       .header .top-header .menu {
         text-align: center; } }
-    @media screen and (max-width: 36.25em) {
+    @media screen and (max-width: 48em) {
       .header .top-header .menu {
         position: relative;
-        text-align: left; } }
+        text-align: left;
+        margin-left: 15px; } }
     .header .top-header .menu .menu-item {
       font-family: "Quicksand", sans-serif;
       color: #DED96B;
       font-size: 20px;
       display: inline-block;
-      padding: 0 3rem; }
+      padding-right: 3rem; }
+      @media screen and (max-width: 48em) {
+        .header .top-header .menu .menu-item {
+          display: block; } }
   .header .top-header .tools {
     background: url("../images/background-tools.svg");
     background-repeat: no-repeat;
@@ -90,7 +94,7 @@ a {
     top: 0;
     right: 0;
     overflow: hidden; }
-    @media screen and (max-width: 36.25em) {
+    @media screen and (max-width: 48em) {
       .header .top-header .tools {
         position: relative;
         width: 380px; } }
@@ -114,7 +118,7 @@ a {
         font-family: "Quicksand", sans-serif; }
       .header .top-header .tools .search-bar .close .icon-close-circular {
         vertical-align: bottom; }
-      @media screen and (max-width: 36.25em) {
+      @media screen and (max-width: 48em) {
         .header .top-header .tools .search-bar {
           right: -60%; } }
     .header .top-header .tools .active-search {
@@ -122,10 +126,10 @@ a {
       transform: translateX(-120%);
       transition: -webkit-transform 600ms ease-in-out;
       transition: transform 600ms ease-in-out; }
-      @media screen and (max-width: 36.25em) {
+      @media screen and (max-width: 48em) {
         .header .top-header .tools .active-search {
-          -webkit-transform: translateX(-180%);
-          transform: translateX(-180%); } }
+          -webkit-transform: translateX(-170%);
+          transform: translateX(-170%); } }
     .header .top-header .tools .inactive {
       opacity: 0;
       pointer-events: none;
@@ -144,7 +148,7 @@ a {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 750px; }
-    @media screen and (max-width: 36.25em) {
+    @media screen and (max-width: 48em) {
       .header .monkey {
         width: 63%; } }
     .header .monkey .site-title, .header .monkey .talking-money {
@@ -155,12 +159,12 @@ a {
       color: #DED96B;
       font-size: 90px;
       width: 47%; }
-      @media screen and (max-width: 36.25em) {
+      @media screen and (max-width: 48em) {
         .header .monkey .site-title {
           font-size: 30px; } }
     .header .monkey .talking-monkey {
       float: right; }
-      @media screen and (max-width: 36.25em) {
+      @media screen and (max-width: 48em) {
         .header .monkey .talking-monkey {
           width: 90px; } }
 
@@ -270,10 +274,12 @@ a {
       margin: 25% 0; }
       .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
         float: left;
-        margin-right: 50px; }
-        @media screen and (max-width: 36.25em) {
+        margin-right: 50px;
+        max-width: 100%; }
+        @media screen and (max-width: 48em) {
           .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
-            width: 100%; } }
+            width: 100%;
+            height: 100%; } }
       .main .content .posts-list .post-container .post-title {
         color: #4FA2C0;
         font-family: "Amatic SC", cursive;
@@ -293,7 +299,7 @@ a {
           display: block;
           width: 33%;
           float: left; }
-          @media screen and (max-width: 36.25em) {
+          @media screen and (max-width: 48em) {
             .main .content .posts-list .post-container .post-foot div {
               width: 100%;
               float: none; } }
@@ -384,8 +390,6 @@ a {
     height: 2rem; }
   .single-post .detail .content .date .month {
     text-transform: capitalize; }
-  .single-post .detail .content .comments {
-    overflow: hidden; }
   .single-post .detail .content .social-share {
     text-align: center; }
     .single-post .detail .content .social-share .icon {
@@ -397,7 +401,7 @@ a {
     .single-post .detail .content .related .related-header {
       color: #3F3832; }
     .single-post .detail .content .related .cycle-links {
-      margin: 0 220px; }
+      margin: 0; }
       .single-post .detail .content .related .cycle-links .icon {
         width: 4rem;
         height: 4rem; }

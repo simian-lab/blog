@@ -55,9 +55,6 @@
 				.month{
 					text-transform: capitalize;
 				}
-			}	
-			.comments{
-				overflow: hidden;
 			}
 			.social-share{
 				text-align: center;
@@ -73,7 +70,7 @@
 					color: $dark-brown;
 				}
 				.cycle-links{
-					margin: 0 220px;
+					margin: 0;
 					.icon{
 						width: 4rem;
     				height: 4rem;

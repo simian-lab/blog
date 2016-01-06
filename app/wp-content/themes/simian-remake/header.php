@@ -223,7 +223,9 @@
 					<svg class="icon icon-left-arrow"><use xlink:href="#icon-left-arrow"></use></svg><span class="mls"></span>
 				</a>
 			</div>
-			<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Simian Logo">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
+				<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Simian Logo">
+			</a>
 			<nav class="menu">
 				<?php
         $args = array(

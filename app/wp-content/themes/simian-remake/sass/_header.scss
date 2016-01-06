@@ -4,12 +4,12 @@
 	background: url('../images/background-header.svg');
 	background-repeat: no-repeat;
   background-size: cover;
-  @include media($mobile){
+  @include media($ipad-portrait){
   	height: 100px;
   }
   .menu-toggle{
   	display: none;
-  	@include media($mobile){
+  	@include media($ipad-portrait){
   		display: block;
   		position: absolute;
   	}
@@ -21,13 +21,13 @@
 
   }
   .active-menu{
-  	@include media($mobile){
+  	@include media($ipad-portrait){
   		transform: translateX(100%);
   		transition: transform 600ms ease-in-out;
   	}
   }
 	.top-header{
-		@include media($mobile){
+		@include media($ipad-portrait){
   		background: url('../images/background-header.svg');
 			background-repeat: no-repeat;
   		background-size: cover;
@@ -39,7 +39,7 @@
     	transition: transform 600ms ease-in-out;
   	}
   	.menu-toggle{
-  		@include media($mobile){
+  		@include media($ipad-portrait){
   			position: relative;
   		}
   	}
@@ -47,7 +47,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			@include media($mobile){
+			@include media($ipad-portrait){
 				position: relative;
 			}
 		}
@@ -59,16 +59,20 @@
 			@include media($tablet){
 				text-align: center;
 			}
-			@include media($mobile){
+			@include media($ipad-portrait){
 				position: relative;
 				text-align: left;
+				margin-left: 15px;
 			}
 			.menu-item{
 				font-family: $font-text;
 				color: $yellow;
 				font-size: 20px;
 				display: inline-block;
-    		padding: 0 3rem;
+    		padding-right: 3rem;
+    		@include media($ipad-portrait){
+    			display: block;
+    		}
 			}
 		}
 		.tools{
@@ -79,7 +83,7 @@
 			top: 0;
 			right: 0;
 			overflow: hidden;
-			@include media($mobile){
+			@include media($ipad-portrait){
 				position: relative;
 				width: 380px;
 			}
@@ -109,15 +113,15 @@
 				.close .icon-close-circular{
 					vertical-align: bottom;
 				}
-				@include media($mobile){
+				@include media($ipad-portrait){
 					right: -60%;
 				}
 			}
 			.active-search{
   			transform: translateX(-120%);
   			transition: transform 600ms ease-in-out;
-  			@include media($mobile){
-  				transform: translateX(-180%);
+  			@include media($ipad-portrait){
+  				transform: translateX(-170%);
   			}
 			}
 			.inactive{
@@ -145,7 +149,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		width: 750px;
-		@include media($mobile){
+		@include media($ipad-portrait){
 			width: 63%;
 		}
 		.site-title, .talking-money{
@@ -157,13 +161,13 @@
 			color: $yellow;
 			font-size: 90px;
 			width: 47%;
-			@include media($mobile){
+			@include media($ipad-portrait){
 				font-size: 30px;
 			}
 		}
 		.talking-monkey{
     	float: right;
-    	@include media($mobile){
+    	@include media($ipad-portrait){
 				width: 90px;
 			}
 		}
