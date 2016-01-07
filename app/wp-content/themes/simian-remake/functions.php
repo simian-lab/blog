@@ -16,6 +16,9 @@ if ( ! function_exists( 'simian_theme_setup' ) ) :
     */
     load_theme_textdomain( 'simian_theme', get_template_directory() . '/languages' );
 
+    add_image_size( 'post_list_image', 500, 565, true);
+    add_image_size( 'single_list_image', 130, 120, true);
+
     // Enable support for Post Thumbnails
     add_theme_support( 'post-thumbnails' );
   }

@@ -70,7 +70,7 @@ $url = $thumb['0'];
 						<div class="related-post">
 							<a href="<?php the_permalink(); ?>">
 								<div class="post-thumbnail">
-									<?php the_post_thumbnail('thumbnail'); ?>
+									<?php the_post_thumbnail('single_list_image'); ?>
 								</div>							
 								<h3 class="title">
 									<?php the_title();?>
