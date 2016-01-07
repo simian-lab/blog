@@ -38,6 +38,12 @@
 					<a href="https://plus.google.com/+SimianCo" target="_blank" class="google-plus">
 						<svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
 					</a>
+          <a href="https://www.youtube.com/channel/UCD4IYGyW-b0TqpK29gmZLhw" class="youtube">
+            <svg class="icon icon-youtube"><use xlink:href="#icon-youtube"></use></svg><span class="mls"></span>
+          </a>
+          <a href="https://www.linkedin.com/company/simian-s-a-s-" class="linkedin">
+            <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span class="mls"></span>
+          </a>
 				</div>
   		</div>
 	  	<div class="copyright">

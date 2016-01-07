@@ -51,12 +51,15 @@ $the_query = new WP_Query( $args );
 							<p class="year"><?php echo __(' de ','simian_theme') . get_the_date('Y'); ?></p>
 						</div>
 						<div class="author">
-							<img class="icon" src="<?php echo get_template_directory_uri(); ?>/images/authors/<?php the_author_meta('nickname'); ?>.svg" alt="<?php the_author_meta('nickname'); ?>">							
+							<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>						
 							<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
 						</div>
 						<div class="comments">
 							<svg class="icon icon-balloon"><use xlink:href="#icon-balloon"></use></svg><span class="mls"></span>
-							<p><?php echo __('Comentarios', 'simian_theme') . '('.wp_count_comments()->total_comments . ')'; ?></p>
+							<p><?php 							
+							echo __('Comentarios', 'simian_theme') . '(';
+							comments_number('0', '1', '%');
+							echo ')'; ?></p>
 						</div>
 						<?php if ( has_tag() ): ?>
 						<div class="tags">

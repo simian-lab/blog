@@ -5,7 +5,7 @@
 			@include span-columns(10);
 			@include shift(1);
 			.post-container{
-				margin: 25% 0;
+				margin: 0;
 				.post-thumbnail{
 					.wp-post-image{
 						float: left;
@@ -33,7 +33,7 @@
 					font-size: 20px;
 					float: left;
   				width: 100%;
-  				margin-top: 45px;
+  				margin: 45px 0;
 					div{
 						display: block;
 						width: 33%;
@@ -52,10 +52,20 @@
     				width: 2rem;
     				height: 2rem;
 					}
+					.author{
+						.avatar{
+							display: inline-block;
+    					width: 2rem;
+    					height: 2rem;
+						}
+					}
 					.date{
 						.month{
 							text-transform: capitalize;
 						}
+					}
+					.tags{
+						width: 100%;
 					}						
 				}
 			}

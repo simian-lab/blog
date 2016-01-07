@@ -158,7 +158,8 @@ a {
       font-family: "Amatic SC", cursive;
       color: #DED96B;
       font-size: 90px;
-      width: 47%; }
+      width: 47%;
+      text-transform: uppercase; }
       @media screen and (max-width: 48em) {
         .header .monkey .site-title {
           font-size: 30px; } }
@@ -231,7 +232,7 @@ a {
       margin-left: 17.05961%;
       text-align: center;
       font-family: "Quicksand", sans-serif;
-      color: #B3B0AE; }
+      color: #5D5752; }
       .footer .content .copyright:last-child {
         margin-right: 0; }
     .footer .content .simian-bottom {
@@ -271,7 +272,7 @@ a {
     .main .content .posts-list:last-child {
       margin-right: 0; }
     .main .content .posts-list .post-container {
-      margin: 25% 0; }
+      margin: 0; }
       .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
         float: left;
         margin-right: 50px;
@@ -285,16 +286,16 @@ a {
         font-family: "Amatic SC", cursive;
         font-size: 60px; }
       .main .content .posts-list .post-container .post-excerpt {
-        color: #B3B0AE;
+        color: #5D5752;
         font-family: "Quicksand", sans-serif;
         font-size: 20px; }
       .main .content .posts-list .post-container .post-foot {
-        color: #B3B0AE;
+        color: #5D5752;
         font-family: "Quicksand", sans-serif;
         font-size: 20px;
         float: left;
         width: 100%;
-        margin-top: 45px; }
+        margin: 45px 0; }
         .main .content .posts-list .post-container .post-foot div {
           display: block;
           width: 33%;
@@ -310,8 +311,14 @@ a {
           display: inline-block;
           width: 2rem;
           height: 2rem; }
+        .main .content .posts-list .post-container .post-foot .author .avatar {
+          display: inline-block;
+          width: 2rem;
+          height: 2rem; }
         .main .content .posts-list .post-container .post-foot .date .month {
           text-transform: capitalize; }
+        .main .content .posts-list .post-container .post-foot .tags {
+          width: 100%; }
     .main .content .posts-list .pagination {
       float: right;
       margin-top: 100px;
@@ -341,7 +348,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Quicksand", sans-serif;
-  color: #B3B0AE;
+  color: #5D5752;
   min-height: 80vh;
   margin-top: -245px;
   position: relative;
@@ -366,7 +373,7 @@ a {
 
 .single-post .detail .content {
   display: block;
-  color: #B3B0AE;
+  color: #5D5752;
   font-family: "Quicksand", sans-serif;
   font-size: 20px; }
   .single-post .detail .content .post-content {
@@ -554,7 +561,8 @@ a {
 .icon-youtube {
   color: #E72B2C; }
 
-.icon-twitter {
+.icon-twitter,
+.icon-linkedin {
   color: #00A7E2; }
 
 .icon-heart,
