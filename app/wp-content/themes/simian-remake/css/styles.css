@@ -386,7 +386,8 @@ a {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    left: 50%; }
+    left: 50%;
+    margin: 0; }
   .single-post .detail .hero:after {
     content: '';
     position: absolute;
@@ -399,19 +400,27 @@ a {
   display: block;
   color: #5D5752;
   font-family: "Quicksand", sans-serif;
-  font-size: 20px; }
+  font-size: 20px;
+  max-width: 68rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .single-post .detail .content::after {
+    clear: both;
+    content: "";
+    display: table; }
   .single-post .detail .content .post-content {
-    max-width: 68rem;
-    margin-left: auto;
-    margin-right: auto; }
-    .single-post .detail .content .post-content::after {
-      clear: both;
-      content: "";
-      display: table; }
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%; }
+    .single-post .detail .content .post-content:last-child {
+      margin-right: 0; }
   .single-post .detail .content .author, .single-post .detail .content .date {
     display: block;
     width: 50%;
-    float: left; }
+    float: left;
+    text-align: center; }
     .single-post .detail .content .author p, .single-post .detail .content .date p {
       display: inline;
       vertical-align: super; }
@@ -422,7 +431,14 @@ a {
   .single-post .detail .content .date .month {
     text-transform: capitalize; }
   .single-post .detail .content .social-share {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%;
     text-align: center; }
+    .single-post .detail .content .social-share:last-child {
+      margin-right: 0; }
     .single-post .detail .content .social-share .icon {
       display: inline-block;
       width: 2.5rem;
