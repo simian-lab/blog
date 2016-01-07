@@ -59,10 +59,12 @@ a {
   .header .top-header .logo {
     position: absolute;
     top: 0;
-    left: 0; }
+    left: 0;
+    margin: 15px; }
     @media screen and (max-width: 48em) {
       .header .top-header .logo {
-        position: relative; } }
+        position: relative;
+        margin: 0 15px; } }
   .header .top-header .menu {
     position: absolute;
     top: 0;
@@ -152,7 +154,10 @@ a {
     width: 750px; }
     @media screen and (max-width: 48em) {
       .header .monkey {
-        width: 63%; } }
+        width: 100%;
+        position: relative;
+        text-align: center;
+        top: 17px; } }
     .header .monkey .site-title, .header .monkey .talking-money {
       display: inline-block;
       vertical-align: middle; }
@@ -164,12 +169,15 @@ a {
       text-transform: uppercase; }
       @media screen and (max-width: 48em) {
         .header .monkey .site-title {
-          font-size: 30px; } }
+          font-size: 30px;
+          width: initial;
+          vertical-align: bottom; } }
     .header .monkey .talking-monkey {
       float: right; }
       @media screen and (max-width: 48em) {
         .header .monkey .talking-monkey {
-          width: 90px; } }
+          width: 90px;
+          float: none; } }
 
 .footer {
   background: url("../images/background-footer.svg");
@@ -254,8 +262,11 @@ a {
           .footer .content .simian-bottom:last-child {
             margin-right: 0; } }
       .footer .content .simian-bottom .icon {
-        width: 100%;
-        height: 100%; }
+        width: 95px;
+        position: absolute;
+        height: 77px;
+        right: 0;
+        margin: 0 15px; }
 
 .main .content {
   max-width: 68rem;

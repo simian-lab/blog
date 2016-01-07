@@ -323,9 +323,11 @@
 			</div>
 		</div>
 		<div class="monkey">
-			<h1 class="site-title">
-				<?php _e('Nuestro Blog', 'simian_theme'); ?>
-			</h1>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
+				<h1 class="site-title">
+					<?php _e('Nuestro Blog', 'simian_theme'); ?>
+				</h1>
+			</a>
 			<img class="talking-monkey" src="<?php echo get_template_directory_uri(); ?>/images/talking-monkey.svg" alt="Mono Aullador">
 		</div>
 	</header>

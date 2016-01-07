@@ -9,4 +9,7 @@ jQuery('.search-toggle').click(function(event){
 	document.getElementsByClassName('languages')[0].classList.toggle('inactive');
 	document.getElementsByClassName('search-tool')[0].classList.toggle('inactive');
 	document.getElementsByClassName('mail')[0].classList.toggle('inactive');
+	for (var i = 0; i < document.getElementsByClassName('icon-vertical-separator').length; i++) {
+		document.getElementsByClassName('icon-vertical-separator')[i].classList.toggle('inactive');
+	};
 });

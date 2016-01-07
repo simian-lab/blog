@@ -2,6 +2,7 @@
   	<div class="content">
   		<div class="links block">
   			<h2 class="title"><?php _e('Contenido', 'simian_theme'); ?></h2>
+        
   			<?php
         $args = array(
           'theme_location' => 'footer_1',
@@ -15,6 +16,7 @@
   		</div>
   		<div class="info block">
   			<h2 class="title"><?php _e('Información', 'simian_theme'); ?></h2>
+        
 			  <?php
         $args = array(
           'theme_location' => 'footer_2',
@@ -28,6 +30,7 @@
   		</div>
   		<div class="social block">
   			<h2 class="title"><?php _e('Síguenos', 'simian_theme'); ?></h2>
+        
   			<div class="social-links">
 					<a href="https://www.facebook.com/simianlab" target="_blank" class="facebook">
 						<svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg><span class="mls"></span>

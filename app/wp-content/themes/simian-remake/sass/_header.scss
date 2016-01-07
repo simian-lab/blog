@@ -47,8 +47,10 @@
 			position: absolute;
 			top: 0;
 			left: 0;
+			margin: 15px;
 			@include media($ipad-portrait){
 				position: relative;
+				margin: 0 15px;
 			}
 		}
 		.menu{
@@ -153,7 +155,10 @@
 		transform: translateX(-50%);
 		width: 750px;
 		@include media($ipad-portrait){
-			width: 63%;
+			width: 100%;
+    	position: relative;
+    	text-align: center;
+    	top: 17px;
 		}
 		.site-title, .talking-money{
 			display: inline-block;
@@ -167,12 +172,15 @@
 			text-transform: uppercase;
 			@include media($ipad-portrait){
 				font-size: 30px;
+				width: initial;
+				vertical-align: bottom;
 			}
 		}
 		.talking-monkey{
     	float: right;
     	@include media($ipad-portrait){
 				width: 90px;
+				float: none;
 			}
 		}
 	}
