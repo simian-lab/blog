@@ -272,16 +272,19 @@
 						<svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
 					</a>
 				</div>
+				<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
 				<div class="search-tool">
 					<a href="" class="search-toggle">
 						<svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
 					</a>
 				</div>
+				<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
 				<div class="mail">
 					<a href="http://simian.co/">
 						<svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg><span class="mls"></span>
 					</a>
 				</div>
+				<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
 				<div class="languages">
 					<?php
 					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];					

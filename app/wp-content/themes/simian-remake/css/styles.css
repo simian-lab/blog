@@ -102,6 +102,8 @@ a {
       display: inline-block;
       width: 2rem;
       height: 2rem; }
+    .header .top-header .tools .icon-vertical-separator {
+      margin: 0 -10px 6px; }
     .header .top-header .tools .social, .header .top-header .tools .search-tool, .header .top-header .tools .mail, .header .top-header .tools .languages, .header .top-header .tools .search-bar {
       display: inline;
       transition: all 600ms ease-in-out; }
