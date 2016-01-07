@@ -272,7 +272,8 @@ a {
     .main .content .posts-list:last-child {
       margin-right: 0; }
     .main .content .posts-list .post-container {
-      margin: 0; }
+      margin: 0;
+      display: inline-block; }
       .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
         float: left;
         margin-right: 50px;
@@ -322,9 +323,19 @@ a {
     .main .content .posts-list .pagination {
       float: right;
       margin-top: 100px;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: bold;
+      font-family: "Quicksand", sans-serif;
       color: #3F3832; }
+      .main .content .posts-list .pagination .page-numbers .icon {
+        vertical-align: middle;
+        width: 3.5rem;
+        height: 3.5rem; }
+      .main .content .posts-list .pagination .page-numbers:after {
+        content: '-';
+        margin: 0 9px; }
+      .main .content .posts-list .pagination .page-numbers:last-child:after {
+        content: ''; }
 
 .category .main .content .category-head, .tag .main .content .category-head {
   float: left;

@@ -6,6 +6,7 @@
 			@include shift(1);
 			.post-container{
 				margin: 0;
+				display: inline-block;
 				.post-thumbnail{
 					.wp-post-image{
 						float: left;
@@ -72,9 +73,27 @@
 			.pagination{
 				float: right;
   			margin-top: 100px;
-  			font-size: 30px;
+  			font-size: 20px;
   			font-weight: bold;
+  			font-family: $font-text;
   			color: $dark-brown;
+  			
+  			.page-numbers{
+  				.icon{
+  					vertical-align: middle;
+  					width: 3.5rem;
+  					height: 3.5rem;
+  				}
+					&:after{
+  					content: '-';
+  					margin: 0 9px;
+  				}
+  				&:last-child{
+  					&:after{
+  						content: '';
+  					}
+  				}
+  			}
 			}
 		}
 	}
