@@ -396,18 +396,12 @@ a {
         transform: translateX(-60%); }
 
 .category .main .content .category-head, .tag .main .content .category-head {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 82.94039%;
-  margin-left: 8.5298%;
   font-family: "Amatic SC", cursive;
   font-size: 60px;
   margin-bottom: 0;
   margin-top: 60px;
-  text-transform: uppercase; }
-  .category .main .content .category-head:last-child, .tag .main .content .category-head:last-child {
-    margin-right: 0; }
+  text-transform: uppercase;
+  margin: 0 4% 10px; }
   .category .main .content .category-head .cat, .tag .main .content .category-head .cat {
     color: #4FA2C0; }
   .category .main .content .category-head .category-title, .tag .main .content .category-head .category-title {
