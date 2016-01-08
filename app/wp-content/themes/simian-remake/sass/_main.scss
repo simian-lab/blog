@@ -79,23 +79,43 @@
   			color: $dark-brown;
   			
   			.page-numbers{
+					position: relative;
+  				display: inline-block;
+  				.number-label{
+  					display: inline-block;
+  				}
+  				.prev,.next {
+    				margin: 0 1rem;  
+  				}
+  				&:before {
+    				content: ' - ';
+    				margin: 0 1rem;
+  				}
+  				&:first-child, &.prev + .page-numbers, &.next{
+						&:before {
+      				display: none;
+    				}
+  				}
+  				
+  				.icon-circle{
+  					display: none;
+  				}
   				.icon{
   					vertical-align: middle;
   					width: 3.5rem;
   					height: 3.5rem;
   				}
-					&:after{
-  					content: '-';
-  					margin: 0 9px;
-  				}
-  				&:last-child{
-  					&:after{
-  						content: '';
-  					}
-  				}
   			}
   			.current{
-  				
+  				.icon-circle{
+  					color: $yellow;
+  					position: absolute;
+  					top: -50%;
+  					display: block;
+				    z-index: -1;
+				    left: 100%;
+				    transform: translateX(-60%);
+  				}
   			}
 			}
 		}

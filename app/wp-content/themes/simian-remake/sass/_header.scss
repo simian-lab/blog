@@ -81,6 +81,10 @@
 			}
 		}
 		.mobile-top{
+			display: none;
+			@include media($ipad-portrait){
+				display: block;
+			}
 			.menu-toggle{
 				display: inline-block;
 			}
