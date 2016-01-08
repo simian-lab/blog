@@ -52,6 +52,7 @@ query_posts( $args ); ?>
 							<p class="year"><?php echo __(' de ','simian_theme') . get_the_date('Y'); ?></p>
 						</div>
 						<div class="author">
+							<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>	
 							<?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?>
 						</div>
 						<div class="comments">
