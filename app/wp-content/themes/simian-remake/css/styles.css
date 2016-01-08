@@ -408,14 +408,17 @@ a {
     color: #3F3832; }
 
 .single-post .detail .hero {
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: black;
   font-family: "Quicksand", sans-serif;
   color: #5D5752;
   min-height: 80vh;
-  margin-top: -245px;
+  margin-top: -15%;
   position: relative;
   z-index: -1; }
+  .single-post .detail .hero .wp-post-image {
+    width: 100vw;
+    height: 80vh;
+    opacity: 0.8; }
   .single-post .detail .hero .title {
     font-family: "Amatic SC", cursive;
     color: #DED96B;
@@ -469,6 +472,10 @@ a {
     height: 2rem; }
   .single-post .detail .content .date .month {
     text-transform: capitalize; }
+  .single-post .detail .content .author .avatar {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem; }
   .single-post .detail .content .social-share {
     float: left;
     display: block;

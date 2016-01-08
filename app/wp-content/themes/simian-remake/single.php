@@ -15,7 +15,8 @@ $url = $thumb['0'];
 ?>
 <?php while(have_posts()): the_post(); ?>
 	<article class="detail">
-		<section class="hero" style="background-image: url(<?php echo $url; ?>);">
+		<section class="hero">
+			<?php the_post_thumbnail('large'); ?>
 			<h1 class="title">
 				<?php the_title();?>
 			</h1>			
@@ -23,7 +24,7 @@ $url = $thumb['0'];
 		<section class="content">
 			<div class="post-content">
 				<div class="author">
-					<img class="icon" src="<?php echo get_template_directory_uri(); ?>/images/authors/<?php the_author_meta('nickname'); ?>.svg" alt="<?php the_author_meta('nickname'); ?>">							
+					<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>
 					<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
 				</div>
 				<div class="date">

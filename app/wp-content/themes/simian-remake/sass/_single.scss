@@ -1,14 +1,18 @@
 .single-post{
 	.detail{
 		.hero{
-			background-repeat: no-repeat;
-  		background-size: cover;
+			background-color: black;
 			font-family: $font-text;
 			color: $grey;
 			min-height: 80vh;
-			margin-top: -245px;
+			margin-top: -15%;
 			position: relative;
     	z-index: -1;
+    	.wp-post-image{
+    		width: 100vw;
+    		height: 80vh;
+    		opacity: 0.8;
+    	}
 			.title{
 				font-family: $font-title;
 				color: $yellow;
@@ -29,8 +33,7 @@
 				@include background-image(linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%));
 			}		
 		}
-		.content{
-			
+		.content{			
 			display: block;
 			color: $grey;
 			font-family: $font-text;
@@ -58,6 +61,13 @@
 			.date{
 				.month{
 					text-transform: capitalize;
+				}
+			}
+			.author{
+				.avatar{
+					display: inline-block;
+    			width: 2rem;
+    			height: 2rem;
 				}
 			}
 			.social-share{
