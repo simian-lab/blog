@@ -240,26 +240,40 @@
 			</a>
 		</div>
 		<div class="top-header">
-			<div class="menu-toggle">
-				<a href="" class="mobile-menu">
-					<svg class="icon icon-left-arrow"><use xlink:href="#icon-left-arrow"></use></svg><span class="mls"></span>
-				</a>
-			</div>
+			<div class="mobile-top">
+				<div class="menu-toggle">
+					<a href="" class="mobile-menu">
+						<svg class="icon icon-left-arrow"><use xlink:href="#icon-left-arrow"></use></svg><span class="mls"></span>
+					</a>
+				</div>
+				<div class="languages">
+					<?php
+					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];					
+					if (class_exists('SitePress')) {
+						$match = preg_match('/^\/es\//', $_SERVER["REQUEST_URI"]);
+						//Site in spanish
+						if ($match > 0){
+							$request_en = str_replace('/es/', '/', $_SERVER["REQUEST_URI"]);
+							$url_english = $_SERVER["HTTP_HOST"] . $request_en;
+							$url_spanish = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+						}//site in english
+						else{
+							$request_es = '/es'.$_SERVER["REQUEST_URI"];
+							$url_spanish = $_SERVER["HTTP_HOST"] . $request_es;
+							$url_english = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+						}
+					}?>
+					<a href="<?php echo 'http://'.$url_spanish; ?>">						
+							<svg class="icon icon-es<?php if( ICL_LANGUAGE_CODE == 'en'){ echo ' white-icon';} ?>"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
+					</a>
+					<a href="<?php echo 'http://'.$url_english; ?>">
+						<svg class="icon icon-en<?php if( ICL_LANGUAGE_CODE == 'es'){ echo ' white-icon';} ?>"><use xlink:href="#icon-en"></use></svg><span class="mls"></span>
+					</a>
+				</div>
+			</div>			
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
 				<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Simian Logo">
 			</a>
-			<nav class="menu">
-				<?php
-        $args = array(
-          'theme_location' => 'header',
-          'container' => false,
-          'menu_class' => '',
-          'echo' => true,
-          'fallback_cb' => 'wp_page_menu',
-          );
-
-          wp_nav_menu( $args ); ?>
-			</nav>
 			<div class="tools">
 				<div class="social">
 					<a href="https://www.facebook.com/simianlab" target="_blank" class="facebook">
@@ -321,6 +335,18 @@
 					</a>
 				</div>
 			</div>
+			<nav class="menu">
+				<?php
+        $args = array(
+          'theme_location' => 'header',
+          'container' => false,
+          'menu_class' => '',
+          'echo' => true,
+          'fallback_cb' => 'wp_page_menu',
+          );
+
+          wp_nav_menu( $args ); ?>
+			</nav>			
 		</div>
 		<div class="monkey">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">

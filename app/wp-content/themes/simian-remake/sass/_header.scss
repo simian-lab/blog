@@ -72,9 +72,32 @@
 				font-size: 20px;
 				display: inline-block;
     		padding-right: 3rem;
+    		text-transform: uppercase;
     		@include media($ipad-portrait){
     			display: block;
+    			color: white;
+					font-weight: bold;
     		}
+			}
+		}
+		.mobile-top{
+			.menu-toggle{
+				display: inline-block;
+			}
+			.languages{
+				.icon{
+					width: 3rem;
+					height: 3rem;
+				}
+				.white-icon{
+					color: white;
+				}
+				#language{
+					display: inline-block;
+				}
+				@include media($ipad-portrait){
+					float: right
+				}
 			}
 		}
 		.tools{
@@ -87,7 +110,7 @@
 			overflow: hidden;
 			@include media($ipad-portrait){
 				position: relative;
-				width: 380px;
+				width: 355px;
 			}
 			.icon{
 				display: inline-block;
@@ -145,7 +168,10 @@
 				#language{
 					display: inline-block;
 				}
-			}
+				@include media($ipad-portrait){
+					display: none;
+				}
+			}			
 		}
 	}
 	.monkey{

@@ -84,10 +84,25 @@ a {
       color: #DED96B;
       font-size: 20px;
       display: inline-block;
-      padding-right: 3rem; }
+      padding-right: 3rem;
+      text-transform: uppercase; }
       @media screen and (max-width: 48em) {
         .header .top-header .menu .menu-item {
-          display: block; } }
+          display: block;
+          color: white;
+          font-weight: bold; } }
+  .header .top-header .mobile-top .menu-toggle {
+    display: inline-block; }
+  .header .top-header .mobile-top .languages .icon {
+    width: 3rem;
+    height: 3rem; }
+  .header .top-header .mobile-top .languages .white-icon {
+    color: white; }
+  .header .top-header .mobile-top .languages #language {
+    display: inline-block; }
+  @media screen and (max-width: 48em) {
+    .header .top-header .mobile-top .languages {
+      float: right; } }
   .header .top-header .tools {
     background: url("../images/background-tools.svg");
     background-repeat: no-repeat;
@@ -99,7 +114,7 @@ a {
     @media screen and (max-width: 48em) {
       .header .top-header .tools {
         position: relative;
-        width: 380px; } }
+        width: 355px; } }
     .header .top-header .tools .icon {
       display: inline-block;
       width: 2rem;
@@ -145,6 +160,9 @@ a {
       color: white; }
     .header .top-header .tools .languages #language {
       display: inline-block; }
+    @media screen and (max-width: 48em) {
+      .header .top-header .tools .languages {
+        display: none; } }
   .header .monkey {
     position: absolute;
     bottom: 0;
