@@ -100,6 +100,8 @@ a {
     color: white; }
   .header .top-header .mobile-top .languages #language {
     display: inline-block; }
+  .header .top-header .mobile-top .languages .icon-es {
+    margin-right: -14px; }
   @media screen and (max-width: 48em) {
     .header .top-header .mobile-top .languages {
       float: right; } }

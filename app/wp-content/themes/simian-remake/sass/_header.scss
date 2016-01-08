@@ -95,6 +95,9 @@
 				#language{
 					display: inline-block;
 				}
+				.icon-es{
+					margin-right: -14px;
+				}
 				@include media($ipad-portrait){
 					float: right
 				}
