@@ -24,14 +24,14 @@ $args = array(
   'posts_per_page' => 4,
   'paged' => $paged
 );
-$the_query = new WP_Query( $args );
+query_posts( $args );
 ?>
 <div class="main">
 	<div class="content">
-		<?php if ( $the_query->have_posts() ): ?>
+		<?php if ( have_posts() ): ?>
 			<div class="posts-list">
-				<?php while ( $the_query->have_posts() ):
-				$the_query->the_post(); ?>
+				<?php while ( have_posts() ):
+				the_post(); ?>
 				<div class="post-container">
 					<a href="<?php the_permalink(); ?>">
 						<div class="post-thumbnail">

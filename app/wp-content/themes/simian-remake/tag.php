@@ -22,17 +22,17 @@ $args = array(
   'paged' => $paged,
   'tag' => $tag
 );
-$the_query = new WP_Query( $args ); ?>
+query_posts( $args ); ?>
 <div class="main">
 	<div class="content">
 		<h2 class="category-head">
 			<span class="cat"><?php _e('Etiqueta> ','simian_theme'); ?></span>
 			<span class="category-title"><?php single_tag_title(); ?></span>
 		</h2>
-		<?php if ( $the_query->have_posts() ): ?>
+		<?php if ( have_posts() ): ?>
 			<div class="posts-list">
-				<?php while ( $the_query->have_posts() ):
-				$the_query->the_post(); ?>
+				<?php while ( have_posts() ):
+				the_post(); ?>
 				<div class="post-container">
 					<a href="<?php the_permalink(); ?>">
 						<div class="post-thumbnail">
@@ -69,10 +69,17 @@ $the_query = new WP_Query( $args ); ?>
 				<?php endwhile; ?>
 				<div class="pagination">
 					<?php 
-					$args = array(
+					$pagination_args = array(
 						'show_all' => True,
-					);
-					echo paginate_links($args); ?>
+        		'mid_size' => 2,
+        		'next_text' => '<svg class="icon icon-right-arrow-circular"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>',
+        		'prev_text' => '<svg class="icon icon-left-arrow-circular"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>',
+        		'type' => 'plain',
+        		'before_page_number' => '<div class="number-label">',
+        		'after_page_number' => '<svg class="icon icon-circle"><use xlink:href="#icon-circle"></use></svg><span class="mls"></span></div>',
+      		);
+      		$links = paginate_links( $pagination_args );
+					echo ($links); ?>
 				</div>
 			</div>
 		<?php endif; ?>
