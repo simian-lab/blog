@@ -49,7 +49,10 @@ $the_query = new WP_Query( $args );
 				<div class="post-container">
 					<a href="<?php the_permalink(); ?>">
 						<div class="post-thumbnail">
-							<?php the_post_thumbnail('post_list_image'); ?>
+							<?php if ( has_post_thumbnail() ): ?>
+								<img class="image-margin" src="<?php echo get_template_directory_uri(); ?>/images/margen.png" alt="">
+								<?php the_post_thumbnail('post_list_image');
+							endif; ?>
 						</div>						
 						<h2 class="post-title">
 							<?php the_title(); ?>

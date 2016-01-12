@@ -541,6 +541,11 @@ a {
           width: 100%; } }
     .single-post .detail .content .related .related-container .title, .single-post .detail .content .related .related-container .post-thumbnail {
       display: inline; }
+    .single-post .detail .content .related .related-container .post-thumbnail .image-margin {
+      position: absolute;
+      width: 133px;
+      height: 125px;
+      margin: -2px -2px 0; }
     .single-post .detail .content .related .related-container .title {
       font-family: "Quicksand", sans-serif;
       color: #3F3832;
