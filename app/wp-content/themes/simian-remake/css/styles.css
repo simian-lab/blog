@@ -539,7 +539,7 @@ a {
           @media screen and (max-width: 60em) {
             .single-post .detail .content .related .cycle-links .right-link .label {
               vertical-align: super; } }
-        @media screen and (max-width: 60em) {
+        @media screen and (max-width: 48em) {
           .single-post .detail .content .related .cycle-links .right-link {
             float: none; } }
     .single-post .detail .content .related .related-container .related-post {

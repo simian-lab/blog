@@ -121,7 +121,7 @@
 								vertical-align: super;
 							}
 						}
-						@include media($tablet){
+						@include media($ipad-portrait){
 							float: none;
 						}
 					}
