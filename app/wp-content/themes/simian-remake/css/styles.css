@@ -509,7 +509,7 @@ a {
     .single-post .detail .content .related .related-header {
       color: #3F3832; }
     .single-post .detail .content .related .cycle-links {
-      margin: 0;
+      margin: 30px 0 0;
       text-transform: uppercase; }
       .single-post .detail .content .related .cycle-links .icon {
         width: 4rem;
@@ -527,18 +527,28 @@ a {
         .single-post .detail .content .related .cycle-links .left-link .label {
           display: inline-block;
           vertical-align: bottom; }
+          @media screen and (max-width: 60em) {
+            .single-post .detail .content .related .cycle-links .left-link .label {
+              vertical-align: super; } }
       .single-post .detail .content .related .cycle-links .right-link {
         display: inline-block;
         float: right; }
         .single-post .detail .content .related .cycle-links .right-link .label {
           display: inline-block;
           vertical-align: bottom; }
+          @media screen and (max-width: 60em) {
+            .single-post .detail .content .related .cycle-links .right-link .label {
+              vertical-align: super; } }
+        @media screen and (max-width: 60em) {
+          .single-post .detail .content .related .cycle-links .right-link {
+            float: none; } }
     .single-post .detail .content .related .related-container .related-post {
       width: 32%;
       display: inline-block; }
       @media screen and (max-width: 60em) {
         .single-post .detail .content .related .related-container .related-post {
-          width: 100%; } }
+          width: 100%;
+          margin-bottom: 25px; } }
     .single-post .detail .content .related .related-container .title, .single-post .detail .content .related .related-container .post-thumbnail {
       display: inline; }
     .single-post .detail .content .related .related-container .post-thumbnail {
@@ -549,14 +559,20 @@ a {
         width: 156px;
         height: 146px;
         margin: -12px -12px 0; }
+      @media screen and (max-width: 60em) {
+        .single-post .detail .content .related .related-container .post-thumbnail {
+          display: block;
+          float: none; } }
     .single-post .detail .content .related .related-container .title {
       font-family: "Quicksand", sans-serif;
       color: #3F3832;
-      font-size: 22px;
+      font-size: 20px;
       text-transform: uppercase;
-      font-weight: normal;
       position: relative;
       top: 30px; }
+      @media screen and (max-width: 60em) {
+        .single-post .detail .content .related .related-container .title {
+          top: 0; } }
 
 .search .main .content .search-bar .search-form {
   display: inline-block;
