@@ -33,13 +33,13 @@ add_action( 'after_setup_theme', 'simian_theme_setup' );
 if ( ! function_exists( 'simian_theme_enqueue_scripts' ) ) :
   function simian_theme_enqueue_scripts() {
      //Javascripts
-    wp_register_script('simian-menu-toggle-js', get_stylesheet_directory_uri().'/js/menu-toggle.js', array('jquery'),'1.1', true);
+    wp_register_script('simian-menu-toggle-js', get_stylesheet_directory_uri().'/js/menu-toggle.js', array('jquery'),'1.2', true);
     wp_enqueue_script('simian-menu-toggle-js'); 
 
-    wp_register_script('simian-search-submit-js', get_stylesheet_directory_uri().'/js/search-submit.js', array('jquery'),'1.1', true);
+    wp_register_script('simian-search-submit-js', get_stylesheet_directory_uri().'/js/search-submit.js', array('jquery'),'1.2', true);
     wp_enqueue_script('simian-search-submit-js'); 
 
-    wp_register_script('simian-language-change-js', get_stylesheet_directory_uri().'/js/language-change.js', array('jquery'),'1.1', true);
+    wp_register_script('simian-language-change-js', get_stylesheet_directory_uri().'/js/language-change.js', array('jquery'),'1.2', true);
     wp_enqueue_script('simian-language-change-js');
     
     //Styles :D
