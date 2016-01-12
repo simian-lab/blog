@@ -313,14 +313,21 @@ a {
     .main .content .posts-list .post-container {
       margin: 0;
       display: inline-block; }
-      .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
-        float: left;
-        margin-right: 50px;
-        max-width: 100%; }
-        @media screen and (max-width: 48em) {
-          .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
-            width: 100%;
-            height: 100%; } }
+      .main .content .posts-list .post-container .post-thumbnail {
+        position: relative; }
+        .main .content .posts-list .post-container .post-thumbnail .image-margin {
+          position: absolute;
+          margin: -13px 0 0 -11px;
+          width: 518px;
+          height: 596px; }
+        .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
+          float: left;
+          margin-right: 50px;
+          max-width: 100%; }
+          @media screen and (max-width: 48em) {
+            .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
+              width: 100%;
+              height: 100%; } }
       .main .content .posts-list .post-container .post-title {
         color: #4FA2C0;
         font-family: "Amatic SC", cursive;

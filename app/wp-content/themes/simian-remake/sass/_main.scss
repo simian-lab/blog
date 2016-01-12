@@ -8,6 +8,13 @@
 				margin: 0;
 				display: inline-block;
 				.post-thumbnail{
+					position: relative;
+					.image-margin{
+						position: absolute;
+					  margin: -13px 0 0 -11px;
+					  width: 518px;
+					  height: 596px;
+					}
 					.wp-post-image{
 						float: left;
 						margin-right: 50px;
