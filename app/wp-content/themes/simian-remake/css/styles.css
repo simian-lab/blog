@@ -320,6 +320,11 @@ a {
           margin: -13px 0 0 -11px;
           width: 518px;
           height: 596px; }
+          @media screen and (max-width: 48em) {
+            .main .content .posts-list .post-container .post-thumbnail .image-margin {
+              width: 104%;
+              margin: -1% 0 0 -2%;
+              height: initial; } }
         .main .content .posts-list .post-container .post-thumbnail .wp-post-image {
           float: left;
           margin-right: 50px;

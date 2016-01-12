@@ -14,6 +14,11 @@
 					  margin: -13px 0 0 -11px;
 					  width: 518px;
 					  height: 596px;
+					  @include media($ipad-portrait){
+					  	width: 104%;
+    					margin: -1% 0 0 -2%;
+    					height: initial;
+					  }
 					}
 					.wp-post-image{
 						float: left;
