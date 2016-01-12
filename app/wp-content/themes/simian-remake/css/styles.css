@@ -534,7 +534,7 @@ a {
           display: inline-block;
           vertical-align: bottom; }
     .single-post .detail .content .related .related-container .related-post {
-      width: 33%;
+      width: 32%;
       display: inline-block; }
       @media screen and (max-width: 60em) {
         .single-post .detail .content .related .related-container .related-post {
@@ -542,7 +542,8 @@ a {
     .single-post .detail .content .related .related-container .title, .single-post .detail .content .related .related-container .post-thumbnail {
       display: inline; }
     .single-post .detail .content .related .related-container .post-thumbnail {
-      margin: 13px; }
+      margin: 13px;
+      float: left; }
       .single-post .detail .content .related .related-container .post-thumbnail .image-margin {
         position: absolute;
         width: 156px;
@@ -551,7 +552,11 @@ a {
     .single-post .detail .content .related .related-container .title {
       font-family: "Quicksand", sans-serif;
       color: #3F3832;
-      font-size: 30px; }
+      font-size: 22px;
+      text-transform: uppercase;
+      font-weight: normal;
+      position: relative;
+      top: 30px; }
 
 .search .main .content .search-bar .search-form {
   display: inline-block;
