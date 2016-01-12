@@ -10,7 +10,7 @@
 			@include span-columns(2);
 			@include shift(2);
 			text-align: center;
-			@include media($mobile){
+			@include media($ipad-portrait){
 				@include span-columns(8);
 			}
 			&:first-child{
@@ -34,7 +34,7 @@
 			}			
 		}
 		.links, .info{
-			@include media($mobile){
+			@include media($ipad-portrait){
 				display: none;
 			}
 		}
@@ -57,16 +57,19 @@
 		}
 		.simian-bottom{
 			@include span-columns(2);
-			@include media($mobile){
-				@include span-columns(4);
-				@include shift(4);
-			}
+			@include media($ipad-portrait){
+				@include span-columns(12);
+				text-align: center;
+			}			
 			.icon{
 				width: 95px;
     		position: absolute;
     		height: 77px;
     		right: 0;
     		margin: 0 15px;
+    		@include media($ipad-portrait){
+					position: relative;
+				}
 			}
 		}
 	}
