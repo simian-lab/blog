@@ -635,10 +635,17 @@ a {
     background: transparent;
     position: absolute;
     margin: 40px; }
+    @media screen and (max-width: 60em) {
+      .error404 .header {
+        margin: 0; } }
     .error404 .header .simian-home .icon-simian {
       width: 5rem;
       height: 5rem;
       color: #3F3832; }
+      @media screen and (max-width: 36.25em) {
+        .error404 .header .simian-home .icon-simian {
+          width: 3rem;
+          height: 3rem; } }
     .error404 .header .simian-home .home-label {
       font-family: "Quicksand", sans-serif;
       color: #3F3832;
@@ -646,6 +653,14 @@ a {
       font-weight: bold;
       position: relative;
       left: -20px; }
+      @media screen and (max-width: 36.25em) {
+        .error404 .header .simian-home .home-label {
+          font-size: 20px;
+          left: 0; } }
+    @media screen and (max-width: 48em) {
+      .error404 .header {
+        position: relative;
+        height: 50px; } }
   .error404 .main-error {
     font-family: "Amatic SC", cursive;
     margin-top: 40px; }
@@ -655,17 +670,30 @@ a {
       text-align: center;
       font-size: 65px;
       margin: 0; }
+      @media screen and (max-width: 36.25em) {
+        .error404 .main-error .error-title {
+          font-size: 55px; } }
     .error404 .main-error .not-found {
       color: #3F3832;
       text-transform: uppercase;
       text-align: center;
       font-size: 130px;
       margin: 0; }
+      @media screen and (max-width: 60em) {
+        .error404 .main-error .not-found {
+          font-size: 90px; } }
+      @media screen and (max-width: 36.25em) {
+        .error404 .main-error .not-found {
+          font-size: 40px; } }
     .error404 .main-error .image404 {
       width: 100%;
       margin-bottom: -150px;
       z-index: -1;
       position: relative; }
+      @media screen and (max-width: 36.25em) {
+        .error404 .main-error .image404 {
+          margin-bottom: -200px;
+          height: 258px; } }
 
 .icon {
   display: inline-block;
