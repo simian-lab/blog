@@ -31,7 +31,10 @@ $url = $thumb['0'];
 					<svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg><span class="mls"></span>
 					<p class="month"><?php echo get_the_date('j M'); ?></p>
 					<p class="year"><?php echo __(' de ','simian_theme') . get_the_date('Y'); ?></p>
-				</div>		
+				</div>
+				<h2 class="title">
+					<?php the_title();?>
+				</h2>			
 				<?php the_content(); ?>
 			</div>
 			<div class="post-footer">
