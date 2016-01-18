@@ -40,10 +40,16 @@
 			font-size: 20px;
 			@include outer-container;
 			.post-content{
-				@include span-columns(10);
-				@include shift(1);
+				@include span-columns(8);
+				@include shift(2);
+				@include media($tablet){
+					@include span-columns(10);
+					@include shift(1);
+				}
 				.title{
 					color: $light-red;
+					text-transform: uppercase;
+    			margin-top: 40px;
 				}
 				img{
 					max-width: 100%;
@@ -75,12 +81,17 @@
 						font-family: $font-text;
 					}
 				}
+				//Wp Styles
+				.alignright{
+					float: right;
+				}
+				.alignleft{
+					float: left;
+				}
 			}
 			.author, .date{
-				display: block;
+				display: inline;
 				width: 50%;
-				float: left;
-				text-align: center;
 				p{
 					display: inline;
 					vertical-align: super;
@@ -92,6 +103,7 @@
 				height: 2rem;
 			}
 			.date{
+				float: right;
 				.month{
 					text-transform: capitalize;
 				}

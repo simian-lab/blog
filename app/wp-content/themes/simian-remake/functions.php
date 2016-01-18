@@ -41,9 +41,13 @@ if ( ! function_exists( 'simian_theme_enqueue_scripts' ) ) :
 
     wp_register_script('simian-language-change-js', get_stylesheet_directory_uri().'/js/language-change.js', array('jquery'),'1.2', true);
     wp_enqueue_script('simian-language-change-js');
+
+    wp_register_script('simian-share-popups-js', get_stylesheet_directory_uri().'/js/popups.js', array('jquery'),'1.1', true);
+    wp_enqueue_script('simian-share-popups-js'); 
+
     
     //Styles :D
-    wp_enqueue_style('simian-style', get_stylesheet_directory_uri() . '/css/styles.css', '', '2.1.2');
+    wp_enqueue_style('simian-style', get_stylesheet_directory_uri() . '/css/styles.css', '', '2.1.3');
    
   }
 endif;

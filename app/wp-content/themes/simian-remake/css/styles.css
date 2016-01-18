@@ -470,12 +470,23 @@ a {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 82.94039%;
-    margin-left: 8.5298%; }
+    width: 65.88078%;
+    margin-left: 17.05961%; }
     .single-post .detail .content .post-content:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 60em) {
+      .single-post .detail .content .post-content {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 82.94039%;
+        margin-left: 8.5298%; }
+        .single-post .detail .content .post-content:last-child {
+          margin-right: 0; } }
     .single-post .detail .content .post-content .title {
-      color: #FF5F5C; }
+      color: #FF5F5C;
+      text-transform: uppercase;
+      margin-top: 40px; }
     .single-post .detail .content .post-content img {
       max-width: 100%; }
     .single-post .detail .content .post-content blockquote p {
@@ -499,11 +510,13 @@ a {
       color: #3F3832;
       font-size: 60px;
       font-family: "Quicksand", sans-serif; }
+    .single-post .detail .content .post-content .alignright {
+      float: right; }
+    .single-post .detail .content .post-content .alignleft {
+      float: left; }
   .single-post .detail .content .author, .single-post .detail .content .date {
-    display: block;
-    width: 50%;
-    float: left;
-    text-align: center; }
+    display: inline;
+    width: 50%; }
     .single-post .detail .content .author p, .single-post .detail .content .date p {
       display: inline;
       vertical-align: super; }
@@ -511,8 +524,10 @@ a {
     display: inline-block;
     width: 2rem;
     height: 2rem; }
-  .single-post .detail .content .date .month {
-    text-transform: capitalize; }
+  .single-post .detail .content .date {
+    float: right; }
+    .single-post .detail .content .date .month {
+      text-transform: capitalize; }
   .single-post .detail .content .author .avatar {
     display: inline-block;
     width: 2rem;
