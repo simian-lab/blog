@@ -90,7 +90,7 @@
 				}
 				.gallery{
 					position: relative;
-					&:after{
+					&:before{
 						content: '';
 						background: url('../images/margen.svg');
 						background-repeat: no-repeat;
