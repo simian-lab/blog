@@ -517,10 +517,7 @@ a {
     .single-post .detail .content .post-content .gallery {
       position: relative; }
       .single-post .detail .content .post-content .gallery:before {
-        content: '';
-        background: url("../images/margen.png");
-        background-repeat: no-repeat;
-        background-size: cover;
+        content: '<img src="../images/margen.png">';
         border: 0;
         position: absolute;
         left: 0;

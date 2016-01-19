@@ -91,10 +91,7 @@
 				.gallery{
 					position: relative;
 					&:before{
-						content: '';
-						background: url('../images/margen.png');
-						background-repeat: no-repeat;
-  					background-size: cover;
+						content: '<img src="../images/margen.png">';
 						border: 0;
 				    position: absolute;
 				    left: 0;
