@@ -16,13 +16,14 @@
 			.title{
 				font-family: $font-title;
 				color: $yellow;
-				font-size: 110px;
+				font-size: 90px;
 				text-align: center;
 				position: absolute;
    		  top: 50%;
     		transform: translate(-50%, -50%);
         left: 50%;
         margin: 0;
+        width: 85%;
 			}
 			&:after{
 				content: '';
@@ -91,7 +92,6 @@
 				.gallery{
 					position: relative;
 					&:before{
-						content: '<img src="../images/margen.png">';
 						border: 0;
 				    position: absolute;
 				    left: 0;
@@ -136,10 +136,10 @@
 					height: 2.5rem;
 				}
 			}
-			.related{
-				margin: 0 80px;
+			.related{				
 				.related-header{
-					color: $dark-brown;
+					color: $dark-brown;					
+    			display: inline-block;
 				}
 				.cycle-links{
 					margin: 30px 0 0;

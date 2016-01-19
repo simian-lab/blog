@@ -73,7 +73,10 @@ $the_query = new WP_Query( $args );
 						</div>
 						<div class="comments">
 							<svg class="icon icon-balloon"><use xlink:href="#icon-balloon"></use></svg><span class="mls"></span>
-							<p><?php echo __('Comentarios', 'simian_theme') . '('.wp_count_comments()->total_comments . ')'; ?></p>
+							<p><?php 							
+							echo __('Comentarios', 'simian_theme') . '(';
+							comments_number('0', '1', '%');
+							echo ')'; ?></p>
 						</div>
 						<?php if ( has_tag() ): ?>
 						<div class="tags">
