@@ -514,6 +514,18 @@ a {
       float: right; }
     .single-post .detail .content .post-content .alignleft {
       float: left; }
+    .single-post .detail .content .post-content .gallery {
+      position: relative; }
+      .single-post .detail .content .post-content .gallery:after {
+        content: '';
+        background: url("../images/margen.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 0;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%; }
   .single-post .detail .content .author, .single-post .detail .content .date {
     display: inline;
     width: 50%; }
