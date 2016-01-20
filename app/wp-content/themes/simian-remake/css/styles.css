@@ -434,7 +434,7 @@ a {
   .single-post .detail .hero .wp-post-image {
     width: 100vw;
     height: 80vh;
-    opacity: 0.8; }
+    opacity: 0.65; }
   .single-post .detail .hero .title {
     font-family: "Amatic SC", cursive;
     color: #DED96B;
