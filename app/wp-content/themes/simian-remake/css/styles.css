@@ -209,7 +209,8 @@ a {
 .footer {
   background: url("../images/background-footer.svg");
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  margin-left: -5px; }
   .footer .content {
     max-width: 68rem;
     margin-left: auto;
