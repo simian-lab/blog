@@ -23,14 +23,14 @@ $url = $thumb['0'];
 		</section>
 		<section class="content">
 			<div class="post-content">
-				<div class="author">
-					<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>
-					<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
-				</div>
 				<div class="date">
 					<svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg><span class="mls"></span>
 					<p class="month"><?php echo get_the_date('j M'); ?></p>
 					<p class="year"><?php echo __(' de ','simian_theme') . get_the_date('Y'); ?></p>
+				</div>
+				<div class="author">
+					<?php echo get_avatar( get_the_author_meta( 'ID' )); ?>
+					<p><?php the_author_meta('first_name'); echo ' '; the_author_meta('last_name') ; ?></p>
 				</div>
 				<h2 class="title">
 					<?php the_title();?>

@@ -103,6 +103,9 @@
 			.author, .date{
 				display: inline;
 				width: 50%;
+				@include media($mobile){
+					width: 100%;
+				}
 				p{
 					display: inline;
 					vertical-align: super;
@@ -136,7 +139,10 @@
 					height: 2.5rem;
 				}
 			}
-			.related{				
+			.related{
+				@include media($tablet){
+					margin: 0 20px;
+				}				
 				.related-header{
 					color: $dark-brown;					
     			display: inline-block;

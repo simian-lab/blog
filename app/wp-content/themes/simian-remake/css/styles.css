@@ -37,6 +37,9 @@ a {
     .header .menu-toggle .icon {
       width: 3rem;
       height: 3rem; }
+    .header .menu-toggle .icon-menu {
+      width: 4rem;
+      height: 4rem; }
   @media screen and (max-width: 48em) {
     .header .active-menu {
       -webkit-transform: translateX(100%);
@@ -370,6 +373,10 @@ a {
           display: inline-block;
           width: 2rem;
           height: 2rem; }
+        .main .content .posts-list .post-container .post-foot .icon-balloon {
+          width: 2.5rem;
+          height: 2.5rem;
+          margin-bottom: -5px; }
         .main .content .posts-list .post-container .post-foot .author .avatar {
           display: inline-block;
           width: 2rem;
@@ -528,6 +535,9 @@ a {
   .single-post .detail .content .author, .single-post .detail .content .date {
     display: inline;
     width: 50%; }
+    @media screen and (max-width: 36.25em) {
+      .single-post .detail .content .author, .single-post .detail .content .date {
+        width: 100%; } }
     .single-post .detail .content .author p, .single-post .detail .content .date p {
       display: inline;
       vertical-align: super; }
@@ -556,6 +566,9 @@ a {
       display: inline-block;
       width: 2.5rem;
       height: 2.5rem; }
+  @media screen and (max-width: 60em) {
+    .single-post .detail .content .related {
+      margin: 0 20px; } }
   .single-post .detail .content .related .related-header {
     color: #3F3832;
     display: inline-block; }
