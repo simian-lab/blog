@@ -68,7 +68,8 @@
     	position: relative;
     	@include media($mobile){
     		margin-bottom: -200px;
-    		height: 258px;
+    		height: 40vh;
+    		object-fit: cover;
     	}
 		}
 	}
