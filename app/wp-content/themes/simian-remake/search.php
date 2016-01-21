@@ -26,7 +26,7 @@ $the_query = new WP_Query( $args );
 <div class="main">
 	<div class="content">	
 	<div class="search-bar">		
-		<form class="search-form" id="form-search" action="<?php echo get_search_link(); ?>">
+		<form class="search-form" id="form-search" action="<?php echo home_url(); ?>">
 			<input class="input" name="s" type="text">
 		</form>
 		<a href="" class="search-submit" id="search-content">
@@ -36,10 +36,10 @@ $the_query = new WP_Query( $args );
 	<div class="search-head">
 		<span class="results-span"><?php _e('Resultados para la palabra > ','simian_theme'); ?></span>
 		<span class="query-span"><?php echo $search_query; ?></span>
-		<?php if( $the_query->post_count == 1) : ?>
-			<span class="num-span"><?php echo __('Se ha encontrado ', 'simian_theme') . '(' . $the_query->post_count . ')' . __(' artículo relacionado:', 'simian_theme'); ?></span>
+		<?php if( $the_query->found_posts == 1) : ?>
+			<span class="num-span"><?php echo __('Se ha encontrado ', 'simian_theme') . '(' . $the_query->found_posts . ')' . __(' artículo relacionado:', 'simian_theme'); ?></span>
 		<?php else: ?>
-			<span class="num-span"><?php echo __('Se han encontrado ', 'simian_theme') . '(' . $the_query->post_count . ')' . __(' artículos relacionados:', 'simian_theme'); ?></span>
+			<span class="num-span"><?php echo __('Se han encontrado ', 'simian_theme') . '(' . $the_query->found_posts . ')' . __(' artículos relacionados:', 'simian_theme'); ?></span>
 		<?php endif; ?>
 	</div>
 		<?php if ( $the_query->have_posts() ): ?>
@@ -91,11 +91,16 @@ $the_query = new WP_Query( $args );
 				<div class="pagination">
 					<?php
 					$pagination_args = array(
-						'show_all' => True,
-        		'mid_size' => 2,
+						'format' => 'page/%#%/?s='.$search_query,
+						'show_all' => False,
+        		'mid_size' => 1,
+        		'end_size' => 1,
+        		'total' => $the_query->max_num_pages,
         		'next_text' => '<svg class="icon icon-right-arrow-circular"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>',
         		'prev_text' => '<svg class="icon icon-left-arrow-circular"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>',
-        		'type' => 'plain'
+        		'type' => 'plain',
+        		'before_page_number' => '<div class="number-label">',
+        		'after_page_number' => '<svg class="icon icon-circle"><use xlink:href="#icon-circle"></use></svg><span class="mls"></span></div>',
       		);
       		$links = paginate_links( $pagination_args );
 					echo ($links); ?>

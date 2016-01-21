@@ -327,7 +327,7 @@
 					<a href="" class="search-submit" id="search-header">
 						<svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
 					</a>
-					<form class="search-form" id="form-header" action="<?php echo get_search_link(); ?>">
+					<form class="search-form" id="form-header" action="<?php echo home_url(); ?>">
 						<input class="input" name="s" type="text">
 					</form>
 					<a href="" class="search-toggle" href="">
