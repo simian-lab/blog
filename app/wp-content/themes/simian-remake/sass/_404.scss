@@ -66,6 +66,9 @@
     	margin-bottom: -150px;
     	z-index: -1;
     	position: relative;
+    	@include media($tablet){
+    		margin-bottom: -170px;
+    	}
     	@include media($mobile){
     		margin-bottom: -200px;
     		height: 40vh;

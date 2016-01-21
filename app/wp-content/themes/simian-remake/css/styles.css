@@ -736,6 +736,9 @@ a {
       margin-bottom: -150px;
       z-index: -1;
       position: relative; }
+      @media screen and (max-width: 60em) {
+        .error404 .main-error .image404 {
+          margin-bottom: -170px; } }
       @media screen and (max-width: 36.25em) {
         .error404 .main-error .image404 {
           margin-bottom: -200px;
