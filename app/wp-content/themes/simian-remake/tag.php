@@ -22,7 +22,8 @@ $args = array(
   'paged' => $paged,
   'tag' => $tag
 );
-query_posts( $args ); ?>
+query_posts( $args );
+global $wp_query; ?>
 <div class="main">
 	<div class="content">
 		<h2 class="category-head">
@@ -60,7 +61,10 @@ query_posts( $args ); ?>
 						</div>
 						<div class="comments">
 							<svg class="icon icon-balloon"><use xlink:href="#icon-balloon"></use></svg><span class="mls"></span>
-							<p><?php echo __('Comentarios', 'simian_theme') . '('.wp_count_comments()->total_comments . ')'; ?></p>
+							<p><?php 							
+							echo __('Comentarios', 'simian_theme') . '(';
+							comments_number('0', '1', '%');
+							echo ')'; ?></p>
 						</div>
 						<?php if ( has_tag() ): ?>
 						<div class="tags">
@@ -77,6 +81,7 @@ query_posts( $args ); ?>
 						'show_all' => False,
         		'mid_size' => 1,
         		'end_size' => 1,
+        		'total' => $wp_query->max_num_pages,
         		'next_text' => '<svg class="icon icon-right-arrow-circular"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>',
         		'prev_text' => '<svg class="icon icon-left-arrow-circular"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>',
         		'type' => 'plain',
