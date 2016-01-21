@@ -441,7 +441,8 @@ a {
   .single-post .detail .hero .wp-post-image {
     width: 100vw;
     height: 80vh;
-    opacity: 0.65; }
+    opacity: 0.65;
+    object-fit: cover; }
   .single-post .detail .hero .title {
     font-family: "Amatic SC", cursive;
     color: #DED96B;
@@ -523,11 +524,17 @@ a {
     .single-post .detail .content .post-content .alignleft {
       float: left; }
     .single-post .detail .content .post-content .gallery {
-      position: relative; }
+      position: relative;
+      padding: 25px; }
       .single-post .detail .content .post-content .gallery:before {
+        content: '';
+        background: url("../images/margen.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
         border: 0;
         position: absolute;
         left: 0;
+        top: 0;
         width: 100%;
         height: 100%; }
   .single-post .detail .content .author, .single-post .detail .content .date {
@@ -635,6 +642,9 @@ a {
     @media screen and (max-width: 60em) {
       .single-post .detail .content .related .related-container .title {
         top: 0; } }
+
+.search .main .content .search-bar, .search .main .content .search-head {
+  margin: 0 4% 10px; }
 
 .search .main .content .search-bar .search-form {
   display: inline-block;

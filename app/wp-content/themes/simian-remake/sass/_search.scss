@@ -1,6 +1,9 @@
 .search{
 	.main{
 		.content{
+			.search-bar, .search-head{
+			  margin: 0 4% 10px;
+			}
 			.search-bar{
 				.search-form{
 					display: inline-block;
