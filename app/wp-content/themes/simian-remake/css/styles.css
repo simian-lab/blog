@@ -131,6 +131,8 @@ a {
       display: inline-block;
       width: 2rem;
       height: 2rem; }
+    .header .top-header .tools .icon-mail {
+      color: #4FA2C0; }
     .header .top-header .tools .icon-vertical-separator {
       margin: 0 -10px 6px; }
     .header .top-header .tools .social, .header .top-header .tools .search-tool, .header .top-header .tools .mail, .header .top-header .tools .languages, .header .top-header .tools .search-bar {
@@ -153,14 +155,10 @@ a {
         .header .top-header .tools .search-bar {
           right: -60%; } }
     .header .top-header .tools .active-search {
-      -webkit-transform: translateX(-120%);
-      transform: translateX(-120%);
+      -webkit-transform: translateX(-150%);
+      transform: translateX(-150%);
       transition: -webkit-transform 600ms ease-in-out;
       transition: transform 600ms ease-in-out; }
-      @media screen and (max-width: 48em) {
-        .header .top-header .tools .active-search {
-          -webkit-transform: translateX(-170%);
-          transform: translateX(-170%); } }
     .header .top-header .tools .inactive {
       opacity: 0;
       pointer-events: none;

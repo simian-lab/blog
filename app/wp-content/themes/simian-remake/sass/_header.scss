@@ -129,6 +129,9 @@
     		width: 2rem;
     		height: 2rem;
 			}
+			.icon-mail{
+				color: $light-blue;
+			}
 			.icon-vertical-separator{
 				margin: 0 -10px 6px;
 			}
@@ -158,11 +161,8 @@
 				}
 			}
 			.active-search{
-  			transform: translateX(-120%);
+  			transform: translateX(-150%);
   			transition: transform 600ms ease-in-out;
-  			@include media($ipad-portrait){
-  				transform: translateX(-170%);
-  			}
 			}
 			.inactive{
 				opacity: 0;
