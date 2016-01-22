@@ -213,9 +213,9 @@
 						float: left;
 						.image-margin{
 							position: absolute;
-	    				width: 156px;
-    					height: 146px;
-    					margin: -12px -12px 0;
+	    				width: 140px;
+    					height: 180px;
+    					margin: -29px 0 0 -5px;
 						}
 						@include media($tablet){
     					display: block;

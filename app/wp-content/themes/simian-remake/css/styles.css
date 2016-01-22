@@ -628,9 +628,9 @@ a {
     float: left; }
     .single-post .detail .content .related .related-container .post-thumbnail .image-margin {
       position: absolute;
-      width: 156px;
-      height: 146px;
-      margin: -12px -12px 0; }
+      width: 140px;
+      height: 180px;
+      margin: -29px 0 0 -5px; }
     @media screen and (max-width: 60em) {
       .single-post .detail .content .related .related-container .post-thumbnail {
         display: block;

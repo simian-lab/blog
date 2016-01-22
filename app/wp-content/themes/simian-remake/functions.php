@@ -47,7 +47,7 @@ if ( ! function_exists( 'simian_theme_enqueue_scripts' ) ) :
 
     
     //Styles :D
-    wp_enqueue_style('simian-style', get_stylesheet_directory_uri() . '/css/styles.css', '', '2.2.7');
+    wp_enqueue_style('simian-style', get_stylesheet_directory_uri() . '/css/styles.css', '', '2.2.8');
    
   }
 endif;
