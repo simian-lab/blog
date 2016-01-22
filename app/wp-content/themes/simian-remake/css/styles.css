@@ -144,6 +144,10 @@ a {
       position: absolute;
       right: -80%;
       top: 0; }
+
+@-moz-document url-prefix() {
+  .header .top-header .tools .search-bar {
+    right: -100%; } }
       .header .top-header .tools .search-bar .search-form {
         display: inline-block;
         vertical-align: super; }
@@ -157,6 +161,7 @@ a {
     .header .top-header .tools .active-search {
       -webkit-transform: translateX(-150%);
       transform: translateX(-150%);
+      -moz-transform: translateX(-120%);
       transition: -webkit-transform 600ms ease-in-out;
       transition: transform 600ms ease-in-out; }
     .header .top-header .tools .inactive {
@@ -326,7 +331,8 @@ a {
           position: absolute;
           margin: -20px 0 0 -16px;
           width: 535px;
-          height: 612px; }
+          height: 612px;
+          left: 0; }
           @media screen and (max-width: 48em) {
             .main .content .posts-list .post-container .post-thumbnail .image-margin {
               width: 104%;

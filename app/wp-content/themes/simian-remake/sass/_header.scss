@@ -146,6 +146,9 @@
 				position: absolute;
     		right: -80%;
     		top: 0;
+    		@-moz-document url-prefix(){
+					right: -100%;
+    		}
 				.search-form{
 					display: inline-block;
 					vertical-align: super;
@@ -162,6 +165,7 @@
 			}
 			.active-search{
   			transform: translateX(-150%);
+  			-moz-transform: translateX(-120%);
   			transition: transform 600ms ease-in-out;
 			}
 			.inactive{

@@ -14,6 +14,8 @@
     				margin: -20px 0 0 -16px;
     				width: 535px;
     				height: 612px;
+    				//For firefox
+    				left: 0;
 					  @include media($ipad-portrait){
 					  	width: 104%;
     					margin: -1% 0 0 -2%;
