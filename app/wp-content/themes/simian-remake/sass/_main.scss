@@ -1,0 +1,142 @@
+.main{
+	.content{
+		@include outer-container;
+		.posts-list{
+			@include span-columns(10);
+			@include shift(1);
+			.post-container{
+				margin: 0;
+				display: inline-block;
+				.post-thumbnail{
+					position: relative;
+					.image-margin{
+						position: absolute;
+					  margin: -13px 0 0 -11px;
+					  width: 518px;
+					  height: 596px;
+					  @include media($ipad-portrait){
+					  	width: 104%;
+    					margin: -1% 0 0 -2%;
+    					height: initial;
+					  }
+					}
+					.wp-post-image{
+						float: left;
+						margin-right: 50px;
+						max-width: 100%;
+						@include media($ipad-portrait){
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+				.post-title{
+					color: $light-blue;
+					font-family: $font-title;
+					font-size: 55px;
+					text-transform: uppercase;
+				}	
+				.post-excerpt{
+					color: $grey;
+					font-family: $font-text;
+					font-size: 20px;
+				}				
+				.post-foot{
+					color: $grey;
+					font-family: $font-text;
+					font-size: 20px;
+					float: left;
+  				width: 100%;
+  				margin: 45px 0;
+					div{
+						display: block;
+						width: 33%;
+						@include media($ipad-portrait){
+							width: 100%;
+							float: none;
+						}
+						float: left;
+					}
+					p{
+						display: inline;
+    				vertical-align: super;
+					}
+					.icon{
+						display: inline-block;
+    				width: 2rem;
+    				height: 2rem;
+					}
+					.icon-balloon{
+						width: 2.5rem;
+						height: 2.5rem;
+						margin-bottom: -5px;
+					}
+					.author{
+						.avatar{
+							display: inline-block;
+    					width: 2rem;
+    					height: 2rem;
+						}
+					}
+					.date{
+						.month{
+							text-transform: capitalize;
+						}
+					}
+					.tags{
+						width: 100%;
+					}						
+				}
+			}
+			.pagination{
+				float: right;
+  			margin-top: 80px;
+  			font-size: 20px;
+  			font-weight: bold;
+  			font-family: $font-text;
+  			color: $dark-brown;
+  			
+  			.page-numbers{
+					position: relative;
+  				display: inline-block;
+  				.number-label{
+  					display: inline-block;
+  				}
+  				.prev,.next {
+    				margin: 0 1rem;  
+  				}
+  				&:before {
+    				content: ' - ';
+    				margin: 0 9px;
+  				}
+  				&:first-child, &.prev + .page-numbers, &.next{
+						&:before {
+      				display: none;
+    				}
+  				}
+  				
+  				.icon-circle{
+  					display: none;
+  				}
+  				.icon{
+  					vertical-align: middle;
+  					width: 3rem;
+  					height: 3.5rem;
+  				}
+  			}
+  			.current{
+  				.icon-circle{
+  					color: $yellow;
+  					position: absolute;
+  					top: -50%;
+  					display: block;
+				    z-index: -1;
+				    left: 100%;
+				    transform: translateX(-60%);
+  				}
+  			}
+			}
+		}
+	}
+}
+

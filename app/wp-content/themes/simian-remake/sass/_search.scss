@@ -1,0 +1,43 @@
+.search{
+	.main{
+		.content{
+			.search-bar, .search-head{
+			  margin: 0 4% 10px;
+			}
+			.search-bar{
+				.search-form{
+					display: inline-block;
+    			vertical-align: top;
+    			.input{
+    				height: 35px;
+    				width: 300px;
+    			}
+				}
+				.icon{
+					width: 3rem;
+    			height: 3rem;
+				}
+			}
+			.search-head{
+				.results-span{					
+					font-family: $font-title;
+					color: $light-blue;
+					font-size: 60px;
+					text-transform: uppercase;
+				}
+				.query-span{
+					font-family: $font-text;
+					font-size: 50px;
+					color: $dark-brown;
+					text-transform: capitalize;
+				}
+				.num-span{
+					display: block;
+					font-size: 30px;
+					font-family: $font-text;
+					color: $dark-brown;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+.category, .tag{
+	.main{
+		.content{
+			.category-head{
+				font-family: $font-title;
+				font-size: 60px;
+				margin-bottom: 0;
+    		margin-top: 60px;
+    		text-transform: uppercase;
+    		margin: 0 4% 10px;
+				.cat{
+					color: $light-blue;
+				}
+				.category-title{
+					color: $dark-brown;
+				}
+			}
+		}
+	}
+}

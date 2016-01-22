@@ -1,0 +1,81 @@
+// Main dependencies
+@import 'bourbon';
+@import 'neat';
+@import 'variables';
+@import 'reset';
+
+//Template imports
+@import 'header';
+@import 'footer';
+@import 'main';
+@import 'category';
+@import 'single';
+@import 'search';
+@import '404';
+
+//General icons styles
+
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	width: 2rem;
+	height: 2rem;
+}
+.border-color {
+	fill: $icon-borders;
+}
+.fill-color {
+	fill: currentColor;
+}
+
+.icon-audio,
+.icon-calendar,
+.icon-close-circular,
+.icon-left-arrow-circular,
+.icon-right-arrow-circular,
+.icon-mail,
+.icon-search,
+.icon-share,
+.icon-pause
+ {
+	color: $marine-blue;
+}
+
+.icon-play-circular,
+.icon-en {
+	color: $play-blue;
+}
+
+.icon-balloon,
+.icon-banana,
+.icon-left-arrow,
+.icon-right-arrow,
+.icon-map-marker,
+.icon-star,
+.icon-menu,
+.icon-es {
+	color: $yellow;
+}
+
+.icon-facebook {
+	color: $facebook-blue;
+}
+
+.icon-google-plus,
+.icon-youtube {
+	color: $red;
+}
+
+.icon-twitter,
+.icon-linkedin {
+	color: $twitter-blue;
+}
+
+.icon-heart,
+.icon-tag {
+	color: $light-red;
+}
+
+.icon-simian{
+	color: #FFFFFF;
+}

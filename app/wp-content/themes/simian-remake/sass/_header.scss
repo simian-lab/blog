@@ -1,0 +1,225 @@
+.header{
+	position: relative;
+	height: 440px;
+	background: url('../images/background-header.svg');
+	background-repeat: no-repeat;
+  background-size: cover;
+  @include media($ipad-portrait){
+  	height: 100px;
+  }
+  .menu-toggle{
+  	display: none;
+  	@include media($ipad-portrait){
+  		display: block;
+  		position: absolute;  		
+  		z-index: 1;
+  	}
+  	.icon{
+  		width: 3rem;
+  		height: 3rem;
+  	}
+  	.icon-menu{
+  		width: 4rem;
+  		height: 4rem;
+  	}
+  	
+
+  }
+  .active-menu{
+  	@include media($ipad-portrait){
+  		transform: translateX(100%);
+  		transition: transform 600ms ease-in-out;
+  	}
+  }
+	.top-header{
+		@include media($ipad-portrait){
+  		background: url('../images/background-header.svg');
+			background-repeat: no-repeat;
+  		background-size: cover;
+  		height: 440px;
+    	position: absolute;
+    	z-index: 1;
+    	width: 100%;
+    	right: 100%;
+    	transition: transform 600ms ease-in-out;
+  	}
+  	.menu-toggle{
+  		@include media($ipad-portrait){
+  			position: relative;
+  		}
+  	}
+		.logo{
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 15px;
+			@include media($ipad-portrait){
+				position: relative;
+				margin: 0 15px;
+			}
+		}
+		.menu{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			@include media($tablet){
+				text-align: center;
+			}
+			@include media($ipad-portrait){
+				position: relative;
+				text-align: left;
+				margin-left: 15px;
+			}
+			.menu-item{
+				font-family: $font-text;
+				color: $yellow;
+				font-size: 20px;
+				display: inline-block;
+    		padding-right: 3rem;
+    		text-transform: uppercase;
+    		@include media($ipad-portrait){
+    			display: block;
+    			color: white;
+					font-weight: bold;
+    		}
+			}
+		}
+		.mobile-top{
+			display: none;
+			@include media($ipad-portrait){
+				display: block;
+			}
+			.menu-toggle{
+				display: inline-block;
+			}
+			.languages{
+				.icon{
+					width: 3rem;
+					height: 3rem;
+				}
+				.white-icon{
+					color: white;
+				}
+				#language{
+					display: inline-block;
+				}
+				.icon-es{
+					margin-right: -14px;
+				}
+				@include media($ipad-portrait){
+					float: right
+				}
+			}
+		}
+		.tools{
+			background: url('../images/background-tools.svg');
+			background-repeat: no-repeat;
+  		background-size: cover;
+			position: absolute;
+			top: 0;
+			right: 0;
+			overflow: hidden;
+			@include media($ipad-portrait){
+				position: relative;
+				width: 355px;
+			}
+			.icon{
+				display: inline-block;
+    		width: 2rem;
+    		height: 2rem;
+			}
+			.icon-mail{
+				color: $light-blue;
+			}
+			.icon-vertical-separator{
+				margin: 0 -10px 6px;
+			}
+			.social, .search-tool, .mail, .languages, .search-bar{
+				display: inline;
+				transition: all 600ms ease-in-out;
+			}
+			.social, .search-tool, .mail{
+				vertical-align: super;
+			}
+			.search-bar{
+				position: absolute;
+    		right: -80%;
+    		top: 0;
+				.search-form{
+					display: inline-block;
+					vertical-align: super;
+				}
+				.input{
+					font-family: $font-text;
+				}
+				.close .icon-close-circular{
+					vertical-align: bottom;
+				}
+				@include media($ipad-portrait){
+					right: -60%;
+				}
+			}
+			.active-search{
+  			transform: translateX(-150%);
+  			transition: transform 600ms ease-in-out;
+			}
+			.inactive{
+				opacity: 0;
+				pointer-events: none;
+				transition: all 600ms ease-in-out;
+			}
+			.languages{
+				.icon{
+					width: 3rem;
+					height: 3rem;
+				}
+				.white-icon{
+					color: white;
+				}
+				#language{
+					display: inline-block;
+				}
+				@include media($ipad-portrait){
+					display: none;
+				}
+			}			
+		}
+	}
+	.monkey{
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 750px;
+		@include media($ipad-portrait){
+			width: 100%;
+    	position: relative;
+    	text-align: center;
+    	top: 17px;
+		}
+		.site-title, .talking-money{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.site-title{
+			font-family: $font-title;
+			color: $yellow;
+			font-size: 90px;
+			width: 47%;
+			text-transform: uppercase;
+			@include media($ipad-portrait){
+				font-size: 30px;
+				width: initial;
+				vertical-align: bottom;
+			}
+		}
+		.talking-monkey{
+    	float: right;
+    	@include media($ipad-portrait){
+				width: 90px;
+				float: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+  "name": "simian-remake",
+  "version": "1.0.0",
+  "description": "Brand new theme for our Simian Blog",
+  "author": "Simian",
+  "dependencies": {
+    "browser-sync": "^2.6.5",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-cache": "0.2.8",
+    "gulp-concat": "2.5.2",
+    "gulp-imagemin": "2.2.1",
+    "gulp-sass": "^2.0.1",
+    "gulp-uglify": "1.2.0",
+    "node-neat": "^1.4.2"
+  }
+}
