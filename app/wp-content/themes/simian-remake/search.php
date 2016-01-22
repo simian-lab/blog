@@ -50,7 +50,7 @@ $the_query = new WP_Query( $args );
 					<a href="<?php the_permalink(); ?>">
 						<div class="post-thumbnail">
 							<?php if ( has_post_thumbnail() ): ?>
-								<img class="image-margin" src="<?php echo get_template_directory_uri(); ?>/images/margen.png" alt="">
+								<img class="image-margin" src="<?php echo get_template_directory_uri(); ?>/images/border.svg" alt="">
 								<?php the_post_thumbnail('post_list_image');
 							endif; ?>
 						</div>						

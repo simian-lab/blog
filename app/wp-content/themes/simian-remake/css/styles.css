@@ -324,9 +324,9 @@ a {
         position: relative; }
         .main .content .posts-list .post-container .post-thumbnail .image-margin {
           position: absolute;
-          margin: -13px 0 0 -11px;
-          width: 518px;
-          height: 596px; }
+          margin: -17px 0 0 -15px;
+          width: 530px;
+          height: 604px; }
           @media screen and (max-width: 48em) {
             .main .content .posts-list .post-container .post-thumbnail .image-margin {
               width: 104%;
@@ -525,18 +525,21 @@ a {
       float: left; }
     .single-post .detail .content .post-content .gallery {
       position: relative;
-      padding: 25px; }
-      .single-post .detail .content .post-content .gallery:before {
-        content: '';
-        background: url("../images/margen.png");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        border: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%; }
+      padding: 25px;
+      border-image: url(/images/border.svg);
+      border-style: solid;
+      /* &:before{
+						content: '';
+						background: url('../images/border.svg');
+						background-repeat: no-repeat;
+  					background-size: 100% 100%;
+						border: 0;
+				    position: absolute;
+				    left: 0;
+				    top: 0;
+				    width: 100%;
+				    height: 100%;
+					} */ }
   .single-post .detail .content .author, .single-post .detail .content .date {
     display: inline;
     width: 50%; }
