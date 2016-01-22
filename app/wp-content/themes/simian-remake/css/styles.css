@@ -324,9 +324,9 @@ a {
         position: relative; }
         .main .content .posts-list .post-container .post-thumbnail .image-margin {
           position: absolute;
-          margin: -17px 0 0 -15px;
-          width: 530px;
-          height: 604px; }
+          margin: -20px 0 0 -16px;
+          width: 535px;
+          height: 612px; }
           @media screen and (max-width: 48em) {
             .main .content .posts-list .post-container .post-thumbnail .image-margin {
               width: 104%;
