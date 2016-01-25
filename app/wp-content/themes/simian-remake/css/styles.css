@@ -264,7 +264,7 @@ a {
       .footer .content .block .title {
         font-family: "Amatic SC", cursive;
         color: #DED96B;
-        font-size: 50px; }
+        font-size: 40px; }
       .footer .content .block .menu-item {
         font-family: "Quicksand", sans-serif;
         text-transform: uppercase;
@@ -274,11 +274,14 @@ a {
         display: none; } }
     .footer .content .social .icon {
       display: inline-block;
-      width: 3rem;
-      height: 3rem;
+      margin: 0 2.5px;
+      width: 2.5rem;
+      height: 2.5rem;
       background: white;
       border-radius: 50%;
       padding: 5px; }
+    .footer .content .social .icon-google-plus {
+      padding: 0; }
     .footer .content .copyright {
       float: left;
       display: block;

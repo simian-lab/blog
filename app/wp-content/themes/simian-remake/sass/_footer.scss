@@ -27,7 +27,7 @@
 			.title{
 				font-family: $font-title;
 				color: $yellow;
-				font-size: 50px;
+				font-size: 40px;
 			}
 			.menu-item{
 				font-family: $font-text;
@@ -43,11 +43,15 @@
 		.social{
 			.icon{
 				display: inline-block;
-    		width: 3rem;
-    		height: 3rem;
+				margin: 0 2.5px;
+    		width: 2.5rem;
+    		height: 2.5rem;
     		background: white;
     		border-radius: 50%;
     		padding: 5px;
+			}
+			.icon-google-plus{
+				padding: 0;
 			}
 		}
 		.copyright{
