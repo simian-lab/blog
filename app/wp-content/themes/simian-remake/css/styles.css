@@ -456,12 +456,19 @@ a {
   min-height: 80vh;
   margin-top: -15%;
   position: relative;
-  z-index: -1; }
+  z-index: -1;
+  display: -ms-inline-grid; }
+  @media screen and (max-width: 36.25em) {
+    .single-post .detail .hero {
+      min-height: initial; } }
   .single-post .detail .hero .wp-post-image {
     width: 100vw;
     height: 80vh;
     opacity: 0.65;
     object-fit: cover; }
+    @media screen and (max-width: 36.25em) {
+      .single-post .detail .hero .wp-post-image {
+        height: initial; } }
   .single-post .detail .hero .title {
     font-family: "Amatic SC", cursive;
     color: #DED96B;
@@ -474,6 +481,9 @@ a {
     left: 50%;
     margin: 0;
     width: 85%; }
+    @media screen and (max-width: 36.25em) {
+      .single-post .detail .hero .title {
+        font-size: 45px; } }
   .single-post .detail .hero:after {
     content: '';
     position: absolute;
@@ -521,23 +531,35 @@ a {
       display: inline;
       font-weight: bold;
       font-size: 60px; }
+      @media screen and (max-width: 36.25em) {
+        .single-post .detail .content .post-content blockquote p {
+          font-size: 45px; } }
     .single-post .detail .content .post-content blockquote strong {
       text-shadow: -1px 0 #3F3832, 0 1px #3F3832, 1px 0 #3F3832, 0 -1px #3F3832;
       color: #DED96B;
       font-family: "Amatic SC", cursive;
       font-size: 60px; }
+      @media screen and (max-width: 36.25em) {
+        .single-post .detail .content .post-content blockquote strong {
+          font-size: 45px; } }
     .single-post .detail .content .post-content blockquote:after {
       content: '”';
       font-weight: bold;
       color: #3F3832;
       font-size: 60px;
       font-family: "Quicksand", sans-serif; }
+      @media screen and (max-width: 36.25em) {
+        .single-post .detail .content .post-content blockquote:after {
+          font-size: 45px; } }
     .single-post .detail .content .post-content blockquote:before {
       content: '“';
       font-weight: bold;
       color: #3F3832;
       font-size: 60px;
       font-family: "Quicksand", sans-serif; }
+      @media screen and (max-width: 36.25em) {
+        .single-post .detail .content .post-content blockquote:before {
+          font-size: 45px; } }
     .single-post .detail .content .post-content .alignright {
       float: right; }
     .single-post .detail .content .post-content .alignleft {

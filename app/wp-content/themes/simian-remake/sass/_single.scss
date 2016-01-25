@@ -8,11 +8,19 @@
 			margin-top: -15%;
 			position: relative;
     	z-index: -1;
+    	//Cause IE
+    	display: -ms-inline-grid;
+    	@include media($mobile){
+    		min-height: initial;
+    	}
     	.wp-post-image{
     		width: 100vw;
     		height: 80vh;
     		opacity: 0.65;
     		object-fit: cover;
+    		@include media($mobile){
+    			height: initial;
+    		}
     	}
 			.title{
 				font-family: $font-title;
@@ -25,6 +33,9 @@
         left: 50%;
         margin: 0;
         width: 85%;
+        @include media($mobile){
+    			font-size: 45px;
+    		}
 			}
 			&:after{
 				content: '';
@@ -61,18 +72,27 @@
 						display: inline;
 						font-weight: bold;
 						font-size: 60px;
+						@include media($mobile){
+    					font-size: 45px;
+    				}
 					}
 					strong{
 						text-shadow: -1px 0 $dark-brown, 0 1px $dark-brown, 1px 0 $dark-brown, 0 -1px $dark-brown;
 						color: $yellow;
 						font-family: $font-title;
 						font-size: 60px;
+						@include media($mobile){
+    					font-size: 45px;
+    				}
 					}
 					&:after{
 						content: '”';
 						font-weight: bold;
 						color: $dark-brown;
 						font-size: 60px;
+						@include media($mobile){
+    					font-size: 45px;
+    				}
 						font-family: $font-text;
 					}
 					&:before{
@@ -80,6 +100,9 @@
 						font-weight: bold;
 						color: $dark-brown;
 						font-size: 60px;
+						@include media($mobile){
+    					font-size: 45px;
+    				}
 						font-family: $font-text;
 					}
 				}
