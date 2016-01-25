@@ -1,6 +1,6 @@
 .header{
 	position: relative;
-	height: 440px;
+	height: 370px;
 	background: url('../images/background-header.svg');
 	background-repeat: no-repeat;
   background-size: cover;
@@ -36,7 +36,7 @@
   		background: url('../images/background-header.svg');
 			background-repeat: no-repeat;
   		background-size: cover;
-  		height: 440px;
+  		height: 370px;
     	position: absolute;
     	z-index: 1;
     	width: 100%;
@@ -53,6 +53,8 @@
 			top: 0;
 			left: 0;
 			margin: 15px;
+			width: 250px;
+    	height: 100px;
 			@include media($ipad-portrait){
 				position: relative;
 				margin: 0 15px;
@@ -74,10 +76,11 @@
 			.menu-item{
 				font-family: $font-text;
 				color: $yellow;
-				font-size: 20px;
+				font-size: 18px;
 				display: inline-block;
     		padding-right: 3rem;
     		text-transform: uppercase;
+    		font-weight: bold;
     		@include media($ipad-portrait){
     			display: block;
     			color: white;
@@ -119,7 +122,8 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			overflow: hidden;
+			overflow: hidden;			
+    	margin-top: -5px;
 			@include media($ipad-portrait){
 				position: relative;
 				width: 355px;
@@ -141,6 +145,12 @@
 			}
 			.social, .search-tool, .mail{
 				vertical-align: super;
+			}
+			.icon-facebook{
+				margin-left: 15px;
+			}
+			.icon-google-plus{
+				width: 3rem;
 			}
 			.search-bar{
 				position: absolute;
@@ -212,6 +222,7 @@
 			font-size: 90px;
 			width: 47%;
 			text-transform: uppercase;
+			text-align: right;
 			@include media($ipad-portrait){
 				font-size: 30px;
 				width: initial;
@@ -220,6 +231,7 @@
 		}
 		.talking-monkey{
     	float: right;
+    	width: 365px;
     	@include media($ipad-portrait){
 				width: 90px;
 				float: none;

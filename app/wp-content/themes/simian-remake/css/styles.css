@@ -20,7 +20,7 @@ a {
 
 .header {
   position: relative;
-  height: 440px;
+  height: 370px;
   background: url("../images/background-header.svg");
   background-repeat: no-repeat;
   background-size: cover; }
@@ -51,7 +51,7 @@ a {
       background: url("../images/background-header.svg");
       background-repeat: no-repeat;
       background-size: cover;
-      height: 440px;
+      height: 370px;
       position: absolute;
       z-index: 1;
       width: 100%;
@@ -65,7 +65,9 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 15px; }
+    margin: 15px;
+    width: 250px;
+    height: 100px; }
     @media screen and (max-width: 48em) {
       .header .top-header .logo {
         position: relative;
@@ -87,10 +89,11 @@ a {
     .header .top-header .menu .menu-item {
       font-family: "Quicksand", sans-serif;
       color: #DED96B;
-      font-size: 20px;
+      font-size: 18px;
       display: inline-block;
       padding-right: 3rem;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-weight: bold; }
       @media screen and (max-width: 48em) {
         .header .top-header .menu .menu-item {
           display: block;
@@ -122,7 +125,8 @@ a {
     position: absolute;
     top: 0;
     right: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    margin-top: -5px; }
     @media screen and (max-width: 48em) {
       .header .top-header .tools {
         position: relative;
@@ -140,6 +144,10 @@ a {
       transition: all 600ms ease-in-out; }
     .header .top-header .tools .social, .header .top-header .tools .search-tool, .header .top-header .tools .mail {
       vertical-align: super; }
+    .header .top-header .tools .icon-facebook {
+      margin-left: 15px; }
+    .header .top-header .tools .icon-google-plus {
+      width: 3rem; }
     .header .top-header .tools .search-bar {
       position: absolute;
       right: -80%;
@@ -199,14 +207,16 @@ a {
       color: #DED96B;
       font-size: 90px;
       width: 47%;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      text-align: right; }
       @media screen and (max-width: 48em) {
         .header .monkey .site-title {
           font-size: 30px;
           width: initial;
           vertical-align: bottom; } }
     .header .monkey .talking-monkey {
-      float: right; }
+      float: right;
+      width: 365px; }
       @media screen and (max-width: 48em) {
         .header .monkey .talking-monkey {
           width: 90px;
@@ -231,8 +241,7 @@ a {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 14.70196%;
-      margin-left: 17.05961%;
+      width: 31.76157%;
       text-align: center; }
       .footer .content .block:last-child {
         margin-right: 0; }
@@ -241,11 +250,12 @@ a {
           float: left;
           display: block;
           margin-right: 2.35765%;
-          width: 65.88078%; }
+          width: 65.88078%;
+          margin-left: 17.05961%; }
           .footer .content .block:last-child {
             margin-right: 0; } }
       .footer .content .block:first-child {
-        margin-left: 8.5298%; }
+        margin-left: 17.05961%; }
         .footer .content .block:first-child .menu-item {
           font-family: "Quicksand", sans-serif;
           text-transform: uppercase;
@@ -260,7 +270,7 @@ a {
         text-transform: uppercase;
         color: white; }
     @media screen and (max-width: 48em) {
-      .footer .content .links, .footer .content .info {
+      .footer .content .links {
         display: none; } }
     .footer .content .social .icon {
       display: inline-block;
@@ -530,22 +540,18 @@ a {
     .single-post .detail .content .post-content .alignleft {
       float: left; }
     .single-post .detail .content .post-content .gallery {
-      position: relative;
-      padding: 25px;
-      border-image: url(/images/border.svg);
-      border-style: solid;
-      /* &:before{
-						content: '';
-						background: url('../images/border.svg');
-						background-repeat: no-repeat;
-  					background-size: 100% 100%;
-						border: 0;
-				    position: absolute;
-				    left: 0;
-				    top: 0;
-				    width: 100%;
-				    height: 100%;
-					} */ }
+      position: relative; }
+      .single-post .detail .content .post-content .gallery:before {
+        content: '';
+        background: url("../images/border.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%; }
   .single-post .detail .content .author, .single-post .detail .content .date {
     display: inline;
     width: 50%; }

@@ -9,14 +9,14 @@
 		padding-top: 127px;
 		
 		.block{
-			@include span-columns(2);
-			@include shift(2);
+			@include span-columns(4);
 			text-align: center;
 			@include media($ipad-portrait){
 				@include span-columns(8);
+				@include shift(2);
 			}
 			&:first-child{
-				@include shift(1);
+				@include shift(2);
 				.menu-item{
 					font-family: $font-text;
 					text-transform: uppercase;
@@ -35,7 +35,7 @@
 				color: white;
 			}			
 		}
-		.links, .info{
+		.links{
 			@include media($ipad-portrait){
 				display: none;
 			}
