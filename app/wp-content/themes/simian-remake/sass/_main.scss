@@ -97,7 +97,9 @@
   			font-weight: bold;
   			font-family: $font-text;
   			color: $dark-brown;
-  			
+  			@include media($mobile){
+  				margin-top: 30px;
+  			}
   			.page-numbers{
 					position: relative;
   				display: inline-block;

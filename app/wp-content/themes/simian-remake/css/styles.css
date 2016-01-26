@@ -29,7 +29,7 @@ a {
       height: 100px; } }
   .header .menu-toggle {
     display: none; }
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: 64em) {
       .header .menu-toggle {
         display: block;
         position: absolute;
@@ -40,13 +40,13 @@ a {
     .header .menu-toggle .icon-menu {
       width: 4rem;
       height: 4rem; }
-  @media screen and (max-width: 48em) {
+  @media screen and (max-width: 64em) {
     .header .active-menu {
       -webkit-transform: translateX(100%);
       transform: translateX(100%);
       transition: -webkit-transform 600ms ease-in-out;
       transition: transform 600ms ease-in-out; } }
-  @media screen and (max-width: 48em) {
+  @media screen and (max-width: 64em) {
     .header .top-header {
       background: url("../images/background-header.svg");
       background-repeat: no-repeat;
@@ -59,7 +59,7 @@ a {
       transition: -webkit-transform 600ms ease-in-out;
       transition: transform 600ms ease-in-out;
       overflow: hidden; } }
-  @media screen and (max-width: 48em) {
+  @media screen and (max-width: 64em) {
     .header .top-header .menu-toggle {
       position: relative; } }
   .header .top-header .logo {
@@ -69,7 +69,7 @@ a {
     margin: 15px;
     width: 250px;
     height: 100px; }
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: 64em) {
       .header .top-header .logo {
         position: relative;
         margin: 0 15px; } }
@@ -82,7 +82,7 @@ a {
     @media screen and (max-width: 60em) {
       .header .top-header .menu {
         text-align: center; } }
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: 64em) {
       .header .top-header .menu {
         position: relative;
         text-align: left;
@@ -95,14 +95,14 @@ a {
       padding-right: 3rem;
       text-transform: uppercase;
       font-weight: bold; }
-      @media screen and (max-width: 48em) {
+      @media screen and (max-width: 64em) {
         .header .top-header .menu .menu-item {
           display: block;
           color: white;
           font-weight: bold; } }
   .header .top-header .mobile-top {
     display: none; }
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: 64em) {
       .header .top-header .mobile-top {
         display: block; } }
     .header .top-header .mobile-top .menu-toggle {
@@ -116,7 +116,7 @@ a {
       display: inline-block; }
     .header .top-header .mobile-top .languages .icon-es {
       margin-right: -14px; }
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: 64em) {
       .header .top-header .mobile-top .languages {
         float: right; } }
   .header .top-header .tools {
@@ -128,7 +128,7 @@ a {
     right: 0;
     overflow: hidden;
     margin-top: -5px; }
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: 64em) {
       .header .top-header .tools {
         position: relative;
         width: 324px; } }
@@ -164,7 +164,7 @@ a {
         font-family: "Quicksand", sans-serif; }
       .header .top-header .tools .search-bar .close .icon-close-circular {
         vertical-align: bottom; }
-      @media screen and (max-width: 48em) {
+      @media screen and (max-width: 64em) {
         .header .top-header .tools .search-bar {
           right: -220px; }
         @-moz-document url-prefix() {
@@ -176,7 +176,7 @@ a {
       -moz-transform: translateX(-120%);
       transition: -webkit-transform 600ms ease-in-out;
       transition: transform 600ms ease-in-out; }
-      @media screen and (max-width: 48em) {
+      @media screen and (max-width: 64em) {
         .header .top-header .tools .active-search {
           -webkit-transform: translateX(-130%);
           transform: translateX(-130%);
@@ -192,7 +192,7 @@ a {
       color: white; }
     .header .top-header .tools .languages #language {
       display: inline-block; }
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: 64em) {
       .header .top-header .tools .languages {
         display: none; } }
   .header .monkey {
@@ -202,7 +202,7 @@ a {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 750px; }
-    @media screen and (max-width: 48em) {
+    @media screen and (max-width: 64em) {
       .header .monkey {
         width: 100%;
         position: relative;
@@ -421,6 +421,9 @@ a {
       font-weight: bold;
       font-family: "Quicksand", sans-serif;
       color: #3F3832; }
+      @media screen and (max-width: 36.25em) {
+        .main .content .posts-list .pagination {
+          margin-top: 30px; } }
       .main .content .posts-list .pagination .page-numbers {
         position: relative;
         display: inline-block; }
