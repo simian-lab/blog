@@ -28,7 +28,7 @@
   .active-menu{
   	@include media($ipad-portrait){
   		transform: translateX(100%);
-  		transition: transform 600ms ease-in-out;
+  		transition: transform 600ms ease-in-out;  		
   	}
   }
 	.top-header{
@@ -42,6 +42,7 @@
     	width: 100%;
     	right: 100%;
     	transition: transform 600ms ease-in-out;
+    	overflow: hidden;
   	}
   	.menu-toggle{
   		@include media($ipad-portrait){
@@ -126,7 +127,7 @@
     	margin-top: -5px;
 			@include media($ipad-portrait){
 				position: relative;
-				width: 355px;
+				width: 324px;
 			}
 			.icon{
 				display: inline-block;
@@ -170,7 +171,7 @@
 					vertical-align: bottom;
 				}
 				@include media($ipad-portrait){
-					right: -62%;
+					right: -67%;
 					@-moz-document url-prefix(){
 						right: -85%;
     			}
@@ -181,6 +182,7 @@
   			-moz-transform: translateX(-120%);
   			transition: transform 600ms ease-in-out;
   			@include media($ipad-portrait){
+  				transform: translateX(-130%);
   				-moz-transform: translateX(-110%);
   			}
 			}

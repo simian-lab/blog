@@ -57,7 +57,8 @@ a {
       width: 100%;
       right: 100%;
       transition: -webkit-transform 600ms ease-in-out;
-      transition: transform 600ms ease-in-out; } }
+      transition: transform 600ms ease-in-out;
+      overflow: hidden; } }
   @media screen and (max-width: 48em) {
     .header .top-header .menu-toggle {
       position: relative; } }
@@ -130,7 +131,7 @@ a {
     @media screen and (max-width: 48em) {
       .header .top-header .tools {
         position: relative;
-        width: 355px; } }
+        width: 324px; } }
     .header .top-header .tools .icon {
       display: inline-block;
       width: 2rem;
@@ -165,7 +166,7 @@ a {
         vertical-align: bottom; }
       @media screen and (max-width: 48em) {
         .header .top-header .tools .search-bar {
-          right: -62%; }
+          right: -67%; }
         @-moz-document url-prefix() {
           .header .top-header .tools .search-bar {
             right: -85%; } } }
@@ -177,6 +178,8 @@ a {
       transition: transform 600ms ease-in-out; }
       @media screen and (max-width: 48em) {
         .header .top-header .tools .active-search {
+          -webkit-transform: translateX(-130%);
+          transform: translateX(-130%);
           -moz-transform: translateX(-110%); } }
     .header .top-header .tools .inactive {
       opacity: 0;
