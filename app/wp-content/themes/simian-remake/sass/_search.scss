@@ -11,6 +11,9 @@
     			.input{
     				height: 35px;
     				width: 300px;
+    				@include media($mobile){
+    					width: 200px;
+    				}
     			}
 				}
 				.icon{

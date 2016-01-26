@@ -4,6 +4,9 @@
   background-size: cover;
   margin-left: -5px;
   margin-top: -5px;
+  @include media($ipad-portrait){
+  	margin-top: -50px;
+  }
 	.content{
 		@include outer-container;
 		padding-top: 127px;

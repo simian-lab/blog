@@ -237,6 +237,9 @@ a {
   background-size: cover;
   margin-left: -5px;
   margin-top: -5px; }
+  @media screen and (max-width: 48em) {
+    .footer {
+      margin-top: -50px; } }
   .footer .content {
     max-width: 68rem;
     margin-left: auto;
@@ -469,7 +472,7 @@ a {
   display: -ms-inline-grid; }
   @media screen and (max-width: 36.25em) {
     .single-post .detail .hero {
-      min-height: initial; } }
+      min-height: 40vh; } }
   .single-post .detail .hero .wp-post-image {
     width: 100vw;
     height: 80vh;
@@ -530,6 +533,8 @@ a {
         margin-left: 8.5298%; }
         .single-post .detail .content .post-content:last-child {
           margin-right: 0; } }
+    .single-post .detail .content .post-content .wp-caption {
+      max-width: 100%; }
     .single-post .detail .content .post-content .title {
       color: #FF5F5C;
       text-transform: uppercase;
@@ -542,7 +547,7 @@ a {
       font-size: 60px; }
       @media screen and (max-width: 36.25em) {
         .single-post .detail .content .post-content blockquote p {
-          font-size: 45px; } }
+          font-size: 35px; } }
     .single-post .detail .content .post-content blockquote strong {
       text-shadow: -1px 0 #3F3832, 0 1px #3F3832, 1px 0 #3F3832, 0 -1px #3F3832;
       color: #DED96B;
@@ -701,6 +706,9 @@ a {
   .search .main .content .search-bar .search-form .input {
     height: 35px;
     width: 300px; }
+    @media screen and (max-width: 36.25em) {
+      .search .main .content .search-bar .search-form .input {
+        width: 200px; } }
 
 .search .main .content .search-bar .icon {
   width: 3rem;
