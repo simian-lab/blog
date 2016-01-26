@@ -442,6 +442,13 @@ a {
           vertical-align: middle;
           width: 3rem;
           height: 3.5rem; }
+        .main .content .posts-list .pagination .page-numbers .icon-right-arrow-circular, .main .content .posts-list .pagination .page-numbers .icon-left-arrow-circular {
+          width: 4rem;
+          height: 4.5rem; }
+          @media screen and (max-width: 60em) {
+            .main .content .posts-list .pagination .page-numbers .icon-right-arrow-circular, .main .content .posts-list .pagination .page-numbers .icon-left-arrow-circular {
+              width: 3rem;
+              height: 3.5rem; } }
       .main .content .posts-list .pagination .current .icon-circle {
         color: #DED96B;
         position: absolute;

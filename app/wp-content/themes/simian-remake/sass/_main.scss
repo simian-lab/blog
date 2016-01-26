@@ -127,6 +127,14 @@
   					width: 3rem;
   					height: 3.5rem;
   				}
+  				.icon-right-arrow-circular, .icon-left-arrow-circular{
+  					width: 4rem;
+    				height: 4.5rem;
+    				@include media($tablet){
+    					width: 3rem;
+  						height: 3.5rem;
+    				}
+  				}
   			}
   			.current{
   				.icon-circle{
