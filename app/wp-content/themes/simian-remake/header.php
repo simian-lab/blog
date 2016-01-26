@@ -17,9 +17,8 @@
 <defs>
 <symbol id="icon-menu" viewBox="0 0 1024 1024">
 <title>icon-menu</title>
-<path class="path1 fill-color" d="M292.571 397.714h444.965v60.965h-444.965v-60.965z"></path>
-<path class="path2 fill-color" d="M292.571 483.054h444.965v60.946h-444.965v-60.946z"></path>
-<path class="path3 fill-color" d="M292.571 565.339h444.965v60.946h-444.965v-60.946z"></path>
+<title>ic_menu_black_24px</title>
+<path class="path1" d="M128 768h768v-85.333h-768v85.333zM128 554.667h768v-85.333h-768v85.333zM128 256v85.333h768v-85.333h-768z"></path>
 </symbol>
 <symbol id="icon-es" viewBox="0 0 1024 1024">
 <title>icon-es</title>

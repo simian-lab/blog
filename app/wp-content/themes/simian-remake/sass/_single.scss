@@ -43,7 +43,7 @@
 				bottom: 0;
 				height: 166px;
 				width: 100%;
-				@include background-image(linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%));
+				@include background-image(linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 100%));
 			}		
 		}
 		.content{			
