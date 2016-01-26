@@ -171,12 +171,18 @@
 				}
 				@include media($ipad-portrait){
 					right: -60%;
+					@-moz-document url-prefix(){
+						right: -85%;
+    			}
 				}
 			}
 			.active-search{
   			transform: translateX(-150%);
   			-moz-transform: translateX(-120%);
   			transition: transform 600ms ease-in-out;
+  			@include media($ipad-portrait){
+  				-moz-transform: translateX(-110%);
+  			}
 			}
 			.inactive{
 				opacity: 0;
