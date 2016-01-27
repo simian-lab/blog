@@ -118,18 +118,14 @@
 				}
 				.gallery{
 					position: relative;
-					&:before{
-						content: '';
-						background: url('../images/border.svg');
-						background-repeat: no-repeat;
-  					background-size: 100% 100%;
-						border: 0;
-				    position: absolute;
-				    left: 0;
-				    top: 0;
-				    width: 100%;
-				    height: 100%;
-					}
+					background-image: url('../images/border-top.svg'),
+														url('../images/border-right.svg'),
+														url('../images/border-left.svg'),
+														url('../images/border-bottom.svg');
+					background-repeat: no-repeat;
+					background-position: top, right, left, bottom;
+			    background-size: 100%, contain, contain, 100%;
+			    padding: 40px;
 				}
 			}
 			.author, .date{
