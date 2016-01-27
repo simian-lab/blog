@@ -359,7 +359,7 @@ a {
           width: 535px;
           height: 612px;
           left: 0; }
-          @media screen and (max-width: 48em) {
+          @media screen and (max-width: 60em) {
             .main .content .posts-list .post-container .post-thumbnail .image-margin {
               width: 104%;
               margin: -1% 0 0 -2%;

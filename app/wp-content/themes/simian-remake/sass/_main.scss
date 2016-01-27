@@ -16,7 +16,7 @@
     				height: 612px;
     				//For firefox
     				left: 0;
-					  @include media($ipad-portrait){
+					  @include media($tablet){
 					  	width: 104%;
     					margin: -1% 0 0 -2%;
     					height: initial;
