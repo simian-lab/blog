@@ -1,13 +1,25 @@
 .single-post{
 	.header{
 		height: 270px;
+		@include media($ipad-portrait){
+	  	height: 100px;
+	  }
 		.monkey{
 			width: 455px;
 			.site-title{
 				font-size: 50px;
+				@include media($ipad-portrait){
+					font-size: 30px;
+					width: initial;
+					vertical-align: bottom;
+				}
 			}
 			.talking-monkey{
 				width: 224px;
+				@include media($ipad-portrait){
+					width: 90px;
+					float: none;
+				}
 			}
 		}
 	}
@@ -17,7 +29,7 @@
 			font-family: $font-text;
 			color: $grey;
 			min-height: 80vh;
-			margin-top: -15%;
+			margin-top: -100px;
 			position: relative;
     	z-index: -1;
     	//Cause IE

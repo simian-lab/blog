@@ -480,19 +480,31 @@ a {
 
 .single-post .header {
   height: 270px; }
+  @media screen and (max-width: 48em) {
+    .single-post .header {
+      height: 100px; } }
   .single-post .header .monkey {
     width: 455px; }
     .single-post .header .monkey .site-title {
       font-size: 50px; }
+      @media screen and (max-width: 48em) {
+        .single-post .header .monkey .site-title {
+          font-size: 30px;
+          width: initial;
+          vertical-align: bottom; } }
     .single-post .header .monkey .talking-monkey {
       width: 224px; }
+      @media screen and (max-width: 48em) {
+        .single-post .header .monkey .talking-monkey {
+          width: 90px;
+          float: none; } }
 
 .single-post .detail .hero {
   background-color: black;
   font-family: "Quicksand", sans-serif;
   color: #5D5752;
   min-height: 80vh;
-  margin-top: -15%;
+  margin-top: -100px;
   position: relative;
   z-index: -1;
   display: -ms-inline-grid; }
