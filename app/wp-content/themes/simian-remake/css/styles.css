@@ -478,6 +478,15 @@ a {
   .category .main .content .category-head .category-title, .tag .main .content .category-head .category-title {
     color: #3F3832; }
 
+.single-post .header {
+  height: 270px; }
+  .single-post .header .monkey {
+    width: 455px; }
+    .single-post .header .monkey .site-title {
+      font-size: 50px; }
+    .single-post .header .monkey .talking-monkey {
+      width: 224px; }
+
 .single-post .detail .hero {
   background-color: black;
   font-family: "Quicksand", sans-serif;
