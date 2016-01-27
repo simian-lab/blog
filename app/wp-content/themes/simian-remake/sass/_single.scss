@@ -215,7 +215,7 @@
 								vertical-align: super;
 							}
 						}
-						@include media($ipad-portrait){
+						@include media($mobile){
 							float: none;
 						}
 					}
