@@ -78,7 +78,7 @@ define('WPLANG', 'es_ES');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* Deactivate WordPress automatic updates */
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
