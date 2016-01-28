@@ -259,7 +259,14 @@
 								</a>
 			        <?php }
 				    }
-				  }?>
+				  }else{?>
+					  <a href="#">						
+							<svg class="icon icon-es"><use xlink:href="#icon-es"></use></svg>
+						</a>
+						<a href="#">						
+							<svg class="icon icon-en"><use xlink:href="#icon-en"></use></svg>
+						</a>
+					<?php }?>
 				</div>
 			</div>			
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
@@ -305,7 +312,14 @@
 								</a>
 			        <?php }
 				    }
-				  }?>
+				  }else{?>
+					  <a href="#">						
+							<svg class="icon icon-es"><use xlink:href="#icon-es"></use></svg>
+						</a>
+						<a href="#">						
+							<svg class="icon icon-en"><use xlink:href="#icon-en"></use></svg>
+						</a>
+					<?php }?>
 				</div>
 				<div class="search-bar">
 					<a href="" class="search-submit" id="search-header">
