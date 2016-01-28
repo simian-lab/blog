@@ -42,6 +42,7 @@
     		width: 100vw;
     		height: 80vh;
     		opacity: 0.65;
+    		margin-top: -18px;
     		object-fit: cover;
     		@include media($mobile){
     			height: initial;
