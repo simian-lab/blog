@@ -246,6 +246,8 @@
 				</div>
 				<div class="languages">
 					<?php
+					$languages = icl_get_languages('skip_missing=1&orderby=code&order=desc');
+					var_dump($languages);
 					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];					
 					if (class_exists('SitePress')) {
 						$match = preg_match('/^\/es\//', $_SERVER["REQUEST_URI"]);

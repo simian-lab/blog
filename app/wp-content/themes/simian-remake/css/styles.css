@@ -482,7 +482,7 @@ a {
     color: #3F3832; }
 
 .single-post .header {
-  height: 220px;
+  height: 200px;
   background-position: 50%; }
   @media screen and (max-width: 48em) {
     .single-post .header {
@@ -519,7 +519,7 @@ a {
     width: 100vw;
     height: 80vh;
     opacity: 0.65;
-    margin-top: -18px;
+    margin-top: -38px;
     object-fit: cover; }
     @media screen and (max-width: 36.25em) {
       .single-post .detail .hero .wp-post-image {
