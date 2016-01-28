@@ -4,6 +4,7 @@
 	background: url('../images/background-header.svg');
 	background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
   @include media($ipad-portrait){
   	height: 100px;
   }

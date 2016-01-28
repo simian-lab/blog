@@ -23,7 +23,8 @@ a {
   height: 370px;
   background: url("../images/background-header.svg");
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-position: 50%; }
   @media screen and (max-width: 48em) {
     .header {
       height: 100px; } }
