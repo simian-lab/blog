@@ -246,10 +246,18 @@
 				</div>
 				<div class="languages">
 					<?php
-					$languages = icl_get_languages('skip_missing=1&orderby=code&order=desc');
-					var_dump($languages);
+
 					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];					
 					if (class_exists('SitePress')) {
+						$languages = icl_get_languages('skip_missing=1&orderby=code&order=desc');
+						foreach($languages as $l){
+			        if(!$l['active']) {
+			            $langs[] = '<a href="'.$l['url'].'">'.$l['language_code'].'</a>';
+			        } else {
+			            $langs[] = '·' . strtoupper($l['language_code']);
+			        }
+				    }
+				    echo join(' / ', $langs);
 						$match = preg_match('/^\/es\//', $_SERVER["REQUEST_URI"]);
 						//Site in spanish
 						if ($match > 0){
