@@ -245,38 +245,21 @@
 					</a>
 				</div>
 				<div class="languages">
-					<?php
-
-					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];					
+					<?php				
 					if (class_exists('SitePress')) {
 						$languages = icl_get_languages('skip_missing=1&orderby=code&order=desc');
 						foreach($languages as $l){
-			        if(!$l['active']) {
-			            $langs[] = '<a href="'.$l['url'].'">'.$l['language_code'].'</a>';
-			        } else {
-			            $langs[] = '·' . strtoupper($l['language_code']);
-			        }
+			        if(!$l['active']) { ?>
+			        	<a href="<?php echo $l['url']; ?>">						
+									<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?>"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+								</a>
+			        <?php } else { ?>
+			          <a href="<?php echo $l['url']; ?>">						
+									<svg class="icon icon-<?php echo $l['language_code']; ?>"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+								</a>
+			        <?php }
 				    }
-				    echo join(' / ', $langs);
-						$match = preg_match('/^\/es\//', $_SERVER["REQUEST_URI"]);
-						//Site in spanish
-						if ($match > 0){
-							$request_en = str_replace('/es/', '/', $_SERVER["REQUEST_URI"]);
-							$url_english = $_SERVER["HTTP_HOST"] . $request_en;
-							$url_spanish = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-						}//site in english
-						else{
-							$request_es = '/es'.$_SERVER["REQUEST_URI"];
-							$url_spanish = $_SERVER["HTTP_HOST"] . $request_es;
-							$url_english = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-						}
-					}?>
-					<a href="<?php echo 'http://'.$url_spanish; ?>">						
-							<svg class="icon icon-es<?php if( ICL_LANGUAGE_CODE == 'en'){ echo ' white-icon';} ?>"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
-					</a>
-					<a href="<?php echo 'http://'.$url_english; ?>">
-						<svg class="icon icon-en<?php if( ICL_LANGUAGE_CODE == 'es'){ echo ' white-icon';} ?>"><use xlink:href="#icon-en"></use></svg><span class="mls"></span>
-					</a>
+				  }?>
 				</div>
 			</div>			
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
@@ -308,28 +291,21 @@
 				</div>
 				<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
 				<div class="languages">
-					<?php
-					$current_url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];					
+					<?php				
 					if (class_exists('SitePress')) {
-						$match = preg_match('/^\/es\//', $_SERVER["REQUEST_URI"]);
-						//Site in spanish
-						if ($match > 0){
-							$request_en = str_replace('/es/', '/', $_SERVER["REQUEST_URI"]);
-							$url_english = $_SERVER["HTTP_HOST"] . $request_en;
-							$url_spanish = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-						}//site in english
-						else{
-							$request_es = '/es'.$_SERVER["REQUEST_URI"];
-							$url_spanish = $_SERVER["HTTP_HOST"] . $request_es;
-							$url_english = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-						}
-					}?>
-					<a href="<?php echo 'http://'.$url_spanish; ?>">						
-							<svg class="icon icon-es<?php if( ICL_LANGUAGE_CODE == 'en'){ echo ' white-icon';} ?>"><use xlink:href="#icon-es"></use></svg><span class="mls"></span>
-					</a>
-					<a href="<?php echo 'http://'.$url_english; ?>">
-						<svg class="icon icon-en<?php if( ICL_LANGUAGE_CODE == 'es'){ echo ' white-icon';} ?>"><use xlink:href="#icon-en"></use></svg><span class="mls"></span>
-					</a>
+						$languages = icl_get_languages('skip_missing=1&orderby=code&order=desc');
+						foreach($languages as $l){
+			        if(!$l['active']) { ?>
+			        	<a href="<?php echo $l['url']; ?>">						
+									<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?>"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+								</a>
+			        <?php } else { ?>
+			          <a href="<?php echo $l['url']; ?>">						
+									<svg class="icon icon-<?php echo $l['language_code']; ?>"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+								</a>
+			        <?php }
+				    }
+				  }?>
 				</div>
 				<div class="search-bar">
 					<a href="" class="search-submit" id="search-header">
