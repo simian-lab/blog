@@ -517,7 +517,7 @@ a {
   @media screen and (max-width: 36.25em) {
     .single-post .detail .hero {
       min-height: 40vh;
-      margin-top: 14vh; } }
+      margin-top: -29px; } }
   .single-post .detail .hero .wp-post-image {
     width: 100vw;
     height: 80vh;
