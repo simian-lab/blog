@@ -47,7 +47,9 @@
     		opacity: 0.65;
     		margin-top: -38px;
     		object-fit: cover;
+    		min-height: 415px;
     		@include media($mobile){
+    			min-height: 230px;
     			height: initial;
     		}
     	}
