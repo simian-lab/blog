@@ -479,7 +479,8 @@ a {
     color: #3F3832; }
 
 .single-post .header {
-  height: 270px; }
+  height: 220px;
+  background-position: 50%; }
   @media screen and (max-width: 48em) {
     .single-post .header {
       height: 100px; } }

@@ -1,6 +1,7 @@
 .single-post{
 	.header{
-		height: 270px;
+		height: 220px;
+  	background-position: 50%;
 		@include media($ipad-portrait){
 	  	height: 100px;
 	  }
