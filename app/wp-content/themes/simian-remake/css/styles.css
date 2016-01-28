@@ -137,6 +137,12 @@ a {
       display: inline-block;
       width: 2rem;
       height: 2rem; }
+    .header .top-header .tools .social .icon {
+      width: 1.5rem; }
+    .header .top-header .tools .social .icon-facebook {
+      margin-left: 15px; }
+    .header .top-header .tools .social .icon-google-plus {
+      width: 2rem; }
     .header .top-header .tools .icon-mail {
       color: #4FA2C0; }
     .header .top-header .tools .icon-vertical-separator {
@@ -146,10 +152,6 @@ a {
       transition: all 600ms ease-in-out; }
     .header .top-header .tools .social, .header .top-header .tools .search-tool, .header .top-header .tools .mail {
       vertical-align: super; }
-    .header .top-header .tools .icon-facebook {
-      margin-left: 15px; }
-    .header .top-header .tools .icon-google-plus {
-      width: 3rem; }
     .header .top-header .tools .search-bar {
       position: absolute;
       right: -80%;

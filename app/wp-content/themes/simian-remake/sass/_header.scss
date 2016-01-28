@@ -135,6 +135,17 @@
     		width: 2rem;
     		height: 2rem;
 			}
+			.social{
+				.icon{
+					width: 1.5rem;
+				}
+				.icon-facebook{
+					margin-left: 15px;
+				}
+				.icon-google-plus{
+					width: 2rem;
+				}
+			}
 			.icon-mail{
 				color: $light-blue;
 			}
@@ -147,13 +158,7 @@
 			}
 			.social, .search-tool, .mail{
 				vertical-align: super;
-			}
-			.icon-facebook{
-				margin-left: 15px;
-			}
-			.icon-google-plus{
-				width: 3rem;
-			}
+			}			
 			.search-bar{
 				position: absolute;
     		right: -80%;
