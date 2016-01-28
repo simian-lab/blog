@@ -4,6 +4,7 @@
   	background-position: 50%;
 		@include media($ipad-portrait){
 	  	height: 100px;
+	  	overflow: hidden;
 	  }
 		.monkey{
 			width: 455px;
@@ -38,6 +39,7 @@
     	display: -ms-inline-grid;
     	@include media($mobile){
     		min-height: 40vh;
+    		margin-top: 14vh;
     	}
     	.wp-post-image{
     		width: 100vw;

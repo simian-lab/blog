@@ -486,7 +486,8 @@ a {
   background-position: 50%; }
   @media screen and (max-width: 48em) {
     .single-post .header {
-      height: 100px; } }
+      height: 100px;
+      overflow: hidden; } }
   .single-post .header .monkey {
     width: 455px;
     bottom: -40px; }
@@ -515,7 +516,8 @@ a {
   display: -ms-inline-grid; }
   @media screen and (max-width: 36.25em) {
     .single-post .detail .hero {
-      min-height: 40vh; } }
+      min-height: 40vh;
+      margin-top: 14vh; } }
   .single-post .detail .hero .wp-post-image {
     width: 100vw;
     height: 80vh;
