@@ -4,10 +4,12 @@
   	background-position: 50%;
 		@include media($ipad-portrait){
 	  	height: 100px;
-	  	overflow: hidden;
 	  }
 		.monkey{
 			width: 455px;
+			@include media($ipad-portrait){
+				width: 100%;
+			}
 			bottom: -40px;
 			.site-title{
 				font-size: 50px;

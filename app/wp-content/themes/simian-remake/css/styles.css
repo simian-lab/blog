@@ -486,11 +486,13 @@ a {
   background-position: 50%; }
   @media screen and (max-width: 48em) {
     .single-post .header {
-      height: 100px;
-      overflow: hidden; } }
+      height: 100px; } }
   .single-post .header .monkey {
     width: 455px;
     bottom: -40px; }
+    @media screen and (max-width: 48em) {
+      .single-post .header .monkey {
+        width: 100%; } }
     .single-post .header .monkey .site-title {
       font-size: 50px; }
       @media screen and (max-width: 48em) {
