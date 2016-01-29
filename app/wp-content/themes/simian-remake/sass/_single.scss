@@ -149,8 +149,8 @@
 				.alignleft{
 					float: left;
 				}
-				.gallery{
-					position: relative;
+				/* .gallery{
+					position: relative;					
 					background-image: url('../images/border-top.svg'),
 														url('../images/border-right.svg'),
 														url('../images/border-left.svg'),
@@ -159,7 +159,7 @@
 					background-position: top, right, left, bottom;
 			    background-size: 100%, contain, contain, 100%;
 			    padding: 40px;
-				}
+				} */
 			}
 			.author, .date{
 				display: inline;
