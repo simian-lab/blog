@@ -94,6 +94,7 @@
 				}
 				.wp-caption{
 					max-width: 100%;
+					margin: 0 20px;
 				}
 				.title{
 					color: $light-red;
@@ -107,7 +108,7 @@
 					p{
 						display: inline;
 						font-weight: bold;
-						font-size: 60px;
+						font-size: 50px;
 						@include media($ipad-portrait){
     					font-size: 35px;
     				}
@@ -116,7 +117,7 @@
 						text-shadow: -1px 0 $dark-brown, 0 1px $dark-brown, 1px 0 $dark-brown, 0 -1px $dark-brown;
 						color: $yellow;
 						font-family: $font-title;
-						font-size: 60px;
+						font-size: 55px;
 						@include media($ipad-portrait){
     					font-size: 45px;
     				}
@@ -149,7 +150,7 @@
 				.alignleft{
 					float: left;
 				}
-				/* .gallery{
+				.gallery{
 					position: relative;					
 					background-image: url('../images/border-top.svg'),
 														url('../images/border-right.svg'),
@@ -159,7 +160,7 @@
 					background-position: top, right, left, bottom;
 			    background-size: 100%, contain, contain, 100%;
 			    padding: 40px;
-				} */
+				}
 			}
 			.author, .date{
 				display: inline;
@@ -198,6 +199,9 @@
 					display: inline-block;
 					width: 2.5rem;
 					height: 2.5rem;
+				}
+				.icon-google-plus{
+					width: 3rem;
 				}
 			}
 			.related{

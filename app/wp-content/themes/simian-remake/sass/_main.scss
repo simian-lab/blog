@@ -99,7 +99,11 @@
   			font-family: $font-text;
   			color: $dark-brown;
   			@include media($mobile){
-  				margin-top: 30px;
+  				margin-top: 0;
+  				position: absolute;
+  				.page-numbers.dots + .page-numbers {
+					  display: none !important;
+					}
   			}
   			.page-numbers{
 					position: relative;
@@ -141,6 +145,9 @@
   				}
   			}
   			.dots{
+  				@include media($mobile){
+  					font-size: 0.75rem;
+  				}
   				&:before {
     				content: '';
   				}

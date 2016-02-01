@@ -428,7 +428,10 @@ a {
       color: #3F3832; }
       @media screen and (max-width: 36.25em) {
         .main .content .posts-list .pagination {
-          margin-top: 30px; } }
+          margin-top: 0;
+          position: absolute; }
+          .main .content .posts-list .pagination .page-numbers.dots + .page-numbers {
+            display: none !important; } }
       .main .content .posts-list .pagination .page-numbers {
         position: relative;
         display: inline-block; }
@@ -457,6 +460,9 @@ a {
             .main .content .posts-list .pagination .page-numbers .icon-right-arrow-circular, .main .content .posts-list .pagination .page-numbers .icon-left-arrow-circular {
               width: 3rem;
               height: 3.5rem; } }
+      @media screen and (max-width: 36.25em) {
+        .main .content .posts-list .pagination .dots {
+          font-size: 0.75rem; } }
       .main .content .posts-list .pagination .dots:before {
         content: ''; }
       .main .content .posts-list .pagination .current .icon-circle {
@@ -571,18 +577,7 @@ a {
     display: block;
     margin-right: 2.35765%;
     width: 65.88078%;
-    margin-left: 17.05961%;
-    /* .gallery{
-					position: relative;					
-					background-image: url('../images/border-top.svg'),
-														url('../images/border-right.svg'),
-														url('../images/border-left.svg'),
-														url('../images/border-bottom.svg');
-					background-repeat: no-repeat;
-					background-position: top, right, left, bottom;
-			    background-size: 100%, contain, contain, 100%;
-			    padding: 40px;
-				} */ }
+    margin-left: 17.05961%; }
     .single-post .detail .content .post-content:last-child {
       margin-right: 0; }
     @media screen and (max-width: 60em) {
@@ -595,7 +590,8 @@ a {
         .single-post .detail .content .post-content:last-child {
           margin-right: 0; } }
     .single-post .detail .content .post-content .wp-caption {
-      max-width: 100%; }
+      max-width: 100%;
+      margin: 0 20px; }
     .single-post .detail .content .post-content .title {
       color: #FF5F5C;
       text-transform: uppercase;
@@ -605,7 +601,7 @@ a {
     .single-post .detail .content .post-content blockquote p {
       display: inline;
       font-weight: bold;
-      font-size: 60px; }
+      font-size: 50px; }
       @media screen and (max-width: 48em) {
         .single-post .detail .content .post-content blockquote p {
           font-size: 35px; } }
@@ -613,7 +609,7 @@ a {
       text-shadow: -1px 0 #3F3832, 0 1px #3F3832, 1px 0 #3F3832, 0 -1px #3F3832;
       color: #DED96B;
       font-family: "Amatic SC", cursive;
-      font-size: 60px; }
+      font-size: 55px; }
       @media screen and (max-width: 48em) {
         .single-post .detail .content .post-content blockquote strong {
           font-size: 45px; } }
@@ -639,6 +635,13 @@ a {
       float: right; }
     .single-post .detail .content .post-content .alignleft {
       float: left; }
+    .single-post .detail .content .post-content .gallery {
+      position: relative;
+      background-image: url("../images/border-top.svg"), url("../images/border-right.svg"), url("../images/border-left.svg"), url("../images/border-bottom.svg");
+      background-repeat: no-repeat;
+      background-position: top, right, left, bottom;
+      background-size: 100%, contain, contain, 100%;
+      padding: 40px; }
   .single-post .detail .content .author, .single-post .detail .content .date {
     display: inline;
     width: 50%; }
@@ -673,6 +676,8 @@ a {
       display: inline-block;
       width: 2.5rem;
       height: 2.5rem; }
+    .single-post .detail .content .social-share .icon-google-plus {
+      width: 3rem; }
   @media screen and (max-width: 60em) {
     .single-post .detail .content .related {
       margin: 0 20px; } }

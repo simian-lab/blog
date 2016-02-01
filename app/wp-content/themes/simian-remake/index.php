@@ -79,7 +79,7 @@ query_posts( $args );
 					$pagination_args = array(
 						'show_all' => False,
         		'mid_size' => 1,
-        		'end_size' => 1,
+        		'end_size' => 0,
         		'next_text' => '<svg class="icon icon-right-arrow-circular"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>',
         		'prev_text' => '<svg class="icon icon-left-arrow-circular"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>',
         		'type' => 'plain',
