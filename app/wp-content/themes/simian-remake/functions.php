@@ -36,6 +36,9 @@ if ( ! function_exists( 'simian_theme_enqueue_scripts' ) ) :
     wp_register_script('simian-menu-toggle-js', get_stylesheet_directory_uri().'/js/menu-toggle.js', array('jquery'),'1.2', true);
     wp_enqueue_script('simian-menu-toggle-js'); 
 
+    wp_register_script('simian-fixed-header-js', get_stylesheet_directory_uri().'/js/fixed-header.js', array('jquery'),'1.2', true);
+    wp_enqueue_script('simian-fixed-header-js'); 
+
     wp_register_script('simian-search-submit-js', get_stylesheet_directory_uri().'/js/search-submit.js', array('jquery'),'1.2', true);
     wp_enqueue_script('simian-search-submit-js'); 
 
