@@ -231,7 +231,7 @@
 </head>
 <body id="page" <?php body_class(); ?>>
 	<?php if ( !is_404() ): ?>
-	<header class="sticky-header">
+	<header class="header">
 		<div class="menu-toggle">
 			<a href="" class="mobile-menu">
 				<svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg><span class="mls"></span>

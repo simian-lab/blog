@@ -1,217 +1,225 @@
 .sticky-header{
-	position: fixed;
-	height: 150px;
-	width: 100%;
-	background: url('../images/background-header.svg');
-	background-repeat: no-repeat;
-  background-size: initial;
-  background-position-y: 65%;
-  z-index: 1;
-  @include media($ipad-portrait){
-  	height: 100px;
-  }
-  .menu-toggle{
-  	display: block;
-  	position: absolute;  		
-  	z-index: 1;
-  	.icon{
-  		width: 3rem;
-  		height: 3rem;
-  	}
-  	.icon-menu{
-  		width: 2.4rem;
-    	height: 4rem;
-    	margin-left: 10px;
-  	}
-  }
-  .active-menu{
-  	transform: translateX(100%);
-  	transition: transform 600ms ease-in-out;  		
-  }
-	.top-header{
+	.header{
+		position: fixed;
+		height: 125px !important;
+		width: 100%;
 		background: url('../images/background-header.svg');
 		background-repeat: no-repeat;
-		background-size: cover;
-		height: 370px;
-  	position: absolute;
-  	z-index: 1;
-  	width: 100%;
-  	right: 100%;
-  	transition: transform 600ms ease-in-out;
-  	overflow: hidden;
-
-  	.menu-toggle{
-  		position: relative;
-  	}
-		.logo{
-			position: relative;
-			top: 0;
-			left: 0;
-			margin: 0 15px;
-			width: 250px;
-    	height: 100px;
-		}
-		.menu{
-			
-			position: relative;
-			text-align: left;
-			margin-left: 15px;
-
-			.menu-item{
-				font-family: $font-text;
-				color: white;
-				font-size: 18px;
-				display: block;
-    		padding-right: 3rem;
-    		text-transform: uppercase;
-    		font-weight: bold;
-			}
-		}
-		.mobile-top{
-			display: block;
-			.menu-toggle{
-				display: inline-block;
-			}
-			.languages{
-				float: right;
-
-				.icon{
-					width: 3rem;
-					height: 3rem;
-				}
-				.white-icon{
-					color: white;
-				}
-				#language{
-					display: inline-block;
-				}
-				.icon-es{
-					margin-right: -14px;
-				}
-			}
-		}
-		.tools{
-			background: url('../images/background-tools.svg');
+	  background-size: initial;
+	  background-position-y: 70% !important;
+	  z-index: 1;
+	  @include media($ipad-portrait){
+	  	height: 100px;
+	  }
+	  .menu-toggle{
+	  	display: block;
+	  	position: absolute;  		
+	  	z-index: 1;
+	  	.icon{
+	  		width: 3rem;
+	  		height: 3rem;
+	  	}
+	  	.icon-menu{
+	  		width: 2.4rem;
+	    	height: 4rem;
+	    	margin-left: 10px;
+	  	}
+	  }
+	  .active-menu{
+	  	transform: translateX(100%);
+	  	transition: transform 600ms ease-in-out;  		
+	  }
+		.top-header{
+			background: url('../images/background-header.svg');
 			background-repeat: no-repeat;
-  		background-size: cover;
-			position: relative;
-			top: 0;
-			right: 0;
-			overflow: hidden;			
-    	margin-top: -5px;
-    	width: 324px;
+			background-size: cover;
+			height: 370px;
+	  	position: absolute;
+	  	z-index: 1;
+	  	width: 100%;
+	  	right: 100%;
+	  	transition: transform 600ms ease-in-out;
+	  	overflow: hidden;
 
-			.icon{
-				display: inline-block;
-    		width: 2rem;
-    		height: 2rem;
+	  	.menu-toggle{
+	  		position: relative;
+	  	}
+			.logo{
+				position: relative;
+				top: 0;
+				left: 0;
+				margin: 0 15px;
+				width: 250px;
+	    	height: 100px;
 			}
-			.social{
-				.icon{
-					width: 1.5rem;
-				}
-				.icon-facebook{
-					margin-left: 15px;
-				}
-				.icon-google-plus{
-					width: 2rem;
-				}
-			}
-			.icon-mail{
-				color: $light-blue;
-			}
-			.icon-vertical-separator{
-				margin: 0 -10px 6px;
-			}
-			.social, .search-tool, .mail, .languages, .search-bar{
-				display: inline;
-				transition: all 600ms ease-in-out;
-			}
-			.social, .search-tool, .mail{
-				vertical-align: super;
-			}			
-			.search-bar{
-				position: absolute;
-    		right: -80%;
-    		top: 0;
-    		@-moz-document url-prefix(){
-					right: -100%;
-    		}
-				.search-form{
-					display: inline-block;
-					vertical-align: super;
-				}
-				.input{
+			.menu{
+				
+				position: relative;
+				text-align: left;
+				margin-left: 15px;
+
+				.menu-item{
 					font-family: $font-text;
+					color: white;
+					font-size: 18px;
+					display: block;
+	    		padding-right: 3rem;
+	    		text-transform: uppercase;
+	    		font-weight: bold;
 				}
-				.close .icon-close-circular{
+			}
+			.mobile-top{
+				display: block;
+				.menu-toggle{
+					display: inline-block;
+				}
+				.languages{
+					float: right;
+
+					.icon{
+						width: 3rem;
+						height: 3rem;
+					}
+					.white-icon{
+						color: white;
+					}
+					#language{
+						display: inline-block;
+					}
+					.icon-es{
+						margin-right: -14px;
+					}
+				}
+			}
+			.tools{
+				background: url('../images/background-tools.svg');
+				background-repeat: no-repeat;
+	  		background-size: cover;
+				position: relative;
+				top: 0;
+				right: 0;
+				overflow: hidden;			
+	    	margin-top: -5px;
+	    	width: 324px;
+
+				.icon{
+					display: inline-block;
+	    		width: 2rem;
+	    		height: 2rem;
+				}
+				.social{
+					.icon{
+						width: 1.5rem;
+					}
+					.icon-facebook{
+						margin-left: 15px;
+					}
+					.icon-google-plus{
+						width: 2rem;
+					}
+				}
+				.icon-mail{
+					color: $light-blue;
+				}
+				.icon-vertical-separator{
+					margin: 0 -10px 6px;
+				}
+				.social, .search-tool, .mail, .languages, .search-bar{
+					display: inline;
+					transition: all 600ms ease-in-out;
+				}
+				.social, .search-tool, .mail{
+					vertical-align: super;
+				}			
+				.search-bar{
+					position: absolute;
+	    		right: -80%;
+	    		top: 0;
+	    		@-moz-document url-prefix(){
+						right: -100%;
+	    		}
+					.search-form{
+						display: inline-block;
+						vertical-align: super;
+					}
+					.input{
+						font-family: $font-text;
+					}
+					.close .icon-close-circular{
+						vertical-align: bottom;
+					}
+					right: -220px;
+					@-moz-document url-prefix(){
+						right: -85%;
+	  			}
+				}
+				.active-search{
+	  			transform: translateX(-130%);
+	  				-moz-transform: translateX(-110%);
+	  			transition: transform 600ms ease-in-out;
+				}
+				.inactive{
+					opacity: 0;
+					pointer-events: none;
+					transition: all 600ms ease-in-out;
+				}
+				.languages{
+					display: none;
+					.icon{
+						width: 3rem;
+						height: 3rem;
+					}
+					.white-icon{
+						color: white;
+					}
+					#language{
+						display: inline-block;
+					}
+				}			
+			}
+		}
+		.monkey{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 460px !important;
+			bottom: initial;
+			@include media($ipad-landscape){
+				width: 100%;
+	    	position: relative;
+	    	text-align: center;
+	    	top: 17px;
+			}
+			.site-title, .talking-money{
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.site-title{
+				font-family: $font-title;
+				color: $yellow;
+				font-size: 54px;
+				width: 47%;
+				text-transform: uppercase;
+				text-align: right;
+				@include media($ipad-portrait){
+					font-size: 30px;
+					width: initial;
 					vertical-align: bottom;
 				}
-				right: -220px;
-				@-moz-document url-prefix(){
-					right: -85%;
-  			}
 			}
-			.active-search{
-  			transform: translateX(-130%);
-  				-moz-transform: translateX(-110%);
-  			transition: transform 600ms ease-in-out;
+			.talking-monkey{
+	    	float: right;
+	    	width: 240px;
+	    	@include media($ipad-portrait){
+					width: 90px;
+					float: none;
+				}
 			}
-			.inactive{
-				opacity: 0;
-				pointer-events: none;
-				transition: all 600ms ease-in-out;
-			}
-			.languages{
-				display: none;
-				.icon{
-					width: 3rem;
-					height: 3rem;
-				}
-				.white-icon{
-					color: white;
-				}
-				#language{
-					display: inline-block;
-				}
-			}			
 		}
 	}
-	.monkey{
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 750px;
-		@include media($ipad-landscape){
-			width: 100%;
-    	position: relative;
-    	text-align: center;
-    	top: 17px;
-		}
-		.site-title, .talking-money{
-			display: inline-block;
-			vertical-align: middle;
-		}
-		.site-title{
-			font-family: $font-title;
-			color: $yellow;
-			font-size: 54px;
-			width: 47%;
-			text-transform: uppercase;
-			text-align: right;
-			@include media($ipad-portrait){
-				font-size: 30px;
-				width: initial;
-				vertical-align: bottom;
-			}
-		}
-		.talking-monkey{
-    	float: right;
-    	width: 240px;
-    	@include media($ipad-portrait){
-				width: 90px;
-				float: none;
-			}
+	.detail{
+		.hero{
+			margin-top: 0 !important;
 		}
 	}
 }
@@ -220,8 +228,8 @@
 	height: 370px;
 	background: url('../images/background-header.svg');
 	background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
+  background-size: inherit;
+  background-position-y: 70%;
   @include media($ipad-portrait){
   	height: 100px;
   }
