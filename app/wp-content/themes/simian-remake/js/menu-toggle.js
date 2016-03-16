@@ -4,14 +4,23 @@ jQuery('.menu-toggle').click(function(event){
 });
 jQuery('.search-toggle').click(function(event){
 	event.preventDefault();
-	document.getElementsByClassName('search-bar')[0].classList.toggle('active-search');
-	document.getElementsByClassName('social')[0].classList.toggle('inactive');
-	document.getElementsByClassName('languages')[0].classList.toggle('inactive');
+	var searchbars = document.getElementsByClassName('search-bar');
+	for (var i = 0; i < searchbars.length; i++) {
+		searchbars[i].classList.toggle('active-search');
+	}
+	var socials = document.getElementsByClassName('social');
+	for (var i = 0; i < socials.length; i++) {
+		socials[i].classList.toggle('inactive');
+	}
 	for (var i = 0; i < document.getElementsByClassName('languages').length; i++) {
 		document.getElementsByClassName('languages')[i].classList.toggle('inactive');
 	};
-	document.getElementsByClassName('search-tool')[0].classList.toggle('inactive');
-	document.getElementsByClassName('mail')[0].classList.toggle('inactive');
+	for (var i = 0; i < document.getElementsByClassName('search-tool').length; i++) {
+		document.getElementsByClassName('search-tool')[i].classList.toggle('inactive');
+	}
+	for (var i = 0; i < document.getElementsByClassName('mail').length; i++) {
+		document.getElementsByClassName('mail')[i].classList.toggle('inactive');
+	}
 	for (var i = 0; i < document.getElementsByClassName('icon-vertical-separator').length; i++) {
 		document.getElementsByClassName('icon-vertical-separator')[i].classList.toggle('inactive');
 	};

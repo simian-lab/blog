@@ -46,6 +46,76 @@ a {
     transform: translateX(100%);
     transition: -webkit-transform 600ms ease-in-out;
     transition: transform 600ms ease-in-out; }
+  .sticky-header .header .sticky-tools {
+    display: block;
+    background: url("../images/background-tools.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    margin-top: -5px;
+    width: 324px; }
+    @media screen and (max-width: 64em) {
+      .sticky-header .header .sticky-tools {
+        display: none !important; } }
+    .sticky-header .header .sticky-tools .icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem; }
+    .sticky-header .header .sticky-tools .social .icon {
+      width: 1.5rem; }
+    .sticky-header .header .sticky-tools .social .icon-facebook {
+      margin-left: 15px; }
+    .sticky-header .header .sticky-tools .social .icon-google-plus {
+      width: 2rem; }
+    .sticky-header .header .sticky-tools .icon-mail {
+      color: #4FA2C0; }
+    .sticky-header .header .sticky-tools .icon-vertical-separator {
+      margin: 0 -10px 6px; }
+    .sticky-header .header .sticky-tools .social, .sticky-header .header .sticky-tools .search-tool, .sticky-header .header .sticky-tools .mail, .sticky-header .header .sticky-tools .languages, .sticky-header .header .sticky-tools .search-bar {
+      display: inline;
+      transition: all 600ms ease-in-out; }
+    .sticky-header .header .sticky-tools .social, .sticky-header .header .sticky-tools .search-tool, .sticky-header .header .sticky-tools .mail {
+      vertical-align: super; }
+    .sticky-header .header .sticky-tools .search-bar {
+      position: absolute;
+      right: -80%;
+      top: 0;
+      right: -220px; }
+
+@-moz-document url-prefix() {
+  .sticky-header .header .sticky-tools .search-bar {
+    right: -100%; } }
+      .sticky-header .header .sticky-tools .search-bar .search-form {
+        display: inline-block;
+        vertical-align: super; }
+      .sticky-header .header .sticky-tools .search-bar .input {
+        font-family: "Quicksand", sans-serif; }
+      .sticky-header .header .sticky-tools .search-bar .close .icon-close-circular {
+        vertical-align: bottom; }
+
+@-moz-document url-prefix() {
+  .sticky-header .header .sticky-tools .search-bar {
+    right: -85%; } }
+    .sticky-header .header .sticky-tools .active-search {
+      -webkit-transform: translateX(-130%);
+      transform: translateX(-130%);
+      -moz-transform: translateX(-110%);
+      transition: -webkit-transform 600ms ease-in-out;
+      transition: transform 600ms ease-in-out; }
+    .sticky-header .header .sticky-tools .inactive {
+      opacity: 0;
+      pointer-events: none;
+      transition: all 600ms ease-in-out; }
+    .sticky-header .header .sticky-tools .languages .icon {
+      width: 2.5rem;
+      height: 2.5rem; }
+    .sticky-header .header .sticky-tools .languages .white-icon {
+      color: white; }
+    .sticky-header .header .sticky-tools .languages #language {
+      display: inline-block; }
   .sticky-header .header .top-header {
     background: url("../images/background-header.svg");
     background-repeat: no-repeat;
@@ -84,7 +154,11 @@ a {
       .sticky-header .header .top-header .mobile-top .menu-toggle {
         display: inline-block; }
       .sticky-header .header .top-header .mobile-top .languages {
+        display: none;
         float: right; }
+        @media screen and (max-width: 64em) {
+          .sticky-header .header .top-header .mobile-top .languages {
+            display: block !important; } }
         .sticky-header .header .top-header .mobile-top .languages .icon {
           width: 3rem;
           height: 3rem; }
@@ -95,6 +169,7 @@ a {
         .sticky-header .header .top-header .mobile-top .languages .icon-es {
           margin-right: -14px; }
     .sticky-header .header .top-header .tools {
+      display: none;
       background: url("../images/background-tools.svg");
       background-repeat: no-repeat;
       background-size: cover;
@@ -104,6 +179,9 @@ a {
       overflow: hidden;
       margin-top: -5px;
       width: 324px; }
+      @media screen and (max-width: 64em) {
+        .sticky-header .header .top-header .tools {
+          display: block !important; } }
       .sticky-header .header .top-header .tools .icon {
         display: inline-block;
         width: 2rem;
@@ -211,6 +289,8 @@ a {
   @media screen and (max-width: 48em) {
     .header {
       height: 100px; } }
+  .header .sticky-tools {
+    display: none; }
   .header .menu-toggle {
     display: none; }
     @media screen and (max-width: 64em) {

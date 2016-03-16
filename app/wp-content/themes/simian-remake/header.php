@@ -354,6 +354,67 @@
 			</a>
 			<img class="talking-monkey" src="<?php echo get_template_directory_uri(); ?>/images/talking-monkey.svg" alt="Mono Aullador">
 		</div>
+		<div class="tools sticky-tools">
+			<div class="social">
+				<a href="https://www.facebook.com/simianlab" target="_blank" class="facebook">
+					<svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg><span class="mls"></span>
+				</a>
+				<a href="https://twitter.com/simianlab" target="_blank" class="twitter">
+					<svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg><span class="mls"></span>
+				</a>
+				<a href="https://plus.google.com/+SimianCo" target="_blank" class="google-plus">
+					<svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+			<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
+			<div class="search-tool">
+				<a href="" class="search-toggle">
+					<svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+			<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
+			<div class="mail">
+				<a href="http://simian.co/">
+					<svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+			<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
+			<div class="languages">
+				<?php				
+				if (class_exists('SitePress')) {
+					$languages = icl_get_languages('skip_missing=1&orderby=code&order=desc');
+					foreach($languages as $l){
+		        if(!$l['active']) { ?>
+		        	<a href="<?php echo $l['url']; ?>">						
+								<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?>"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+							</a>
+		        <?php } else { ?>
+		          <a href="<?php echo $l['url']; ?>">						
+								<svg class="icon icon-<?php echo $l['language_code']; ?>"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+							</a>
+		        <?php }
+			    }
+			  }else{?>
+				  <a href="#">						
+						<svg class="icon icon-es"><use xlink:href="#icon-es"></use></svg>
+					</a>
+					<a href="#">						
+						<svg class="icon icon-en"><use xlink:href="#icon-en"></use></svg>
+					</a>
+				<?php }?>
+			</div>
+			<div class="search-bar">
+				<a href="" class="search-submit" id="search-header">
+					<svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
+				</a>
+				<form class="search-form" id="form-header" action="<?php echo home_url(); ?>">
+					<input class="input" name="s" type="text">
+				</form>
+				<a href="" class="search-toggle" href="">
+					<svg class="icon icon-close-circular"><use xlink:href="#icon-close-circular"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+		</div>
 	</header>
 	<?php else : ?>
 		<header class="header">

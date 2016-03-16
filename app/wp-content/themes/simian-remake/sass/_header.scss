@@ -29,6 +29,96 @@
 	  	transform: translateX(100%);
 	  	transition: transform 600ms ease-in-out;  		
 	  }
+	  .sticky-tools{
+	  	display: block;
+			background: url('../images/background-tools.svg');
+			background-repeat: no-repeat;
+  		background-size: cover;
+			position: absolute;
+			top: 0;
+			right: 0;
+			overflow: hidden;			
+    	margin-top: -5px;
+    	width: 324px;
+
+    	@include media($ipad-landscape){
+    		display: none !important;
+    	}
+
+			.icon{
+				display: inline-block;
+    		width: 2rem;
+    		height: 2rem;
+			}
+			.social{
+				.icon{
+					width: 1.5rem;
+				}
+				.icon-facebook{
+					margin-left: 15px;
+				}
+				.icon-google-plus{
+					width: 2rem;
+				}
+			}
+			.icon-mail{
+				color: $light-blue;
+			}
+			.icon-vertical-separator{
+				margin: 0 -10px 6px;
+			}
+			.social, .search-tool, .mail, .languages, .search-bar{
+				display: inline;
+				transition: all 600ms ease-in-out;
+			}
+			.social, .search-tool, .mail{
+				vertical-align: super;
+			}			
+			.search-bar{
+				position: absolute;
+    		right: -80%;
+    		top: 0;
+    		@-moz-document url-prefix(){
+					right: -100%;
+    		}
+				.search-form{
+					display: inline-block;
+					vertical-align: super;
+				}
+				.input{
+					font-family: $font-text;
+				}
+				.close .icon-close-circular{
+					vertical-align: bottom;
+				}
+				right: -220px;
+				@-moz-document url-prefix(){
+					right: -85%;
+  			}
+			}
+			.active-search{
+  			transform: translateX(-130%);
+  				-moz-transform: translateX(-110%);
+  			transition: transform 600ms ease-in-out;
+			}
+			.inactive{
+				opacity: 0;
+				pointer-events: none;
+				transition: all 600ms ease-in-out;
+			}
+			.languages{
+				.icon{
+					width: 2.5rem;
+					height: 2.5rem;
+				}
+				.white-icon{
+					color: white;
+				}
+				#language{
+					display: inline-block;
+				}
+			}			
+		}
 		.top-header{
 			background: url('../images/background-header.svg');
 			background-repeat: no-repeat;
@@ -74,6 +164,10 @@
 					display: inline-block;
 				}
 				.languages{
+					display: none;
+					@include media($ipad-landscape){
+    				display: block !important;
+    			}
 					float: right;
 
 					.icon{
@@ -92,6 +186,10 @@
 				}
 			}
 			.tools{
+				display: none;
+				@include media($ipad-landscape){
+    			display: block !important;
+    		}
 				background: url('../images/background-tools.svg');
 				background-repeat: no-repeat;
 	  		background-size: cover;
@@ -232,6 +330,9 @@
   background-position-y: 70%;
   @include media($ipad-portrait){
   	height: 100px;
+  }
+  .sticky-tools{
+  	display: none;
   }
   .menu-toggle{
   	display: none;
