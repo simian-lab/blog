@@ -100,19 +100,13 @@
   			color: $dark-brown;
   			@include media($mobile){
   				margin-top: 0;
-  				position: absolute;
-  				.page-numbers.dots + .page-numbers {
-					  display: none !important;
-					}
+  				position: relative;
   			}
   			.page-numbers{
 					position: relative;
   				display: inline-block;
   				.number-label{
   					display: inline-block;
-  				}
-  				.prev,.next {
-    				margin: 0 1rem;  
   				}
   				&:before {
     				content: ' - ';
@@ -161,6 +155,22 @@
 				    z-index: -1;
 				    left: 100%;
 				    transform: translateX(-60%);
+  				}
+  			}
+  			.prev,.next {
+    			margin: 0 1rem;    			  
+  			}
+  			.prev{
+  				@include media($mobile){
+						position: absolute;
+						bottom: 0;
+  				}
+  			}
+  			.next{
+  				@include media($mobile){
+						display: block;
+    				position: relative;
+    				left: 140px;
   				}
   			}
 			}
