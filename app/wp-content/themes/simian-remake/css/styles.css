@@ -287,7 +287,8 @@ a {
   position: relative;
   height: 370px;
   background: url("../images/background-header.svg");
-  background-repeat: no-repeat;
+  background-repeat-y: no-repeat;
+  background-repeat-x: repeat;
   background-size: inherit;
   background-position-y: 70%; }
   @media screen and (max-width: 48em) {
@@ -393,14 +394,14 @@ a {
         float: right; } }
   .header .top-header .tools {
     background: url("../images/background-tools.svg");
-    background-repeat-y: no-repeat;
-    background-repeat-x: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     top: 0;
     right: 0;
     overflow: hidden;
-    margin-top: -5px; }
+    margin-top: -5px;
+    z-index: 3; }
     @media screen and (max-width: 64em) {
       .header .top-header .tools {
         position: relative;

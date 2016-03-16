@@ -330,7 +330,8 @@
 	position: relative;
 	height: 370px;
 	background: url('../images/background-header.svg');
-	background-repeat: no-repeat;
+	background-repeat-y: no-repeat;
+	background-repeat-x: repeat;
   background-size: inherit;
   background-position-y: 70%;
   @include media($ipad-portrait){
@@ -454,14 +455,14 @@
 		}
 		.tools{
 			background: url('../images/background-tools.svg');
-			background-repeat-y: no-repeat;
-			background-repeat-x: repeat;
+			background-repeat: no-repeat;
   		background-size: cover;
 			position: absolute;
 			top: 0;
 			right: 0;
 			overflow: hidden;			
     	margin-top: -5px;
+    	z-index: 3;
 			@include media($ipad-landscape){
 				position: relative;
 				width: 324px;
