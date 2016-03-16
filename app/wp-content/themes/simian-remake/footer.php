@@ -19,19 +19,19 @@
         
   			<div class="social-links">
 					<a href="https://www.facebook.com/simianlab" target="_blank" class="facebook">
-						<svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg><span class="mls"></span>
+						<svg class="icon icon-facebook grey-hover"><use xlink:href="#icon-facebook"></use></svg><span class="mls"></span>
 					</a>
 					<a href="https://twitter.com/simianlab" target="_blank"class="twitter">
-						<svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg><span class="mls"></span>
+						<svg class="icon icon-twitter grey-hover"><use xlink:href="#icon-twitter"></use></svg><span class="mls"></span>
 					</a>
 					<a href="https://plus.google.com/+SimianCo" target="_blank" class="google-plus">
-						<svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
+						<svg class="icon icon-google-plus grey-hover"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
 					</a>
           <a href="https://www.youtube.com/channel/UCD4IYGyW-b0TqpK29gmZLhw" class="youtube">
-            <svg class="icon icon-youtube"><use xlink:href="#icon-youtube"></use></svg><span class="mls"></span>
+            <svg class="icon icon-youtube grey-hover"><use xlink:href="#icon-youtube"></use></svg><span class="mls"></span>
           </a>
           <a href="https://www.linkedin.com/company/simian-s-a-s-" class="linkedin">
-            <svg class="icon icon-linkedin"><use xlink:href="#icon-linkedin"></use></svg><span class="mls"></span>
+            <svg class="icon icon-linkedin grey-hover"><use xlink:href="#icon-linkedin"></use></svg><span class="mls"></span>
           </a>
 				</div>
   		</div>

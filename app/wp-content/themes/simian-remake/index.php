@@ -40,7 +40,7 @@ query_posts( $args );
 								<?php the_post_thumbnail('post_list_image');
 							endif; ?>
 						</div>						
-						<h2 class="post-title">
+						<h2 class="post-title grow-hover">
 							<?php the_title(); ?>
 						</h2>
 						<div class="post-excerpt">
@@ -80,10 +80,10 @@ query_posts( $args );
 						'show_all' => False,
         		'mid_size' => 1,
         		'end_size' => 0,
-        		'next_text' => '<svg class="icon icon-right-arrow-circular"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>',
-        		'prev_text' => '<svg class="icon icon-left-arrow-circular"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>',
+        		'next_text' => '<svg class="icon icon-right-arrow-circular grey-hover"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>',
+        		'prev_text' => '<svg class="icon icon-left-arrow-circular grey-hover"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>',
         		'type' => 'plain',
-        		'before_page_number' => '<div class="number-label">',
+        		'before_page_number' => '<div class="number-label grow-hover">',
         		'after_page_number' => '<svg class="icon icon-circle"><use xlink:href="#icon-circle"></use></svg><span class="mls"></span></div>',
       		);
       		$links = paginate_links( $pagination_args );

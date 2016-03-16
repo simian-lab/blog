@@ -45,8 +45,9 @@ a {
   .sticky-header .header .active-menu {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
-    transition: -webkit-transform 600ms ease-in-out;
-    transition: transform 600ms ease-in-out; }
+    transition: transform 800ms ease-in-out;
+    -moz-transition: transform 800ms ease-in-out;
+    -webkit-transition: -webkit-transform 800ms ease-in-out; }
   .sticky-header .header .sticky-tools {
     display: block;
     background: url("../images/background-tools.svg");
@@ -126,8 +127,9 @@ a {
     z-index: 1;
     width: 100%;
     right: 100%;
-    transition: -webkit-transform 600ms ease-in-out;
-    transition: transform 600ms ease-in-out;
+    transition: transform 800ms ease-in-out;
+    -moz-transition: transform 800ms ease-in-out;
+    -webkit-transition: -webkit-transform 800ms ease-in-out;
     overflow: hidden; }
     .sticky-header .header .top-header .menu-toggle {
       position: relative; }
@@ -150,7 +152,9 @@ a {
         padding-right: 3rem;
         text-transform: uppercase;
         font-weight: bold;
-        transition: all 200ms ease-in-out; }
+        transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+        -webkit-transition: all 200ms ease-in-out; }
         .sticky-header .header .top-header .menu .menu-item:hover {
           color: #5D5752; }
     .sticky-header .header .top-header .mobile-top {
@@ -229,12 +233,15 @@ a {
         -webkit-transform: translateX(-130%);
         transform: translateX(-130%);
         -moz-transform: translateX(-110%);
-        transition: -webkit-transform 600ms ease-in-out;
-        transition: transform 600ms ease-in-out; }
+        transition: transform 600ms ease-in-out;
+        -moz-transition: transform 600ms ease-in-out;
+        -webkit-transition: -webkit-transform 600ms ease-in-out; }
       .sticky-header .header .top-header .tools .inactive {
         opacity: 0;
         pointer-events: none;
-        transition: all 600ms ease-in-out; }
+        transition: all 600ms ease-in-out;
+        -moz-transition: all 600ms ease-in-out;
+        -webkit-transition: all 600ms ease-in-out; }
       .sticky-header .header .top-header .tools .languages {
         display: none; }
         .sticky-header .header .top-header .tools .languages .icon {
@@ -314,8 +321,9 @@ a {
     .header .active-menu {
       -webkit-transform: translateX(100%);
       transform: translateX(100%);
-      transition: -webkit-transform 600ms ease-in-out;
-      transition: transform 600ms ease-in-out; } }
+      transition: transform 800ms ease-in-out;
+      -moz-transition: transform 800ms ease-in-out;
+      -webkit-transition: -webkit-transform 800ms ease-in-out; } }
   @media screen and (max-width: 64em) {
     .header .top-header {
       background: url("../images/background-header.svg");
@@ -326,8 +334,9 @@ a {
       z-index: 1;
       width: 100%;
       right: 100%;
-      transition: -webkit-transform 600ms ease-in-out;
-      transition: transform 600ms ease-in-out;
+      transition: transform 800ms ease-in-out;
+      -moz-transition: transform 800ms ease-in-out;
+      -webkit-transition: -webkit-transform 800ms ease-in-out;
       overflow: hidden; } }
   @media screen and (max-width: 64em) {
     .header .top-header .menu-toggle {
@@ -365,7 +374,9 @@ a {
       padding-right: 3rem;
       text-transform: uppercase;
       font-weight: bold;
-      transition: all 200ms ease-in-out; }
+      transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      -webkit-transition: all 200ms ease-in-out; }
       .header .top-header .menu .menu-item:hover {
         color: #5D5752; }
       @media screen and (max-width: 64em) {
@@ -422,7 +433,9 @@ a {
       margin: 0 -10px 6px; }
     .header .top-header .tools .social, .header .top-header .tools .search-tool, .header .top-header .tools .mail, .header .top-header .tools .languages, .header .top-header .tools .search-bar {
       display: inline;
-      transition: all 600ms ease-in-out; }
+      transition: all 600ms ease-in-out;
+      -moz-transition: all 600ms ease-in-out;
+      -webkit-transition: all 600ms ease-in-out; }
     .header .top-header .tools .social, .header .top-header .tools .search-tool, .header .top-header .tools .mail {
       vertical-align: super; }
     .header .top-header .tools .search-bar {
@@ -451,7 +464,8 @@ a {
       transform: translateX(-150%);
       -moz-transform: translateX(-120%);
       transition: -webkit-transform 600ms ease-in-out;
-      transition: transform 600ms ease-in-out; }
+      transition: transform 600ms ease-in-out;
+      -moz-transition: transform 600ms ease-in-out; }
       @media screen and (max-width: 64em) {
         .header .top-header .tools .active-search {
           -webkit-transform: translateX(-130%);
@@ -556,7 +570,12 @@ a {
       .footer .content .block .menu-item {
         font-family: "Quicksand", sans-serif;
         text-transform: uppercase;
-        color: white; }
+        color: white;
+        transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+        -webkit-transition: all 200ms ease-in-out; }
+        .footer .content .block .menu-item:hover {
+          color: #5D5752; }
     @media screen and (max-width: 48em) {
       .footer .content .links {
         display: none; } }
@@ -1186,3 +1205,19 @@ a {
 
 .icon-simian {
   color: #FFFFFF; }
+
+.grey-hover {
+  transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out; }
+  .grey-hover:hover {
+    color: #5D5752 !important; }
+
+.grow-hover {
+  transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in; }
+  .grow-hover:hover {
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1); }

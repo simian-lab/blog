@@ -79,3 +79,22 @@
 .icon-simian{
 	color: #FFFFFF;
 }
+
+.grey-hover{
+	transition: all 200ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out;
+	-webkit-transition: all 200ms ease-in-out;
+	&:hover{
+		color: $grey !important;
+	}
+}
+.grow-hover{
+	transition: all 200ms ease-in-out;
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	&:hover{
+		transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+	}
+}

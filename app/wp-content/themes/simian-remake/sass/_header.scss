@@ -28,7 +28,10 @@
 	  }
 	  .active-menu{
 	  	transform: translateX(100%);
-	  	transition: transform 600ms ease-in-out;  		
+	  	transition: transform 800ms ease-in-out;
+	  	-moz-transition: transform 800ms ease-in-out;
+	  	-webkit-transition: transform 800ms ease-in-out;
+
 	  }
 	  .sticky-tools{
 	  	display: block;
@@ -129,7 +132,9 @@
 	  	z-index: 1;
 	  	width: 100%;
 	  	right: 100%;
-	  	transition: transform 600ms ease-in-out;
+	  	transition: transform 800ms ease-in-out;
+	  	-moz-transition: transform 800ms ease-in-out;
+	  	-webkit-transition: transform 800ms ease-in-out;
 	  	overflow: hidden;
 
 	  	.menu-toggle{
@@ -157,10 +162,12 @@
 	    		padding-right: 3rem;
 	    		text-transform: uppercase;
 	    		font-weight: bold;
-					transition: all 200ms ease-in-out;
-	    		&:hover{
+	    		transition: all 200ms ease-in-out;
+					-moz-transition: all 200ms ease-in-out;
+					-webkit-transition: all 200ms ease-in-out;
+					&:hover{
 						color: $grey;
-	    		}
+					}
 				}
 			}
 			.mobile-top{
@@ -258,13 +265,17 @@
 				}
 				.active-search{
 	  			transform: translateX(-130%);
-	  				-moz-transform: translateX(-110%);
+	  			-moz-transform: translateX(-110%);
 	  			transition: transform 600ms ease-in-out;
+	  			-moz-transition: transform 600ms ease-in-out;
+	  			-webkit-transition: transform 600ms ease-in-out;
 				}
 				.inactive{
 					opacity: 0;
 					pointer-events: none;
 					transition: all 600ms ease-in-out;
+					-moz-transition: all 600ms ease-in-out;
+					-webkit-transition: all 600ms ease-in-out;
 				}
 				.languages{
 					display: none;
@@ -360,7 +371,9 @@
   .active-menu{
   	@include media($ipad-landscape){
   		transform: translateX(100%);
-  		transition: transform 600ms ease-in-out;  		
+  		transition: transform 800ms ease-in-out;
+  		-moz-transition: transform 800ms ease-in-out;
+  		-webkit-transition: transform 800ms ease-in-out;  		
   	}
   }
 	.top-header{
@@ -373,7 +386,9 @@
     	z-index: 1;
     	width: 100%;
     	right: 100%;
-    	transition: transform 600ms ease-in-out;
+    	transition: transform 800ms ease-in-out;
+    	-moz-transition: transform 800ms ease-in-out;
+    	-webkit-transition: transform 800ms ease-in-out;
     	overflow: hidden;
   	}
   	.menu-toggle{
@@ -415,10 +430,11 @@
     		text-transform: uppercase;
     		font-weight: bold;
 				transition: all 200ms ease-in-out;
-    		&:hover{
+				-moz-transition: all 200ms ease-in-out;
+				-webkit-transition: all 200ms ease-in-out;
+				&:hover{
 					color: $grey;
-	    	}
-
+				}
     		@include media($ipad-landscape){
     			display: block;
     			color: white;
@@ -492,6 +508,8 @@
 			.social, .search-tool, .mail, .languages, .search-bar{
 				display: inline;
 				transition: all 600ms ease-in-out;
+				-moz-transition: all 600ms ease-in-out;
+				-webkit-transition: all 600ms ease-in-out;
 			}
 			.social, .search-tool, .mail{
 				vertical-align: super;
@@ -524,6 +542,7 @@
   			transform: translateX(-150%);
   			-moz-transform: translateX(-120%);
   			transition: transform 600ms ease-in-out;
+  			-moz-transition: transform 600ms ease-in-out;
   			@include media($ipad-landscape){
   				transform: translateX(-130%);
   				-moz-transform: translateX(-110%);
