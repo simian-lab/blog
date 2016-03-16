@@ -4,7 +4,8 @@
 		height: 125px !important;
 		width: 100%;
 		background: url('../images/background-header.svg');
-		background-repeat: no-repeat;
+		background-repeat-y: no-repeat;
+		background-repeat-x: repeat;
 	  background-size: initial;
 	  background-position-y: 70% !important;
 	  z-index: 1;
@@ -156,6 +157,10 @@
 	    		padding-right: 3rem;
 	    		text-transform: uppercase;
 	    		font-weight: bold;
+					transition: all 200ms ease-in-out;
+	    		&:hover{
+						color: $grey;
+	    		}
 				}
 			}
 			.mobile-top{
@@ -408,6 +413,11 @@
     		padding-right: 3rem;
     		text-transform: uppercase;
     		font-weight: bold;
+				transition: all 200ms ease-in-out;
+    		&:hover{
+					color: $grey;
+	    	}
+
     		@include media($ipad-landscape){
     			display: block;
     			color: white;
@@ -444,7 +454,8 @@
 		}
 		.tools{
 			background: url('../images/background-tools.svg');
-			background-repeat: no-repeat;
+			background-repeat-y: no-repeat;
+			background-repeat-x: repeat;
   		background-size: cover;
 			position: absolute;
 			top: 0;

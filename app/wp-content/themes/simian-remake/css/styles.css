@@ -23,7 +23,8 @@ a {
   height: 125px !important;
   width: 100%;
   background: url("../images/background-header.svg");
-  background-repeat: no-repeat;
+  background-repeat-y: no-repeat;
+  background-repeat-x: repeat;
   background-size: initial;
   background-position-y: 70% !important;
   z-index: 1; }
@@ -148,7 +149,10 @@ a {
         display: block;
         padding-right: 3rem;
         text-transform: uppercase;
-        font-weight: bold; }
+        font-weight: bold;
+        transition: all 200ms ease-in-out; }
+        .sticky-header .header .top-header .menu .menu-item:hover {
+          color: #5D5752; }
     .sticky-header .header .top-header .mobile-top {
       display: block; }
       .sticky-header .header .top-header .mobile-top .menu-toggle {
@@ -359,7 +363,10 @@ a {
       display: inline-block;
       padding-right: 3rem;
       text-transform: uppercase;
-      font-weight: bold; }
+      font-weight: bold;
+      transition: all 200ms ease-in-out; }
+      .header .top-header .menu .menu-item:hover {
+        color: #5D5752; }
       @media screen and (max-width: 64em) {
         .header .top-header .menu .menu-item {
           display: block;
@@ -386,7 +393,8 @@ a {
         float: right; } }
   .header .top-header .tools {
     background: url("../images/background-tools.svg");
-    background-repeat: no-repeat;
+    background-repeat-y: no-repeat;
+    background-repeat-x: repeat;
     background-size: cover;
     position: absolute;
     top: 0;
@@ -692,7 +700,8 @@ a {
       @media screen and (max-width: 36.25em) {
         .main .content .posts-list .pagination {
           margin-top: 0;
-          position: relative; } }
+          position: relative;
+          margin-left: -25px; } }
       .main .content .posts-list .pagination .page-numbers {
         position: relative;
         display: inline-block; }
@@ -703,7 +712,7 @@ a {
           margin: 0 9px; }
           @media screen and (max-width: 36.25em) {
             .main .content .posts-list .pagination .page-numbers:before {
-              margin: 0 5px; } }
+              margin: 0 0; } }
         .main .content .posts-list .pagination .page-numbers:first-child:before, .main .content .posts-list .pagination .page-numbers.prev + .page-numbers:before, .main .content .posts-list .pagination .page-numbers.next:before {
           display: none; }
         .main .content .posts-list .pagination .page-numbers .icon-circle {
@@ -719,6 +728,10 @@ a {
             .main .content .posts-list .pagination .page-numbers .icon-right-arrow-circular, .main .content .posts-list .pagination .page-numbers .icon-left-arrow-circular {
               width: 3rem;
               height: 3.5rem; } }
+          @media screen and (max-width: 60em) {
+            .main .content .posts-list .pagination .page-numbers .icon-right-arrow-circular, .main .content .posts-list .pagination .page-numbers .icon-left-arrow-circular {
+              width: 2rem;
+              height: 2.5rem; } }
       @media screen and (max-width: 36.25em) {
         .main .content .posts-list .pagination .dots {
           font-size: 0.75rem; } }
@@ -735,15 +748,9 @@ a {
         transform: translateX(-60%); }
       .main .content .posts-list .pagination .prev, .main .content .posts-list .pagination .next {
         margin: 0 1rem; }
-      @media screen and (max-width: 36.25em) {
-        .main .content .posts-list .pagination .prev {
-          position: absolute;
-          bottom: 0; } }
-      @media screen and (max-width: 36.25em) {
-        .main .content .posts-list .pagination .next {
-          display: block;
-          position: relative;
-          left: 140px; } }
+        @media screen and (max-width: 36.25em) {
+          .main .content .posts-list .pagination .prev, .main .content .posts-list .pagination .next {
+            margin: 0 0; } }
 
 .category .main .content .category-head, .tag .main .content .category-head {
   font-family: "Amatic SC", cursive;
@@ -758,8 +765,7 @@ a {
     color: #3F3832; }
 
 .single-post .header {
-  height: 200px;
-  background-position: 50%; }
+  height: 200px; }
   @media screen and (max-width: 48em) {
     .single-post .header {
       height: 100px; } }

@@ -101,6 +101,7 @@
   			@include media($mobile){
   				margin-top: 0;
   				position: relative;
+  				margin-left: -25px;
   			}
   			.page-numbers{
 					position: relative;
@@ -112,7 +113,7 @@
     				content: ' - ';
     				margin: 0 9px;
     				@include media($mobile){
-    					margin: 0 5px;
+    					margin: 0 0;
     				}
   				}
   				&:first-child, &.prev + .page-numbers, &.next{
@@ -136,6 +137,10 @@
     					width: 3rem;
   						height: 3.5rem;
     				}
+    				@include media($tablet){
+    					width: 2rem;
+  						height: 2.5rem;
+    				}
   				}
   			}
   			.dots{
@@ -158,20 +163,10 @@
   				}
   			}
   			.prev,.next {
-    			margin: 0 1rem;    			  
-  			}
-  			.prev{
-  				@include media($mobile){
-						position: absolute;
-						bottom: 0;
-  				}
-  			}
-  			.next{
-  				@include media($mobile){
-						display: block;
-    				position: relative;
-    				left: 140px;
-  				}
+    			margin: 0 1rem;
+    			@include media($mobile){
+    				margin: 0 0;
+    			}    			  
   			}
 			}
 		}
