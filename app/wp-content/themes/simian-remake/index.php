@@ -83,7 +83,7 @@ query_posts( $args );
         		'next_text' => '<svg class="icon icon-right-arrow-circular grey-hover"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>',
         		'prev_text' => '<svg class="icon icon-left-arrow-circular grey-hover"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>',
         		'type' => 'plain',
-        		'before_page_number' => '<div class="number-label grow-hover">',
+        		'before_page_number' => '<div class="number-label">',
         		'after_page_number' => '<svg class="icon icon-circle"><use xlink:href="#icon-circle"></use></svg><span class="mls"></span></div>',
       		);
       		$links = paginate_links( $pagination_args );

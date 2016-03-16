@@ -40,13 +40,13 @@ $url = $thumb['0'];
 			<div class="post-footer">
 				<div class="social-share">
 					<a href="#" onclick="openFacebookPopup();" class="facebook">
-						<svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg><span class="mls"></span>
+						<svg class="icon icon-facebook grey-hover"><use xlink:href="#icon-facebook"></use></svg><span class="mls"></span>
 					</a>
 					<a href="#" onclick="openTwitterPopup('<?php echo  get_the_title(); ?>');" class="twitter">
-						<svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg><span class="mls"></span>
+						<svg class="icon icon-twitter grey-hover"><use xlink:href="#icon-twitter"></use></svg><span class="mls"></span>
 					</a>
 					<a href="#" onclick="openGooglePopup();" class="google-plus">
-						<svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
+						<svg class="icon icon-google-plus grey-hover"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
 					</a>
 				</div>				
 			</div>
