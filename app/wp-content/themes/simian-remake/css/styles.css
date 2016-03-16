@@ -71,7 +71,9 @@ a {
     .sticky-header .header .sticky-tools .social .icon-facebook {
       margin-left: 15px; }
     .sticky-header .header .sticky-tools .social .icon-google-plus {
-      width: 2rem; }
+      width: 2rem;
+      height: 1.5rem;
+      margin-bottom: 4px; }
     .sticky-header .header .sticky-tools .icon-mail {
       color: #4FA2C0; }
     .sticky-header .header .sticky-tools .icon-vertical-separator {
@@ -290,6 +292,9 @@ a {
 .sticky-header .detail .hero {
   margin-top: 0 !important; }
 
+.search.sticky-header .main .content .search-bar {
+  margin-top: 0 !important; }
+
 .header {
   position: relative;
   height: 370px;
@@ -426,7 +431,9 @@ a {
     .header .top-header .tools .social .icon-facebook {
       margin-left: 15px; }
     .header .top-header .tools .social .icon-google-plus {
-      width: 2rem; }
+      width: 2rem;
+      height: 1.5rem;
+      margin-bottom: 4px; }
     .header .top-header .tools .icon-mail {
       color: #4FA2C0; }
     .header .top-header .tools .icon-vertical-separator {
@@ -588,7 +595,7 @@ a {
       border-radius: 50%;
       padding: 5px; }
     .footer .content .social .icon-google-plus {
-      padding: 0; }
+      padding: 0 3px; }
     .footer .content .copyright {
       float: left;
       display: block;

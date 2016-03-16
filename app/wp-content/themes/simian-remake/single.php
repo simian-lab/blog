@@ -89,7 +89,7 @@ $url = $thumb['0'];
 					<?php if(get_next_post_link()): ?>
 						<div class="left-link">
 							<?php	echo get_next_post_link( '%link' ,
-							'<svg class="icon icon-left-arrow-circular"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>'.
+							'<svg class="icon icon-left-arrow-circular grey-hover"><use xlink:href="#icon-left-arrow-circular"></use></svg><span class="mls"></span>'.
 							'<h3 class="label">'.__('Entrada Anterior', 'simian_theme'). '</h3>'); ?>
 						</div>
 					<?php endif; ?>
@@ -97,7 +97,7 @@ $url = $thumb['0'];
 						<div class="right-link">
 							<?php	echo get_previous_post_link( '%link' ,
 							'<h3 class="label">'.__('Entrada Siguiente', 'simian_theme'). '</h3>'.
-							'<svg class="icon icon-right-arrow-circular"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>'); ?>
+							'<svg class="icon icon-right-arrow-circular grey-hover"><use xlink:href="#icon-right-arrow-circular"></use></svg><span class="mls"></span>'); ?>
 							</div>
 					<?php endif; ?>
 				</div>
