@@ -97,6 +97,14 @@
 				.close .icon-close-circular{
 					vertical-align: bottom;
 				}
+				.icon-search{
+					position: relative;
+  				top: 7px;
+				}
+				.icon-close-circular{
+					position: relative;
+  				top: 8px;
+				}
 				right: -220px;
 				@-moz-document url-prefix(){
 					right: -85%;
@@ -168,7 +176,7 @@
 					-moz-transition: all 200ms ease-in-out;
 					-webkit-transition: all 200ms ease-in-out;
 					&:hover{
-						color: $grey;
+						color: $light-red;
 					}
 				}
 			}
@@ -246,7 +254,7 @@
 				.search-bar{
 					position: absolute;
 	    		right: -80%;
-	    		top: 0;
+	    		top: 4px;
 	    		@-moz-document url-prefix(){
 						right: -100%;
 	    		}
@@ -256,6 +264,14 @@
 					}
 					.input{
 						font-family: $font-text;
+					}
+					.icon-search{
+						position: relative;
+    				top: 7px;
+					}
+					.icon-close-circular{
+						position: relative;
+    				top: 8px;
 					}
 					.close .icon-close-circular{
 						vertical-align: bottom;
@@ -445,7 +461,7 @@
 				-moz-transition: all 200ms ease-in-out;
 				-webkit-transition: all 200ms ease-in-out;
 				&:hover{
-					color: $grey;
+					color: $light-red;
 				}
     		@include media($ipad-landscape){
     			display: block;
@@ -531,7 +547,7 @@
 			.search-bar{
 				position: absolute;
     		right: -80%;
-    		top: 0;
+    		top: 4px;
     		@-moz-document url-prefix(){
 					right: -100%;
     		}
@@ -541,6 +557,14 @@
 				}
 				.input{
 					font-family: $font-text;
+				}
+				.icon-search{
+					position: relative;
+  				top: 7px;
+				}
+				.icon-close-circular{
+					position: relative;
+  				top: 8px;
 				}
 				.close .icon-close-circular{
 					vertical-align: bottom;

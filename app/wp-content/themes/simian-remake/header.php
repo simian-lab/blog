@@ -233,14 +233,14 @@
 	<header class="header">
 		<div class="menu-toggle">
 			<a href="" class="mobile-menu">
-				<svg class="icon icon-menu grey-hover"><use xlink:href="#icon-menu"></use></svg><span class="mls"></span>
+				<svg class="icon icon-menu red-hover"><use xlink:href="#icon-menu"></use></svg><span class="mls"></span>
 			</a>
 		</div>
 		<div class="top-header">
 			<div class="mobile-top">
 				<div class="menu-toggle">
 					<a href="" class="mobile-menu">
-						<svg class="icon icon-left-arrow grey-hover"><use xlink:href="#icon-left-arrow"></use></svg><span class="mls"></span>
+						<svg class="icon icon-left-arrow red-hover"><use xlink:href="#icon-left-arrow"></use></svg><span class="mls"></span>
 					</a>
 				</div>
 				<div class="languages">
@@ -250,26 +250,26 @@
 						foreach($languages as $l){
 			        if(!$l['active']) { ?>
 			        	<a href="<?php echo $l['url']; ?>">						
-									<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?> grey-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+									<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
 								</a>
 			        <?php } else { ?>
 			          <a href="<?php echo $l['url']; ?>">						
-									<svg class="icon icon-<?php echo $l['language_code']; ?> grey-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+									<svg class="icon icon-<?php echo $l['language_code']; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
 								</a>
 			        <?php }
 				    }
 				  }else{?>
 					  <a href="#">						
-							<svg class="icon icon-es grey-hover"><use xlink:href="#icon-es"></use></svg>
+							<svg class="icon icon-es red-hover"><use xlink:href="#icon-es"></use></svg>
 						</a>
 						<a href="#">						
-							<svg class="icon icon-en grey-hover"><use xlink:href="#icon-en"></use></svg>
+							<svg class="icon icon-en red-hover"><use xlink:href="#icon-en"></use></svg>
 						</a>
 					<?php }?>
 				</div>
 			</div>			
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
-				<img class="logo grow-hover" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Simian Logo">
+				<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Simian Logo">
 			</a>
 			<div class="tools">
 				<div class="social">
@@ -303,20 +303,20 @@
 						foreach($languages as $l){
 			        if(!$l['active']) { ?>
 			        	<a href="<?php echo $l['url']; ?>">						
-									<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?> grey-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+									<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
 								</a>
 			        <?php } else { ?>
 			          <a href="<?php echo $l['url']; ?>">						
-									<svg class="icon icon-<?php echo $l['language_code']; ?> grey-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+									<svg class="icon icon-<?php echo $l['language_code']; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
 								</a>
 			        <?php }
 				    }
 				  }else{?>
 					  <a href="#">						
-							<svg class="icon icon-es grey-hover"><use xlink:href="#icon-es"></use></svg>
+							<svg class="icon icon-es red-hover"><use xlink:href="#icon-es"></use></svg>
 						</a>
 						<a href="#">						
-							<svg class="icon icon-en grey-hover"><use xlink:href="#icon-en"></use></svg>
+							<svg class="icon icon-en red-hover"><use xlink:href="#icon-en"></use></svg>
 						</a>
 					<?php }?>
 				</div>
@@ -347,7 +347,7 @@
 		</div>
 		<div class="monkey">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
-				<h1 class="site-title grey-hover">
+				<h1 class="site-title red-hover">
 					<?php _e('Nuestro Blog', 'simian_theme'); ?>
 				</h1>
 			</a>
@@ -385,20 +385,20 @@
 					foreach($languages as $l){
 		        if(!$l['active']) { ?>
 		        	<a href="<?php echo $l['url']; ?>">						
-								<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?> grey-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+								<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
 							</a>
 		        <?php } else { ?>
 		          <a href="<?php echo $l['url']; ?>">						
-								<svg class="icon icon-<?php echo $l['language_code']; ?> grey-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+								<svg class="icon icon-<?php echo $l['language_code']; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
 							</a>
 		        <?php }
 			    }
 			  }else{?>
 				  <a href="#">						
-						<svg class="icon icon-es grey-hover"><use xlink:href="#icon-es"></use></svg>
+						<svg class="icon icon-es red-hover"><use xlink:href="#icon-es"></use></svg>
 					</a>
 					<a href="#">						
-						<svg class="icon icon-en grey-hover"><use xlink:href="#icon-en"></use></svg>
+						<svg class="icon icon-en red-hover"><use xlink:href="#icon-en"></use></svg>
 					</a>
 				<?php }?>
 			</div>

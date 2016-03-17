@@ -88,6 +88,14 @@
 		color: $grey !important;
 	}
 }
+.red-hover{
+	transition: all 200ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out;
+	-webkit-transition: all 200ms ease-in-out;
+	&:hover{
+		color: $light-red !important;
+	}
+}
 .grow-hover{
 	transition: all 200ms ease-in-out;
 	-webkit-transition: all 200ms ease-in;

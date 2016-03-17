@@ -88,6 +88,14 @@
 					}
 					.tags{
 						width: 100%;
+						a{
+							transition: all 200ms ease-in-out;
+							-moz-transition: all 200ms ease-in-out;
+							-webkit-transition: all 200ms ease-in-out;
+							&:hover{
+								color: $light-red !important;
+							}
+						}
 					}						
 				}
 			}
@@ -108,6 +116,12 @@
   				display: inline-block;
   				.number-label{
   					display: inline-block;
+  					transition: all 200ms ease-in-out;
+						-moz-transition: all 200ms ease-in-out;
+						-webkit-transition: all 200ms ease-in-out;
+						&:hover{
+							font-size: larger;
+						}
   				}
   				&:before {
     				content: ' - ';

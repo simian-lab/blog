@@ -99,6 +99,12 @@ a {
         font-family: "Quicksand", sans-serif; }
       .sticky-header .header .sticky-tools .search-bar .close .icon-close-circular {
         vertical-align: bottom; }
+      .sticky-header .header .sticky-tools .search-bar .icon-search {
+        position: relative;
+        top: 7px; }
+      .sticky-header .header .sticky-tools .search-bar .icon-close-circular {
+        position: relative;
+        top: 8px; }
 
 @-moz-document url-prefix() {
   .sticky-header .header .sticky-tools .search-bar {
@@ -158,7 +164,7 @@ a {
         -moz-transition: all 200ms ease-in-out;
         -webkit-transition: all 200ms ease-in-out; }
         .sticky-header .header .top-header .menu .menu-item:hover {
-          color: #5D5752; }
+          color: #FF5F5C; }
     .sticky-header .header .top-header .mobile-top {
       display: block; }
       .sticky-header .header .top-header .mobile-top .menu-toggle {
@@ -214,7 +220,7 @@ a {
       .sticky-header .header .top-header .tools .search-bar {
         position: absolute;
         right: -80%;
-        top: 0;
+        top: 4px;
         right: -220px; }
 
 @-moz-document url-prefix() {
@@ -225,6 +231,12 @@ a {
           vertical-align: super; }
         .sticky-header .header .top-header .tools .search-bar .input {
           font-family: "Quicksand", sans-serif; }
+        .sticky-header .header .top-header .tools .search-bar .icon-search {
+          position: relative;
+          top: 7px; }
+        .sticky-header .header .top-header .tools .search-bar .icon-close-circular {
+          position: relative;
+          top: 8px; }
         .sticky-header .header .top-header .tools .search-bar .close .icon-close-circular {
           vertical-align: bottom; }
 
@@ -383,7 +395,7 @@ a {
       -moz-transition: all 200ms ease-in-out;
       -webkit-transition: all 200ms ease-in-out; }
       .header .top-header .menu .menu-item:hover {
-        color: #5D5752; }
+        color: #FF5F5C; }
       @media screen and (max-width: 64em) {
         .header .top-header .menu .menu-item {
           display: block;
@@ -448,7 +460,7 @@ a {
     .header .top-header .tools .search-bar {
       position: absolute;
       right: -80%;
-      top: 0; }
+      top: 4px; }
 
 @-moz-document url-prefix() {
   .header .top-header .tools .search-bar {
@@ -458,6 +470,12 @@ a {
         vertical-align: super; }
       .header .top-header .tools .search-bar .input {
         font-family: "Quicksand", sans-serif; }
+      .header .top-header .tools .search-bar .icon-search {
+        position: relative;
+        top: 7px; }
+      .header .top-header .tools .search-bar .icon-close-circular {
+        position: relative;
+        top: 8px; }
       .header .top-header .tools .search-bar .close .icon-close-circular {
         vertical-align: bottom; }
       @media screen and (max-width: 64em) {
@@ -717,6 +735,12 @@ a {
           text-transform: capitalize; }
         .main .content .posts-list .post-container .post-foot .tags {
           width: 100%; }
+          .main .content .posts-list .post-container .post-foot .tags a {
+            transition: all 200ms ease-in-out;
+            -moz-transition: all 200ms ease-in-out;
+            -webkit-transition: all 200ms ease-in-out; }
+            .main .content .posts-list .post-container .post-foot .tags a:hover {
+              color: #FF5F5C !important; }
     .main .content .posts-list .pagination {
       float: right;
       margin-top: 80px;
@@ -733,7 +757,12 @@ a {
         position: relative;
         display: inline-block; }
         .main .content .posts-list .pagination .page-numbers .number-label {
-          display: inline-block; }
+          display: inline-block;
+          transition: all 200ms ease-in-out;
+          -moz-transition: all 200ms ease-in-out;
+          -webkit-transition: all 200ms ease-in-out; }
+          .main .content .posts-list .pagination .page-numbers .number-label:hover {
+            font-size: larger; }
         .main .content .posts-list .pagination .page-numbers:before {
           content: ' - ';
           margin: 0 9px; }
@@ -1219,6 +1248,13 @@ a {
   -webkit-transition: all 200ms ease-in-out; }
   .grey-hover:hover {
     color: #5D5752 !important; }
+
+.red-hover {
+  transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out; }
+  .red-hover:hover {
+    color: #FF5F5C !important; }
 
 .grow-hover {
   transition: all 200ms ease-in-out;
