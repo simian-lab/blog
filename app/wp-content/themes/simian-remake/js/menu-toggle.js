@@ -1,7 +1,18 @@
-jQuery('.menu-toggle').click(function(event){
-	event.preventDefault();
-	document.getElementsByClassName('top-header')[0].classList.toggle('active-menu');
-});
+jQuery(document).ready(function() {
+  var toggleMenu = function(e) {
+    jQuery('.side-menu').toggleClass('active');
+    jQuery('.all-content').toggleClass('off-canvas');
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  jQuery('.menu-toggle').click(toggleMenu);
+
+  jQuery('.all-content').click(function(e) {
+    jQuery('.side-menu').removeClass('active');
+    jQuery('.all-content').removeClass('off-canvas');
+  });
+})
 jQuery('.search-toggle').click(function(event){
 	event.preventDefault();
 	var searchbars = document.getElementsByClassName('search-bar');

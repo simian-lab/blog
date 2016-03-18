@@ -1,3 +1,209 @@
+.side-menu{
+	position: fixed;
+	z-index: 1;
+	width: 24rem;
+	background: url("../images/background-header.svg");
+	background-position-y: -140px;
+	background-repeat: no-repeat;
+	transition: transform 300ms ease-in-out;
+	-moz-transition: transform 300ms ease-in-out;
+	-webkit-transition: transform 300ms ease-in-out;
+	transform: translateX(-100%);
+	&.active {
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+		-moz-transition: transform 300ms ease-in-out;
+		-webkit-transition: transform 300ms ease-in-out;
+  }
+	.menu-toggle{
+		position: relative;
+	}
+	.logo{
+		position: relative;
+		top: 0;
+		left: 0;
+		margin: 0 15px;
+		width: 250px;
+  	height: 100px;
+	}
+	.menu{
+		
+		position: relative;
+		text-align: left;
+		margin-left: 15px;
+
+		.menu-item{
+			color: $grey;
+			font-family: $font-text;
+			font-size: 20px;
+			margin: 30px 36px 0;
+			display: block;
+  		padding-right: 3rem;
+  		text-transform: uppercase;
+  		transition: all 200ms ease-in-out;
+			-moz-transition: all 200ms ease-in-out;
+			-webkit-transition: all 200ms ease-in-out;
+			&:hover{
+				color: $light-red;
+			}
+		}
+	}
+	.mobile-top{
+		display: block;
+		.menu-toggle{
+			display: inline-block;
+		}
+		.languages{
+			display: none;
+			@include media($ipad-landscape){
+				display: block !important;
+			}
+			float: right;
+
+			.icon{
+				width: 3rem;
+				height: 3rem;
+			}
+			.white-icon{
+				color: white;
+			}
+			#language{
+				display: inline-block;
+			}
+			.icon-es{
+				margin-right: -14px;
+			}
+		}
+	}
+	.tools{
+		display: none;
+		@include media($ipad-landscape){
+			display: block !important;
+		}
+		background: url('../images/background-tools.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		top: 0;
+		right: 0;
+		overflow: hidden;			
+  	margin-top: -5px;
+  	width: 324px;
+
+		.icon{
+			display: inline-block;
+  		width: 2rem;
+  		height: 2rem;
+		}
+		.social{
+			.icon{
+				width: 1.5rem;
+			}
+			.icon-facebook{
+				margin-left: 15px;
+			}
+			.icon-google-plus{
+				width: 2rem;
+			}
+		}
+		.icon-mail{
+			color: $light-blue;
+		}
+		.icon-vertical-separator{
+			margin: 0 -10px 6px;
+		}
+		.social, .search-tool, .mail, .languages, .search-bar{
+			display: inline;
+			transition: all 600ms ease-in-out;
+		}
+		.social, .search-tool, .mail{
+			vertical-align: super;
+		}			
+		.search-bar{
+			position: absolute;
+  		right: -80%;
+  		top: 4px;
+  		@-moz-document url-prefix(){
+				right: -100%;
+  		}
+			.search-form{
+				display: inline-block;
+				vertical-align: super;
+			}
+			.input{
+				font-family: $font-text;
+			}
+			.icon-search{
+				position: relative;
+				top: 7px;
+			}
+			.icon-close-circular{
+				position: relative;
+				top: 8px;
+			}
+			.close .icon-close-circular{
+				vertical-align: bottom;
+			}
+			right: -220px;
+			@-moz-document url-prefix(){
+				right: -85%;
+			}
+		}
+		.active-search{
+			transform: translateX(-130%);
+			-moz-transform: translateX(-110%);
+			transition: transform 600ms ease-in-out;
+			-moz-transition: transform 600ms ease-in-out;
+			-webkit-transition: transform 600ms ease-in-out;
+		}
+		.inactive{
+			opacity: 0;
+			pointer-events: none;
+			transition: all 600ms ease-in-out;
+			-moz-transition: all 600ms ease-in-out;
+			-webkit-transition: all 600ms ease-in-out;
+		}
+		.languages{
+			display: none;
+			.icon{
+				width: 3rem;
+				height: 3rem;
+			}
+			.white-icon{
+				color: white;
+			}
+			#language{
+				display: inline-block;
+			}
+		}			
+	}
+}
+
+.all-content {
+  transition: 0.25s transform ease-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparentize(black, 0.2);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.2s opacity ease-out;
+  }
+
+  &.off-canvas {
+    transform: translateX(24rem);
+
+    &:after {
+      opacity: 1;
+    }
+  }
+}
 .sticky-header{
 	.header{
 		position: fixed;
@@ -406,18 +612,7 @@
   }
 	.top-header{
 		@include media($ipad-landscape){
-  		background: url('../images/background-header.svg');
-			background-repeat: no-repeat;
-  		background-size: cover;
-  		height: 370px;
-    	position: absolute;
-    	z-index: 1;
-    	width: 100%;
-    	right: 100%;
-    	transition: transform 800ms ease-in-out;
-    	-moz-transition: transform 800ms ease-in-out;
-    	-webkit-transition: transform 800ms ease-in-out;
-    	overflow: hidden;
+  		display: none
   	}
   	.menu-toggle{
   		@include media($ipad-landscape){
@@ -431,10 +626,6 @@
 			margin: 15px;
 			width: 250px;
     	height: 100px;
-			@include media($ipad-landscape){
-				position: relative;
-				margin: 0 15px;
-			}
 		}
 		.menu{
 			position: absolute;
@@ -443,11 +634,6 @@
 			transform: translateX(-50%);
 			@include media($tablet){
 				text-align: center;
-			}
-			@include media($ipad-landscape){
-				position: relative;
-				text-align: left;
-				margin-left: 15px;
 			}
 			.menu-item{
 				font-family: $font-text;
@@ -463,11 +649,6 @@
 				&:hover{
 					color: $light-red;
 				}
-    		@include media($ipad-landscape){
-    			display: block;
-    			color: white;
-					font-weight: bold;
-    		}
 			}
 		}
 		.mobile-top{

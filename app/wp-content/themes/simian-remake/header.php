@@ -229,6 +229,116 @@
   <?php wp_head(); ?>
 </head>
 <body id="page" <?php body_class(); ?>>
+	<nav class="side-menu">
+		<div class="mobile-top">
+			<div class="menu-toggle">
+				<a href="" class="mobile-menu">
+					<svg class="icon icon-left-arrow red-hover"><use xlink:href="#icon-left-arrow"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+			<div class="languages">
+				<?php				
+				if (class_exists('SitePress')) {
+					$languages = icl_get_languages('skip_missing=1&orderby=code&order=desc');
+					foreach($languages as $l){
+		        if(!$l['active']) { ?>
+		        	<a href="<?php echo $l['url']; ?>">						
+								<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+							</a>
+		        <?php } else { ?>
+		          <a href="<?php echo $l['url']; ?>">						
+								<svg class="icon icon-<?php echo $l['language_code']; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+							</a>
+		        <?php }
+			    }
+			  }else{?>
+				  <a href="#">						
+						<svg class="icon icon-es red-hover"><use xlink:href="#icon-es"></use></svg>
+					</a>
+					<a href="#">						
+						<svg class="icon icon-en red-hover"><use xlink:href="#icon-en"></use></svg>
+					</a>
+				<?php }?>
+			</div>
+		</div>			
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home">
+			<img class="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Simian Logo">
+		</a>
+		<div class="tools">
+			<div class="social">
+				<a href="https://www.facebook.com/simianlab" target="_blank" class="facebook">
+					<svg class="icon icon-facebook grey-hover"><use xlink:href="#icon-facebook"></use></svg><span class="mls"></span>
+				</a>
+				<a href="https://twitter.com/simianlab" target="_blank" class="twitter">
+					<svg class="icon icon-twitter grey-hover"><use xlink:href="#icon-twitter"></use></svg><span class="mls"></span>
+				</a>
+				<a href="https://plus.google.com/+SimianCo" target="_blank" class="google-plus">
+					<svg class="icon icon-google-plus grey-hover"><use xlink:href="#icon-google-plus"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+			<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
+			<div class="search-tool">
+				<a href="" class="search-toggle">
+					<svg class="icon icon-search grey-hover"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+			<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
+			<div class="mail">
+				<a href="http://simian.co/">
+					<svg class="icon icon-mail grey-hover"><use xlink:href="#icon-mail"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+			<svg class="icon icon-vertical-separator"><use xlink:href="#icon-vertical-separator"></use></svg><span class="mls"></span>
+			<div class="languages">
+				<?php				
+				if (class_exists('SitePress')) {
+					$languages = icl_get_languages('skip_missing=1&orderby=code&order=desc');
+					foreach($languages as $l){
+		        if(!$l['active']) { ?>
+		        	<a href="<?php echo $l['url']; ?>">						
+								<svg class="icon icon-<?php echo $l['language_code']. ' white-icon'; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+							</a>
+		        <?php } else { ?>
+		          <a href="<?php echo $l['url']; ?>">						
+								<svg class="icon icon-<?php echo $l['language_code']; ?> red-hover"><use xlink:href="#icon-<?php echo $l['language_code'];?>"></use></svg>
+							</a>
+		        <?php }
+			    }
+			  }else{?>
+				  <a href="#">						
+						<svg class="icon icon-es red-hover"><use xlink:href="#icon-es"></use></svg>
+					</a>
+					<a href="#">						
+						<svg class="icon icon-en red-hover"><use xlink:href="#icon-en"></use></svg>
+					</a>
+				<?php }?>
+			</div>
+			<div class="search-bar">
+				<a href="" class="search-submit" id="search-header">
+					<svg class="icon icon-search grey-hover"><use xlink:href="#icon-search"></use></svg><span class="mls"></span>
+				</a>
+				<form class="search-form" id="form-header" action="<?php echo home_url(); ?>">
+					<input class="input" name="s" type="text">
+				</form>
+				<a href="" class="search-toggle" href="">
+					<svg class="icon icon-close-circular grey-hover"><use xlink:href="#icon-close-circular"></use></svg><span class="mls"></span>
+				</a>
+			</div>
+		</div>
+		<nav class="menu">
+			<?php
+      $args = array(
+        'theme_location' => 'header',
+        'container' => false,
+        'menu_class' => '',
+        'echo' => true,
+        'fallback_cb' => 'wp_page_menu',
+        );
+
+        wp_nav_menu( $args ); ?>
+		</nav>
+	</nav>
+	<div class="all-content">
 	<?php if ( !is_404() ): ?>
 	<header class="header">
 		<div class="menu-toggle">
