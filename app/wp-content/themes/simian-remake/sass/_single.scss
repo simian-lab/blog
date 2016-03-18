@@ -34,6 +34,7 @@
 			color: $grey;
 			min-height: 80vh;
 			margin-top: -100px;
+			margin-bottom: 25px;
 			position: relative;
     	z-index: -1;
     	//Cause IE
@@ -47,6 +48,9 @@
     		height: 80vh;
     		opacity: 0.65;
     		min-height: 415px;
+    		position: relative;
+    		top: 4px;
+
     		@include media($mobile){
     			min-height: 230px;
     			height: initial;
