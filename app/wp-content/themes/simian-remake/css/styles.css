@@ -1008,8 +1008,6 @@ a {
     width: 100vw;
     height: 80vh;
     opacity: 0.65;
-    margin-top: -38px;
-    object-fit: cover;
     min-height: 415px; }
     @media screen and (max-width: 36.25em) {
       .single-post .detail .hero .wp-post-image {
@@ -1033,10 +1031,19 @@ a {
   .single-post .detail .hero:after {
     content: '';
     position: absolute;
-    bottom: 0;
-    height: 30%;
     width: 100%;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 95%); }
+    height: 101%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%); }
+  .single-post .detail .hero.scrolled:after {
+    opacity: 1;
+    transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    transition-property: opacity;
+    -moz-transition-property: opacity; }
 
 .single-post .detail .content {
   display: block;

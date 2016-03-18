@@ -29,7 +29,12 @@ window.requestAnimationFrame = window.requestAnimationFrame
         $body = $(document.body)
         $(window).on('scroll', function(){
             requestAnimationFrame(makesticky)
-        })
+        }).one('scroll', function(){
+        	//Only on first scroll, set the hero class
+        	if(jQuery('.hero').length > 0){
+        		jQuery('.hero').toggleClass('scrolled');
+        	}
+        });
         $(window).on('resize', function(){
             clearTimeout(resizetimer)
             resizetimer = setTimeout(function(){
