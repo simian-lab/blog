@@ -40,7 +40,7 @@ query_posts( $args );
 								<?php the_post_thumbnail('post_list_image');
 							endif; ?>
 						</div>						
-						<h2 class="post-title grow-hover">
+						<h2 class="post-title">
 							<?php the_title(); ?>
 						</h2>
 						<div class="post-excerpt">

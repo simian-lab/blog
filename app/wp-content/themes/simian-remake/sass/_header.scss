@@ -1,19 +1,30 @@
 .side-menu{
 	position: fixed;
 	z-index: 1;
-	width: 24rem;
+	width: 20rem;
 	background: url("../images/background-header.svg");
-	background-position-y: -140px;
+	background-position-y: -125px;
 	background-repeat: no-repeat;
 	transition: transform 300ms ease-in-out;
 	-moz-transition: transform 300ms ease-in-out;
 	-webkit-transition: transform 300ms ease-in-out;
 	transform: translateX(-100%);
+	-webkit-transform: translateX(-100%);
+	@include media($mobile){
+
+	}
 	&.active {
     transform: translateX(0);
+    -webkit-transform: translateX(0);
     transition: transform 300ms ease-in-out;
 		-moz-transition: transform 300ms ease-in-out;
 		-webkit-transition: transform 300ms ease-in-out;
+		.menu{
+			margin-top: 80px;
+			@include media($ipad-landscape){
+				margin-top: 0;
+			}
+		}
   }
 	.menu-toggle{
 		position: relative;
@@ -197,7 +208,8 @@
   }
 
   &.off-canvas {
-    transform: translateX(24rem);
+    transform: translateX(20rem);
+    -webkit-transform: translateX(20rem);
 
     &:after {
       opacity: 1;

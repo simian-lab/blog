@@ -21,21 +21,26 @@ a {
 .side-menu {
   position: fixed;
   z-index: 1;
-  width: 24rem;
+  width: 20rem;
   background: url("../images/background-header.svg");
-  background-position-y: -140px;
+  background-position-y: -125px;
   background-repeat: no-repeat;
   transition: transform 300ms ease-in-out;
   -moz-transition: transform 300ms ease-in-out;
   -webkit-transition: -webkit-transform 300ms ease-in-out;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%); }
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%); }
   .side-menu.active {
-    -webkit-transform: translateX(0);
     transform: translateX(0);
+    -webkit-transform: translateX(0);
     transition: transform 300ms ease-in-out;
     -moz-transition: transform 300ms ease-in-out;
     -webkit-transition: -webkit-transform 300ms ease-in-out; }
+    .side-menu.active .menu {
+      margin-top: 80px; }
+      @media screen and (max-width: 64em) {
+        .side-menu.active .menu {
+          margin-top: 0; } }
   .side-menu .menu-toggle {
     position: relative; }
   .side-menu .logo {
@@ -179,8 +184,8 @@ a {
     opacity: 0;
     transition: 0.2s opacity ease-out; }
   .all-content.off-canvas {
-    -webkit-transform: translateX(24rem);
-    transform: translateX(24rem); }
+    transform: translateX(20rem);
+    -webkit-transform: translateX(20rem); }
     .all-content.off-canvas:after {
       opacity: 1; }
 
