@@ -1003,7 +1003,6 @@ a {
   display: -ms-inline-grid; }
   @media screen and (max-width: 64em) {
     .single-post .detail .hero {
-      position: relative;
       bottom: 35px; } }
   @media screen and (max-width: 36.25em) {
     .single-post .detail .hero {
@@ -1048,12 +1047,21 @@ a {
     opacity: 0;
     pointer-events: none;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%); }
-  .single-post .detail .hero.scrolled:after {
-    opacity: 1;
+  .single-post .detail .hero.scrolled {
     transition-duration: 0.5s;
     -moz-transition-duration: 0.5s;
-    transition-property: opacity;
-    -moz-transition-property: opacity; }
+    transition-property: -webkit-transform, margin-bottom;
+    transition-property: transform, margin-bottom;
+    -moz-transition-property: transform, margin-bottom;
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+    margin-bottom: -50px; }
+    .single-post .detail .hero.scrolled:after {
+      opacity: 1;
+      transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      transition-property: opacity;
+      -moz-transition-property: opacity; }
 
 .single-post .detail .content {
   display: block;
@@ -1384,7 +1392,8 @@ a {
 .icon-map-marker,
 .icon-star,
 .icon-menu,
-.icon-es {
+.icon-es,
+.icon-close {
   color: #DED96B; }
 
 .icon-facebook {
