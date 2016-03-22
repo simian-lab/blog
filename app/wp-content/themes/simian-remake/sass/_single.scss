@@ -39,18 +39,24 @@
     	z-index: -1;
     	//Cause IE
     	display: -ms-inline-grid;
+    	@include media($ipad-landscape){
+    		position: relative;
+    		bottom: 35px;
+    	}
     	@include media($mobile){
     		min-height: 40vh;
     		margin-top: -29px;
     	}
     	.wp-post-image{
-    		width: 100vw;
+    		width: 100%;
     		height: 80vh;
     		opacity: 0.65;
     		min-height: 415px;
     		position: relative;
     		top: 4px;
-
+				@include media($ipad-landscape){
+    			top: 5px;
+    		}
     		@include media($mobile){
     			min-height: 230px;
     			height: initial;
