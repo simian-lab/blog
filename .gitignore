@@ -1,8 +1,14 @@
 .DS_Store
 *~
 node_modules
-wp-config.php
+node_modules/*
 app/robots.txt
-app/wp-content/uploads/
-app/wp-content/themes/simian-remake/node_modules
+error_log
+logs
+deployments.log
+stack/local-config.php
+wp-content/cache/
 app/.vagrant
+app/wp-content/uploads/
+wp-content/uploads
+app/wp-content/themes/simian-remake/node_modules
