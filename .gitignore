@@ -1,5 +1,13 @@
 .DS_Store
 *~
 node_modules
-wp-config.php
+node_modules/*
 app/robots.txt
+.vagrant
+error_log
+wp-content/uploads/
+wp-content/uploads
+logs
+deployments.log
+stack/local-config.php
+wp-content/cache/
